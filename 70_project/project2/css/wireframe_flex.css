@@ -15,7 +15,10 @@ body {
     color: #000;
     background: #fff;
 }
-
+img {
+    width: 100%;
+    vertical-align: top;
+}
 a {
     color: #000;
 }
@@ -52,6 +55,8 @@ nav li {
 section {
     width: 1496px;
     margin: 0 auto;
+    border: 1px solid #000;
+    border-bottom: none;
 }
 
 .section {
@@ -71,6 +76,7 @@ section {
 /* section1 */
 #main_img {
     position: relative;
+    height: 810px;
 }
 
 #main_img h2 {
@@ -83,8 +89,7 @@ section {
 
 #main_img h2 b {
     padding: 8px 16px;
-    background: #000;
-    color: #fff;
+    border:1px solid #000;
 }
 
 /* section2, 3 common */
@@ -96,14 +101,45 @@ section {
 }
 #menu li, #event li {
     width: 362px;
+    border: 1px solid #000;
 }
 
 /* section2 */
 #menu h2 {
     margin-bottom: 48px;
 }
+#menu li {
+    position: relative;
+}
+#menu li:nth-of-type(4) ~ li {
+    margin-top: 16px;
+    border-bottom: none;
+}
+#menu li:nth-of-type(4n+1) {
+    border-left:none;
+}
+#menu li:nth-of-type(4n) {
+    border-right:none;
+}
+#menu li h3 {
+    position: absolute;
+    left:0;
+    top:0;
+    border-right:1px solid #000;
+    border-bottom:1px solid #000;
+    padding: 8px 24px;
+}
 
 /* section3 */
+#event li {
+    border-bottom: none;
+}
+#event li:first-of-type {
+    border-left:none;
+}
+#event li:last-of-type {
+    border-right:none;
+}
 #event li h3 {
     margin: 16px 0 8px;
 }
@@ -136,7 +172,9 @@ section {
     background: #000;
     color: #fff;
 }
-
+#news .map {
+    border: 1px soild #000;
+}
 /* footer */
 footer {
     text-align: center;
