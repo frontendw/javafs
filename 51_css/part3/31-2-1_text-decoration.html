@@ -17,18 +17,36 @@
             writing-mode: 값;
                 값: horizontal-tb, vertical-rl, vertical-lr
         */
+
+        p {
+            width: 300px;
+            height: 300px;
+            border: 1px solid red;
+        }
         
+        .wm1 {
+            writing-mode: horizontal-tb;
+            line-height: 2;
+            text-decoration: underline;
+            text-underline-offset: 32px;
+            text-underline-position: under;
+        }
+        .wm2 {
+            writing-mode: vertical-rl;
+            text-decoration: underline;
+            text-underline-position: left;
+        }
+        .wm3 {
+            writing-mode: vertical-lr;
+            text-decoration: underline;
+            text-underline-position: right;
+        }
     </style>
 </head>
 <body>
     <h1>텍스트 밑줄 위치와 쓰기 모드</h1>
-    <p class="tuo1">text-underline-offset: auto;</p>
-    <p class="tuo2">text-underline-offset: 8px;</p>
-    <p class="tuo3">text-underline-offset: -.5rem;</p>
-    <p class="tup1">text-underline-position: none;</p>
-    <p class="tup2">text-underline-position: under;</p>
-    <p class="wm1">writing-mode: horizontal-tb;</p>
-    <p class="wm2">writing-mode: vertical-lr;</p>
-    <p class="wm3">writing-mode: vertical-rl;</p>
+    <p class="wm1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nisi repellendus tempore vel? Iusto dolor cum ducimus laboriosam atque? Nobis ipsam porro at, itaque recusandae dignissimos dolorum sapiente suscipit sunt?</p>
+    <p class="wm2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nisi repellendus tempore vel? Iusto dolor cum ducimus laboriosam atque? Nobis ipsam porro at, itaque recusandae dignissimos dolorum sapiente suscipit sunt?</p>
+    <p class="wm3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem nisi repellendus tempore vel? Iusto dolor cum ducimus laboriosam atque? Nobis ipsam porro at, itaque recusandae dignissimos dolorum sapiente suscipit sunt?</p>
 </body>
 </html>
