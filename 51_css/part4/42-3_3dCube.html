@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body { font-family: sans-serif; }
+
+        .scene {
+            width: 400px;
+            margin: 80px;
+            perspective: 1000px;
+            perspective-origin: 30% -50%;
+        }
+
+        .cube {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin-top: 50px;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+        .cube_face {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            line-height: 200px;
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+        }
+        .cube_face_front  { background: rgba(255, 0, 0, 0.7); transform: rotateY(  0deg) translateZ(100px); }
+        .cube_face_right  { background: rgba(255, 255, 0, 0.7); transform: rotateY( 90deg) translateZ(100px); }
+        .cube_face_back   { background: rgba(0, 255, 0, 0.7); transform: rotateY(180deg) translateZ(100px); }
+        .cube_face_left   { background: rgba(0, 255, 255, 0.7); transform: rotateY(-90deg) translateZ(100px); }
+        .cube_face_top    { background: rgba(0, 0, 255, 0.7); transform: rotateX( 90deg) translateZ(100px); }
+        .cube_face_bottom { background: rgba(255, 0, 255, 0.7); transform: rotateX(-90deg) translateZ(100px); }
+
+        label { margin-right: 10px; }
+        input {display:none;}
+
+        #auto:checked ~ .cube {
+            animation: rotateY 10s infinite linear;
+        }
+        #front:checked ~ .cube {
+            transform: translateZ(-100px) rotateY(0deg);
+        }
+        #right:checked ~ .cube {
+            transform: translateZ(-100px) rotateY( -90deg);
+        }
+        #back:checked ~ .cube {
+            transform: translateZ(-100px) rotateY(-180deg);
+        }
+        #left:checked ~ .cube {
+            transform: translateZ(-100px) rotateY(  90deg);
+        }
+        #top:checked ~ .cube {
+            transform: translateZ(-100px) rotateX( -90deg);
+        }
+        #bottom:checked ~ .cube {
+            transform: translateZ(-100px) rotateX(  90deg);
+        }
+
+        @keyframes rotateY {
+            0% {transform: translateZ(-100px) rotateY(0deg);}
+            100% {transform: translateZ(-100px) rotateY(360deg);}
+        }
+    </style>
+</head>
+
+<body>
+    <h1>3D Cube</h1>
+    <div class="scene">
+        <input type="radio" name="rotate-cube-side" value="front" id="auto" checked>
+        <label for="auto">auto</label>
+        <input type="radio" name="rotate-cube-side" value="front" id="front">
+        <label for="front">front</label>
+        <input type="radio" name="rotate-cube-side" value="right" id="right">
+        <label for="right">right</label>
+        <input type="radio" name="rotate-cube-side" value="back" id="back">
+        <label for="back">back</label>
+        <input type="radio" name="rotate-cube-side" value="left" id="left">
+        <label for="left">left</label>
+        <input type="radio" name="rotate-cube-side" value="top" id="top">
+        <label for="top">top</label>
+        <input type="radio" name="rotate-cube-side" value="bottom" id="bottom">
+        <label for="bottom">bottom</label>
+
+        <div class="cube">
+          <div class="cube_face cube_face_front">front</div>
+          <div class="cube_face cube_face_back">back</div>
+          <div class="cube_face cube_face_right">right</div>
+          <div class="cube_face cube_face_left">left</div>
+          <div class="cube_face cube_face_top">top</div>
+          <div class="cube_face cube_face_bottom">bottom</div>
+        </div>
+      </div>
+
+</body>
+
+</html>
