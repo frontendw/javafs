@@ -8,12 +8,11 @@
     <title>HTML+CSS</title>
     <style>
         * { box-sizing: border-box; }
-
         body { font-family: sans-serif; }
 
         .scene {
             width: 400px;
-            margin: 80px;
+            margin: 100px;
             perspective: 1000px;
             perspective-origin: 30% -50%;
         }
@@ -31,19 +30,25 @@
             position: absolute;
             width: 200px;
             height: 200px;
-            border: 1px solid black;
             line-height: 200px;
             font-size: 40px;
             font-weight: bold;
             color: white;
             text-align: center;
         }
-        .cube_face_front  { background: rgba(255, 0, 0, 0.7); transform: rotateY(  0deg) translateZ(100px); }
-        .cube_face_right  { background: rgba(255, 255, 0, 0.7); transform: rotateY( 90deg) translateZ(100px); }
-        .cube_face_back   { background: rgba(0, 255, 0, 0.7); transform: rotateY(180deg) translateZ(100px); }
-        .cube_face_left   { background: rgba(0, 255, 255, 0.7); transform: rotateY(-90deg) translateZ(100px); }
-        .cube_face_top    { background: rgba(0, 0, 255, 0.7); transform: rotateX( 90deg) translateZ(100px); }
-        .cube_face_bottom { background: rgba(255, 0, 255, 0.7); transform: rotateX(-90deg) translateZ(100px); }
+        .cube_face_front  { background: rgba(255, 0, 0, 0.7);}
+        .cube_face_right  { background: rgba(255, 255, 0, 0.7);}
+        .cube_face_back   { background: rgba(0, 255, 0, 0.7);}
+        .cube_face_left   { background: rgba(0, 255, 255, 0.7);}
+        .cube_face_top    { background: rgba(0, 0, 255, 0.7);}
+        .cube_face_bottom { background: rgba(255, 0, 255, 0.7);}
+
+        .cube_face_front  {transform: rotateY(0deg) translateZ(100px); }
+        .cube_face_back   {transform: rotateY(180deg) translateZ(100px); }
+        .cube_face_right  {transform: rotateY(90deg) translateZ(100px); }
+        .cube_face_left   {transform: rotateY(-90deg) translateZ(100px); }
+        .cube_face_top    {transform: rotateX(90deg) translateZ(100px); }
+        .cube_face_bottom {transform: rotateX(-90deg) translateZ(100px); }
 
         label { margin-right: 10px; }
         input {display:none;}
@@ -80,19 +85,19 @@
 <body>
     <h1>3D Cube</h1>
     <div class="scene">
-        <input type="radio" name="rotate-cube-side" value="front" id="auto" checked>
+        <input type="radio" name="rotate-cube-side" id="auto" checked>
         <label for="auto">auto</label>
-        <input type="radio" name="rotate-cube-side" value="front" id="front">
+        <input type="radio" name="rotate-cube-side" id="front">
         <label for="front">front</label>
-        <input type="radio" name="rotate-cube-side" value="right" id="right">
+        <input type="radio" name="rotate-cube-side" id="right">
         <label for="right">right</label>
-        <input type="radio" name="rotate-cube-side" value="back" id="back">
+        <input type="radio" name="rotate-cube-side" id="back">
         <label for="back">back</label>
-        <input type="radio" name="rotate-cube-side" value="left" id="left">
+        <input type="radio" name="rotate-cube-side" id="left">
         <label for="left">left</label>
-        <input type="radio" name="rotate-cube-side" value="top" id="top">
+        <input type="radio" name="rotate-cube-side" id="top">
         <label for="top">top</label>
-        <input type="radio" name="rotate-cube-side" value="bottom" id="bottom">
+        <input type="radio" name="rotate-cube-side" id="bottom">
         <label for="bottom">bottom</label>
 
         <div class="cube">
