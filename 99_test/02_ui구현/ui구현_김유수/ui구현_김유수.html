@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시험전축제_김유수</title>
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: #000 1px
+        }
+
+        section {
+            width: 1496px;
+            margin: 0 auto;
+
+        }
+
+        section h2 {
+            border-bottom: 1px solid #f1f1f1;
+            padding-bottom: 3px
+        }
+
+        body {
+            color: #000;
+
+        }
+
+        li {
+            list-style: none;
+
+        }
+
+        /* header */
+        header {
+            height: 75px;
+            border: 1px solid #000;
+            padding: 0 24px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 99999;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .logo {
+            padding: 12px;
+            border-top: none;
+        }
+
+        nav ul {
+            display: flex;
+            margin-right: 320px
+        }
+
+        nav li {
+            margin: 10px 0 0 160px;
+            padding: 8px 16px;
+
+
+        }
+
+        .lang h2 {
+            margin-top: 18px;
+
+
+        }
+
+        /* section1 */
+        #dream {
+            text-align: center;
+
+        }
+
+        #dream h3 {
+            margin-top: 96px;
+            margin-bottom: 56px;
+
+        }
+
+        #dream img {
+            border: #000 1px solid;
+
+
+        }
+
+        #dream p {
+            margin-bottom: 16px;
+        }
+
+        #dream input {
+            width: 360px;
+            text-align: center;
+        }
+
+        #dream button {
+            text-align: center;
+            width: 360px;
+        }
+
+
+        /* section2 */
+        #show h2 {
+            margin-top: 96px;
+            margin-bottom: 24px;
+        }
+
+
+        #show p {
+            margin-bottom: 48px;
+        }
+
+        #show .container {
+            display: flex;
+            border: #000 1px solid;
+            margin-bottom: 204px;
+            border-left: none;
+        }
+
+        #show li {
+            margin-right: 202px;
+            border: #000 1px solid;
+            border-top: none;
+            border-bottom: none;
+        }
+
+        #show h3 {
+            padding: 4px 8px;
+        }
+
+        #show li #show li:nth-child(3n) {
+            margin-right: 0px
+        }
+
+
+        /* section3 */
+
+        #event h2 {
+            margin-bottom: 24px;
+        }
+
+        #event h4 {
+            margin-top: 8px;
+
+        }
+
+        #event p {
+            margin-top: 24px;
+            margin-bottom: 48px;
+        }
+
+
+        #event .container {
+            display: flex;
+            width: 1496px;
+            flex-wrap: wrap;
+            border: #000 1px solid;
+            margin-bottom: 144px;
+            margin-left: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        #event h3,
+        h4,
+        p {
+            padding: 4px 8px;
+        }
+
+        #event li {
+            margin-right: 201.5px;
+            margin-top: none;
+            border: #000 1px solid;
+            border-bottom: none;
+        }
+
+        #event li:nth-child(1) {
+            border-top: none;
+        }
+
+        #event li:nth-child(2) {
+            border-top: none;
+        }
+
+        #event li:nth-child(3) {
+            border-top: none;
+        }
+
+        #event li:nth-child(3n) {
+            margin-right: 0px;
+        }
+
+
+
+
+
+
+
+
+        /* section4 */
+
+        #party {
+            text-align: center;
+        }
+
+        #party img {
+            border: #000 1px solid
+        }
+
+        #party h2 {
+            margin-top: 64px;
+            margin-bottom: 56px;
+        }
+
+
+        /* footer */
+        footer h2 {
+            margin-top: 160px;
+            margin-bottom: 56px;
+        }
+
+        #footer {
+            text-align: center;
+        }
+
+        #footer img {
+            margin: 0 auto;
+            border: #000 1px solid
+        }
+
+        .contact {
+            background: #fff;
+            text-align: center;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .contact h3 {
+            margin: 72px
+        }
+
+        input {
+            margin: 16px 560px;
+            padding: 8px;
+            width: 800px;
+            height: 40px;
+            border: #000 1px solid;
+        }
+
+        button {
+            width: 800px;
+            height: 32px;
+            margin: 0 560px;
+        }
+
+        .contact h4 {
+            padding: 24px;
+            height: 64px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>시험전축제</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#dream">
+                            <h2>시험전축제</h2>
+                        </a></li>
+                    <li><a href="#show">
+                            <h2>무대공연</h2>
+                        </a></li>
+                    <li><a href="#event">
+                            <h2>소공연</h2>
+                        </a></li>
+                    <li><a href="#footer">
+                            <h2>함께한 사람들</h2>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="lang">
+                <h2>KOR</h2>
+            </div>
+        </div>
+        </div>
+    </header>
+    <!-- section1 -->
+    <section id="dream" alt="dream">
+        <h3>당신의 꿈</h3>
+        <p>시험에 지진 당신을 위해 <br> -SMPI PLANET-</p>
+        <img src="https://dummyimage.com/720x720&text=+▷" alt="dream">
+        <form action="message.php" method="post">
+            <input type="text" name="user_name" placeholder="당신의 꿈은 무엇인가요">
+            <button>보내기</button>
+    </section>
+
+    <!-- section2 -->
+    <section id="show">
+        <h2>무대 공연</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos eum itaque voluptates optio cumque ex!
+            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea autem eveniet dicta amet fuga dignissimos.
+            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nulla, temporibus magni error
+            nesciunt non!
+        </p>
+        <ul class="container">
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="orchestra">
+                <h3>정왕청소년오케스트라</h3>
+            </li>
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="band">
+                <h3>밴드민하</h3>
+            </li>
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="performance">
+                <h3>즘피플래닛</h3>
+            </li>
+        </ul>
+    </section>
+
+    <!-- section3 -->
+    <section id="event">
+        <h2>소공연</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sequi soluta aliquid dolorum quidem
+            exercitationem repudiandae laborum suscipit impedit et sapiente deserunt voluptatem itaque voluptatum, ipsam
+            labore. Illum hic quod nostrum, illo accusamus temporibus enim quisquam ipsam officiis vel et tempore
+            deserunt. Dolores quia placeat doloribus, necessitatibus odio quod ad! Vitae, numquam ipsam! Debitis amet
+            temporibus quaerat quia alias earum minus voluptas quos repellendus eveniet, fugit consequatur iste enim
+            recusandae nobis quisquam rerum facilis, exercitationem eaque fuga vitae velit! Iste?</p>
+        <ul class="container">
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="event1">
+                <h3>김채영</h3>
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </li>
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="event2">
+                <h3>김동욱</h3>
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </li>
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="event3">
+                <h3>김지현</h3>
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </li>
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="event4">
+                <h3>차희주</h3>
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </li>
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="event5">
+                <h3>고륜호</h3>
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </li>
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="event6">
+                <h3>문인경</h3>
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </li>
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="event7">
+                <h3>조무강</h3>
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </li>
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="event8">
+                <h3>시화</h3>
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </li>
+            <li><img src="https://dummyimage.com/362x362&text=+" alt="event9">
+                <h3>김혜빈</h3>
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </li>
+
+
+        </ul>
+    </section>
+    <!-- section4 -->
+    <section id="party">
+        <h2>언제든 삶은 즐거울 수 있다</h2>
+        <img src="https://dummyimage.com/720x720&text=+▷" alt="party">
+
+    </section>
+    <!-- fotter -->
+    <footer>
+        <section id="footer">
+            <h2>함께한 사람들</h2>
+            <img src="https://dummyimage.com/992x678&text=+" alt="people">
+        </section>
+
+
+        <div class="contact">
+            <h3>연락</h3>
+            <form action="message.php" method="post">
+                <input type="text" name="user_name" placeholder="Name">
+                <input type="email" name="user_email" placeholder="Email">
+                <input type="text" name="user_subject" placeholder="Subject">
+                <input type="text" name="user_comment" placeholder="Comment">
+                <button type="submit">SEND MESSAGE</button>
+            </form>
+            <h4>KYS All rights reserved</h4>
+
+
+        </div>
+    </footer>
+    
+</body>
+
+</html>

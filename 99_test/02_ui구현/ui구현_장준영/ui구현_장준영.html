@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVA향수_장준영</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 공통 */
+        #wrap {
+            border: 1px solid #000000;
+            width: 1496px;
+            margin: 0 auto;
+        }
+
+        /* body */
+        body {
+            color: #000000;
+            background: #ffffff;
+        }
+
+        /* a 태그 글자 색상 */
+        a {
+            color: #000000;
+        }
+
+        /* 목록 마크 제거 */
+        li {
+            list-style: none;
+        }
+
+        /* header section footer {
+        display: flex;
+    } */
+
+        /* header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #000;
+            position: fixed;
+            top: 0px;
+            z-index: 99999;
+            width: 100%;
+            height: 54px;
+            padding: 0 32px;
+            background: lavender;
+        }
+
+        .logo {
+            justify-content: left;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: right;
+            margin: 16px;
+        }
+
+        nav li {
+            display: inline-block;
+        }
+
+        /* 섹션 공통 */
+        .section {
+            padding-top: 81px;
+        }
+
+        .section h2 {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #000000;
+        }
+
+        .section h2+p {
+            margin-bottom: 48px;
+        }
+
+        /* 섹션1 */
+        #main_img {
+            position: relative;
+        }
+
+        #main_img b {
+            border: 1px solid #000000;
+            padding: 4px 16px;
+            text-align: center;
+        }
+
+        #main_img h2 {
+            position: absolute;
+            border: 1px solid #000000;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #ccc;
+            padding: 8px 24px;
+        }
+
+        /* 섹션2 */
+        #menu {
+            display: inline-block;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border-bottom: none;
+            border-top: none;
+        }
+
+        #menu h2 {
+            margin-bottom: 48px;
+        }
+
+        #menu h3 {
+            border: 1px solid #000;
+            position: absolute;
+            background: oldlace;
+            padding: 8px;
+            margin-top: -16px;
+        }
+
+        #menu img {
+            border: 1px solid #000000;
+            margin-bottom: 16px;
+        }
+
+        /* 섹션2,3 공통 */
+        #menu li,
+        #event li {
+            display: inline-block;
+            justify-content: space-between;
+            padding-left: 16px;
+            width: 362px;
+        }
+
+        /* #menu ul::after,
+    #event ul::after {
+        content: '';
+        clear: both;
+        display: block;
+    } */
+
+        /* #menu ul{
+        overflow: hidden;
+    } */
+
+        #menu li:not(:nth-of-type(4n)) #event li:not(:nth-of-type(4n)) {
+            margin-right: 8px;
+            padding: 0 0 0 8px;
+        }
+
+        /* 섹션3 */
+        #event {
+            display: inline-block;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #event li {
+            padding: 16px 0px 0 0;
+            border: 1px solid #000000;
+            margin-left: 6px;
+
+        }
+
+        #event li h3 {
+            margin: 16px 0 8px;
+        }
+
+        #event li p {
+            margin: 8px 0;
+        }
+
+        #event li a {
+            display: block;
+            justify-content: space-between;
+            background: #ccc;
+            text-align: center;
+            padding: 8px 0;
+            margin-top: 16px;
+        }
+
+        /* section4 */
+        #news {
+            border-top: none;
+        }
+
+        #news input {
+            display: block;
+            width: 100%;
+            height: 50px;
+            padding: 0px 16px;
+            margin-top: 16px;
+            border: 1px solid #000;
+            border-right: none;
+            border-left: none;
+        }
+
+        #news button {
+            border: 1px solid #000000;
+            border-left: none;
+            padding: 16px;
+            margin: 24px 0;
+        }
+
+        section img {
+            margin-top: -16px;
+            margin-bottom: 0px;
+        }
+
+        /* footer */
+        footer {
+            border: 1px solid #000000;
+            height: 81px;
+            background: #000;
+            color: violet;
+            text-align: center;
+            padding: 32px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <h1 class="logo"><a href="#"><b>JAVA</b>향수</h1>
+        <nav>
+            <ul>
+                <li><a href="#main">제품소개</a></li>
+                <li><a href="#about">이벤트</a></li>
+                <li><a href="#news">공지</a></li>
+                <li><a href="#map">위치</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="wrap">
+        <!-- section1 -->
+        <section id="main_img">
+            <!-- main image -->
+            <img src="https://dummyimage.com/1496x810/000/0ccccc.jpg&text=+" alt="슬라이드 이미지">
+            <!-- main title -->
+            <h2><b>JAVA</b>향수</h2>
+        </section>
+
+        <!-- section2 -->
+        <section id="menu" class="section">
+            <h2 id="main">제품 소개</h2>
+            <ul>
+                <li>
+                    <h3>끌로에 러브 오 플로랄</h3>
+                    <img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="끌로에 러브 오 플로랄">
+                </li>
+                <li>
+                    <h3>베르사체 에로스</h3>
+                    <img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="베르사체 에로스">
+                </li>
+                <li>
+                    <h3>골데아 불가리 더 로만 나이트 오 드 퍼퓸</h3>
+                    <img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="골데아 불가리 더 로만 나이트 오 드 퍼퓸">
+                </li>
+                <li>
+                    <h3>르옴므 프라다 인텐스</h3>
+                    <img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="르옴므 프라다 인텐스">
+                </li>
+                <li>
+                    <h3>코코 마드모아젤</h3>
+                    <img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="코코 마드모아젤">
+                </li>
+                <li>
+                    <h3>코코 마드모아젤</h3>
+                    <img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="코코 마드모아젤">
+                </li>
+                <li>
+                    <h3>아쿠아 알레고리아 페라 그라니타</h3>
+                    <img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="아쿠아 알레고리아 페라 그라니타">
+                </li>
+                <li>
+                    <h3>Nº5 오 드 빠르펭</h3>
+                    <img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="Nº5 오 드 빠르펭">
+                </li>
+            </ul>
+        </section>
+
+        <!-- section3 -->
+        <section id="event" class="section">
+            <h2>행사상품</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quos quibusdam illum debitis nisi expedita
+                tenetur excepturi reprehenderit laborum ullam voluptatum, similique aspernatur pariatur voluptate
+                aliquam, vitae corporis assumenda? Eligendi possimus, facere perferendis odit nemo minima blanditiis
+                quidem, praesentium maxime iure quia nesciunt laudantium nihil libero maiores ad itaque! Beatae labore
+                atque accusantium, illo aspernatur repellat illum a dolores consequatur?</p>
+            <ul>
+                <li><img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="john">
+                    <h3>행사상품1</h3>
+                    <p>2023.05.01~05.03</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati expedita adipisci, quasi
+                        excepturi earum natus!</p>
+                    <a href="#">Contact</a>
+                </li>
+                <li><img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="Jane">
+                    <h3>행사상품2</h3>
+                    <p>2023.05.01~05.03</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati expedita adipisci, quasi
+                        excepturi earum natus!</p>
+                    <a href="#">Contact</a>
+                </li>
+                <li><img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="Mike">
+                    <h3>행사상품3</h3>
+                    <p>2023.05.01~05.03</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati expedita adipisci, quasi
+                        excepturi earum natus!</p>
+                    <a href="#">Contact</a>
+                </li>
+                <li><img src="https://dummyimage.com/362x243/000/0ccccc.jpg&text=+" alt="Dan">
+                    <h3>행사상품4</h3>
+                    <p>2023.05.01~05.03</p>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati expedita adipisci, quasi
+                        excepturi earum natus!</p>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- section4 -->
+        <section id="news" class="section">
+            <h2 id="news">공지사항</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, expedita!</p>
+            <form action="message.php" method="post">
+                <input type="text" name="user_name" placeholder="Name">
+                <input type="email" name="user_email" placeholder="Email">
+                <input type="text" name="user_subject" placeholder="submit">
+                <input type="text" name="user_comment" placeholder="Comment">
+                <button type="submit">SEND MESSAGE</button>
+            </form>
+            <h2>위치</h2>
+            <img src="https://dummyimage.com/1496x810/000/0ccccc.jpg&text=+" alt="">
+        </section>
+
+        <!-- footer -->
+        <footer>
+            <p>Copyright 2023 JAVA 향수. All rights reserved</p>
+        </footer>
+    </div>
+</body>
+
+</html>

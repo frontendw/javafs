@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>넥슨_위재형</title>
+    <style>
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #000000;
+    background: #fff;
+    border: 1px solid #000000;
+}
+a {
+    color: #000000;
+}
+/* 목록의 마커 제거 */
+li {
+    list-style: none;
+}
+div {
+    border: 1px solid #000000;
+}
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    background: #fff;
+    height: 54px;
+    padding: 0 32px;
+    border: 1px solid #000000;
+}
+.logo {
+    position: absolute;
+}
+nav {
+    display: flex;
+    justify-content: end;
+}
+nav li {
+    display: inline-block;
+    margin: 16px 16px;
+}
+/* section common */
+section {
+    width: 1496px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    
+}
+.section {
+    padding-top: 81px;
+}
+.section h2 {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+}
+.section h2+p {
+    margin-bottom: 32px;
+}
+/* section1 */
+#main_img {
+    position: relative;
+}
+#main_img h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: #000000;
+    background: #000;
+    transform: translate(-50%, -50%);
+    padding: 8px 24px;
+    color: #fff;
+}
+/* section2, 3 common */
+#game ul::after,
+#mobile ul::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+#game li:not(:nth-of-type(4n)),
+#mobile li:not(:nth-of-type(4n)) {
+    margin-right: 8px;
+}
+/* section2 */
+#game ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between
+}
+#game h2 {
+    margin-bottom: 48px;
+}
+#game li h3 {
+    position: absolute;
+    border: 1px solid #000000;
+    background: #000000;
+    color: #fff;
+    padding: 8px 16px;
+}
+/* section3 */
+#mobile ul {
+    display: flex;
+    justify-content: space-between
+}
+#mobile li h3 {
+    margin: 16px 0 8px;
+}
+#mobile li p {
+    margin: 8px 0;
+}
+#mobile li a {
+    display: block;
+    background: #ccc;
+    text-align: center;
+    padding: 8px 0;
+    margin-top: 16px;
+    border: 1px solid #000000;
+}
+/* section4 */
+#news input {
+    width: 100%;
+    height: 40px;
+    display: block;
+    padding: 0 10px;
+    margin: 20px 0;
+    border: 1px solid #000000;
+}
+#news button {
+    display: block;
+    margin: 40px 0;
+    background: #000000;
+    color: #fff;
+    width: 154px;
+    height: 40px;
+}
+/* footer*/
+footer {
+    border: 1px solid #000000;
+    color: #000000;
+    text-align: center;
+    padding: 32px 0;
+}
+</style>
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1 class="logo"><a href="#"><b>NEXON</b></a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="#game">게임소개</a></li>
+                        <li><a href="#mobile">모바일게임</a></li>
+                        <li><a href="#news">공지사항</a></li>
+                    </ul>
+                </nav>
+    </header>
+
+    <!-- section1 -->
+    <section id="main_img">
+        <!-- main image -->
+        <div><img src="https://dummyimage.com/1496x810&text=+" alt="슬라이드 이미지"></div>
+        <!-- main title -->
+        <h2><b>NEXON</b></h2>
+    </section>
+
+    <!-- section2 -->
+        <section id="game" class="section">
+                <h2>게임소개</h2>
+                        <ul>
+                            <li>
+                                <h3>메이플 스토리</h3>
+                                <div><img src="https://dummyimage.com/362x243&text=+"alt="게임1"></div>
+                            </li>
+                            <li>
+                                <h3>서든어택</h3>
+                                <div><img src="https://dummyimage.com/362x243&text=+" alt="게임2"></div>
+                            </li>
+                            <li>
+                                <h3>던전앤파이터</h3>
+                                <div><img src="https://dummyimage.com/362x243&text=+" alt="게임3"></div>
+                            </li>
+                            <li>
+                                <h3>피파온라인4</h3>
+                                <div><img src="https://dummyimage.com/362x243&text=+" alt="게임4"></div>
+                            </li>
+                            <li>
+                                <h3>블루아카이브</h3>
+                                <div><img src="https://dummyimage.com/362x243&text=+" alt="게임5"></div>
+                            </li>
+                            <li>
+                                <h3>바람의나라</h3>
+                                <div><img src="https://dummyimage.com/362x243&text=+" alt="게임6"></div>
+                            </li>
+                            <li>
+                                <h3>마비노기</h3>
+                                <div><img src="https://dummyimage.com/362x243&text=+"" alt="게임7"></div>
+                            </li>
+                            <li>
+                                <h3>크아</h3>
+                                <div><img src="https://dummyimage.com/362x243&text=+" alt="게임8"></div>
+                            </li>
+                        </ul>
+                </section>
+    
+    <!-- section3 -->
+    <section id="mobile" class="section">
+        <h2>모바일게임</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, a similique. Nulla, qui fuga numquam corporis odit minus ipsam autem ab sapiente eaque dolorem, animi quia at consequuntur et porro obcaecati esse delectus rerum fugiat culpa magni. Quidem, amet veritatis? Possimus aperiam ducimus, delectus dolorum hic laudantium nesciunt, autem dicta velit, illum aspernatur saepe libero molestias molestiae necessitatibus praesentium. Nihil.</p>
+        <ul>
+            <li>
+                <div><img src="https://dummyimage.com/362x243&text=+" alt="mobile1"></div>
+                <h3>코노스바 모바일</h3>
+                <p>RPG</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempora delectus eveniet praesentium voluptate in!</p>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <div><img src="https://dummyimage.com/362x243&text=+" alt="mobile2"></div>
+                <h3>피파온라인4 모바일</h3>
+                <p>SPORTS</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempora delectus eveniet praesentium voluptate in!</p>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <div><img src="https://dummyimage.com/362x243&text=+" alt="mobile3"></div>
+                <h3>메이플 스토리 모바일</h3>
+                <p>AVG</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempora delectus eveniet praesentium voluptate in!</p>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <div><img src="https://dummyimage.com/362x243&text=+" alt="mobile4"></div>
+                <h3>던전앤파이터 모바일</h3>
+                <p>ATG</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit tempora delectus eveniet praesentium voluptate in!</p>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- section4 -->
+   <section id="news" class="section">
+        <h2>공지사항</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, rerum!</p>
+            <input type="text" name="user_name" placeholder="Name">
+            <input type="email" name="user_email" placeholder="Email">
+            <input type="text" name="user_subject" placeholder="Subject">
+            <input type="text" name="user_comment" placeholder="Comment">
+            
+            <button type="submit">SEND MESSAGE</button>
+        <div><img src="https://dummyimage.com/1496x837&text=+" alt="넥슨본사 지도"></div>
+   </section> 
+
+    <!-- footer -->
+    <footer>
+        <p>Copyright 2023 NEXON. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>굽네치킨_문선호</title>
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: black;
+            background: white;
+        }
+
+        a {
+            color: black;
+        }
+
+        /* 목록의 마커 제거 */
+        li {
+            list-style: none;
+        }
+
+        /* header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            height: 54px;
+            padding: 0 32px;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid black;
+        }
+
+        h1 {
+            padding: 4px 0;
+        }
+
+        nav li {
+            display: inline-block;
+            padding: 16px;
+        }
+
+        /* section common */
+        section {
+            width: 1496px;
+            margin: 0 auto;
+            border-top: 1px solid black;
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+
+        section img {
+            border: 1px solid black;
+        }
+
+        .section {
+            padding-top: 81px;
+
+        }
+
+        .section h2 {
+            margin-bottom: 16px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 16px;
+        }
+
+        .section h2+p {
+            margin-bottom: 32px;
+        }
+
+        /* section1 */
+        #main_img {
+            position: relative;
+        }
+
+        #main_img img {
+            width: 100%;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        #main_img h2 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 8px 24px;
+            border: 1px solid black;
+        }
+
+        /* section2, 3 common */
+        #menu ul,
+        #event ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        #menu li,
+        #event li {
+            width: 362px;
+        }
+
+        /* section2 */
+        #menu {
+            position: relative;
+        }
+
+        #menu h2 {
+            margin-bottom: 48px;
+        }
+
+        #menu li:nth-of-type(1) img,
+        #menu li:nth-of-type(5) img {
+            border-left: 0;
+        }
+
+        #menu li:nth-of-type(4n) img {
+            border-right: 0;
+        }
+
+        #menu h3 {
+            position: absolute;
+            padding: 8px 16px;
+            border: 1px solid black;
+        }
+
+        #menu li:nth-of-type(1) h3,
+        #menu li:nth-of-type(5) h3 {
+            border-left: 0;
+        }
+
+        /* section3 */
+        #event li:nth-of-type(1) img {
+            border-left: 0;
+        }
+
+        #event li:nth-of-type(4) img {
+            border-right: 0;
+        }
+
+        #event li h3 {
+            margin: 16px 0 8px;
+
+        }
+
+        #event li p {
+            margin: 8px 0;
+        }
+
+        #event li a {
+            display: block;
+            background: #eee;
+            color: black;
+            text-align: center;
+            padding: 8px 0;
+            margin-top: 16px;
+            margin-bottom: 8px;
+            border: 1px solid black;
+        }
+
+        #event li:nth-of-type(1) a {
+            border-left: 0;
+        }
+
+        #event li:nth-of-type(4) a {
+            border-right: 0;
+        }
+
+        /* section4 */
+        #news input {
+            width: 100%;
+            height: 48px;
+            margin-bottom: 16px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        #news button {
+            padding: 16px 32px;
+            background: black;
+            color: white;
+            margin-bottom: 32px;
+        }
+
+        #news img {
+            width: 100%;
+            border-left: 0;
+            border-right: 0;
+        }
+
+        /* footer */
+        footer {
+            text-align: center;
+            padding: 32px 0;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <!-- 로고 -->
+    <header>
+        <h1 class="logo"><a href="#"><b>G</b>oobne</a></h1>
+        <!-- 네비게이션 -->
+        <nav>
+            <ul>
+                <li><a href="#menu">Oven Menu</a></li>
+                <li><a href="#event">이벤트</a></li>
+                <li><a href="#news">굽네뉴스</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 섹션1 -->
+    <section id="main_img">
+        <!-- main image -->
+        <img src="https://dummyimage.com/1496x810&text=+" alt="건축물">
+        <!-- main title -->
+        <h2><b>G</b>oobne</h2>
+    </section>
+
+    <!-- 섹션2 -->
+    <section id="menu" class="section">
+        <h2>Oven Menu</h2>
+        <ul>
+            <li>
+                <h3>고추바사삭</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴1">
+            </li>
+            <li>
+                <h3>갈비천왕</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴2">
+            </li>
+            <li>
+                <h3>오븐바사삭</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴3">
+            </li>
+            <li>
+                <h3>볼케이노</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴4">
+            </li>
+            <li>
+                <h3>오리지널</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴5">
+            </li>
+            <li>
+                <h3>허니멜로</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴6">
+            </li>
+            <li>
+                <h3>폭립</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴7">
+            </li>
+            <li>
+                <h3>양념히어로</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴8">
+            </li>
+        </ul>
+    </section>
+
+    <!-- 섹션3 -->
+    <section id="event" class="section">
+        <h2>이벤트</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo
+            consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+            est
+            laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <ul>
+            <li>
+                <img src="https://dummyimage.com/362x243&text=+" alt="이벤트1">
+                <h3>굽네 멤버십 오픈</h3>
+                <p>2023.02 ~ 2023.12.31</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nihil, fugit ipsam dolor laboriosam
+                    modi.</p>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <img src="https://dummyimage.com/362x243&text=+" alt="이벤트2">
+                <h3>피자는 지금 사라굽!</h3>
+                <p>2023.02 ~ 2023.12.31</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nihil, fugit ipsam dolor laboriosam
+                    modi.</p>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <img src="https://dummyimage.com/362x243&text=+" alt="이벤트3">
+                <h3>tweek!</h3>
+                <p>2023.02 ~ 2023.12.31</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nihil, fugit ipsam dolor laboriosam
+                    modi.</p>
+                <a href="#">Contact</a>
+            </li>
+            <li>
+                <img src="https://dummyimage.com/362x243&text=+" alt="이벤트4">
+                <h3>남해가자 프로모션</h3>
+                <p>2023.02 ~ 2023.12.31</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nihil, fugit ipsam dolor laboriosam
+                    modi.</p>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 섹션4 -->
+    <section id="news" class="section">
+        <h2>굽네뉴스</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, illum!</p>
+        <form action="message.php" method="post">
+            <input type="text" name="user_name" placeholder=" Name"><br>
+            <input type="email" name="user_email" placeholder=" Email"><br>
+            <input type="text" name="user_subject" placeholder=" Subject"><br>
+            <input type="text" name="user_comment" placeholder=" Comment"><br>
+            <button type="submit">SEND MESSAGE</button>
+        </form>
+        <img src="https://dummyimage.com/1496x897&text=+" alt="위치">
+    </section>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>© 2009-2016 GOOBNE.CO.ALL RIGHT RESERVED</p>
+    </footer>
+</body>
+
+</html>

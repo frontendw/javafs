@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI구현Nike</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            color: #000;
+            margin: 0 auto;
+
+        }
+
+        a {
+            color: #000
+        }
+
+        /* p태그 전부 상단 마진 16 px 적용 */
+        p {
+            margin-top: 16px;
+        }
+
+        /* 플렉스 공통 적용 */
+        .wrap {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: 1496px;
+        }
+
+        .wrap .container {
+            width: 362px;
+            margin: 8px auto;
+            vertical-align: top;
+        }
+
+        .wrap .container div {
+            width: 362px;
+            margin: 0 auto;
+        }
+
+        .container div {
+            width: 362px;
+            height: 243px;
+            z-index: 9999;
+            border: 1px solid #000;
+        }
+
+        /* div 하위 이미지 전체 보더 처리 */
+        div img {
+            border: 1px solid #000;
+        }
+
+        /* 헤더 */
+        header {
+            display: flex;
+            position: fixed;
+            top: 0;
+            z-index: 99999;
+            width: 100%;
+            padding: 0 32px;
+            height: 54px;
+            border: 1px solid #000;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        /* 내비게이션 가로 처리, 도트 삭제*/
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        /* 헤더 배열 양쪽 끝으로 정렬 */
+        #nav1 {
+            width: 280px;
+            justify-content: space-between;
+        }
+
+        h3 {
+            padding-top: 16px;
+            margin-bottom: 0;
+            width: 100%;
+        }
+
+        /* 섹션1 */
+        .section1 {
+            width: 1920px;
+        }
+
+        #main {
+            position: relative;
+            z-index: 9999;
+            margin: 0 auto;
+            height: 960px;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+
+        #main div {
+            margin: 0 auto;
+            width: 1496px;
+            /* border-left: 1px solid black; */
+            /* border-right: 1px solid black; */
+            /* border-bottom: 1px solid black; */
+        }
+
+        /* 섹션1 메인 이미지 중간에 배열 */
+        #main h2 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -200%);
+            padding: 8px 24px;
+        }
+
+        /* 섹션1 메인 이미지 중간 b태그 음영을 보더로 처리 */
+        #main b {
+            border: 1px solid #000;
+        }
+
+        /* 섹션2 너비 및 중앙 정렬, 보더 처리 */
+        .section2 {
+            width: 1920px;
+            height: 720px;
+            margin: 0 auto;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+        }
+
+        /* 섹션3 너비 및 중앙 정렬, 보더 처리*/
+        .section3 {
+            width: 1920px;
+            height: 720px;
+            margin: 0 auto;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+        }
+
+        /* 섹션3 이벤트 내부의 li 하위 a태그 배열을 플렉스로 지정 */
+        #event li {
+            display: flex;
+            width: 1496px;
+        }
+
+        /* 섹션3의 a태그 설정 */
+        #event li a {
+            padding: 8px 8px;
+            margin: 0 auto;
+            width: 362px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+
+        /* 섹션4 */
+        .section4 {
+            vertical-align: top;
+            width: 1920px;
+            margin-top: 0;
+            margin-left: auto;
+            margin-right: auto;
+            border-top: 1px solid #000;
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+        }
+
+        /* 섹션4 id xxx 설정 */
+        .xxx {
+            margin: 0 auto;
+            width: 1496px;
+            height: 810;
+        }
+
+        /* 섹션4 div 요소들간 상하측 간격 설정 */
+        .xxx div {
+            margin: 16px 0;
+        }
+
+
+        /* 섹션4(컨택트) 안의 인풋 요소 영역 설정 */
+
+        #contact {
+            width: 1920px;
+        }
+
+        #contact div {
+            display: flex;
+            flex-wrap: wrap
+        }
+
+        #contact input {
+            width: 1496px;
+            padding: 16px 8px;
+            border: 1px solid #000;
+        }
+
+        /* 섹션4 버튼 설정 */
+        #contact button {
+            margin-top: 32px;
+            margin-bottom: 32px;
+            padding: 8px 8px;
+            border: 1px solid #000;
+        }
+
+        /* 섹션4 지도 이미지 설정 */
+        #contact img {
+            border: 1px solid #000;
+            margin: 32px 212px;
+        }
+
+        /* 풋터 설정 */
+        footer {
+            width: 100%;
+            height: 80px;
+            border: 1px solid #000;
+            padding: 16px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 class="logo"><a href="#"><b>Nike</b> korea</a></h1>
+        <nav>
+            <ul id="nav1">
+                <li><a href="#">매장찾기</a></li>
+                <li><a href="#">고객센터</a></li>
+                <li><a href="#">가입하기</a></li>
+                <li><a href="#">로그인</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 섹션1 -->
+    <section id="main" class="section1">
+        <div>
+            <img src="https://dummyimage.com/1496x810&" alt="슬라이드 이미지">
+            <h2><b>Nike</b> korea</h2>
+        </div>
+        <div>
+            <h3>MEMBER DAYS</h3>
+            <div>
+                <p>05.01 – 05.07</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero aut ullam soluta reiciendis. Vitae
+                    reiciendis voluptatibus tempora qui, iure dicta architecto similique quasi explicabo? Quia ad veniam
+                </p>
+            </div>
+    </section>
+
+    <!-- 섹션2 -->
+    <section id="item" class="section2">
+        <div id="sh" class="wrap">
+            <h3>신제품</h3>
+            <div class="container 1">
+                <div><img src="https://dummyimage.com/362x243" alt="더미1"></div>
+            </div>
+            <div class="container 2">
+                <div><img src="https://dummyimage.com/362x243" alt="더미2"></div>
+            </div>
+            <div class="container 3">
+                <div><img src="https://dummyimage.com/362x243" alt="더미3"></div>
+            </div>
+            <div class="container 4">
+                <div><img src="https://dummyimage.com/362x243" alt="더미4"></div>
+            </div>
+            <div class="container 5">
+                <div><img src="https://dummyimage.com/362x243" alt="더미5"></div>
+            </div>
+            <div class="container 6">
+                <div><img src="https://dummyimage.com/362x243" alt="더미6"></div>
+            </div>
+            <div class="container 7">
+                <div><img src="https://dummyimage.com/362x243" alt="더미7"></div>
+            </div>
+            <div class="container 8">
+                <div><img src="https://dummyimage.com/362x243" alt="더미8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 섹션3 -->
+    <section id="event"" class=" section3">
+        <div id="ev1" class="wrap">
+            <h3>이벤트</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus ducimus quo sequi ut accusantium.
+                Quo rerum sit ducimus laboriosam inventore cupiditate, itaque voluptates. Ut soluta fugit non ipsam
+                sapiente pariatur harum libero, voluptate excepturi cum, ipsum expedita amet dicta totam dolore nihil
+                nisi? Eligendi eveniet rerum maxime enim placeat? Cupiditate repellendus quas consequuntur, esse id,
+                iure praesentium recusandae necessitatibus velit tenetur veniam quo ullam accusantium iste. Tempore,
+                numquam libero. Ab!</p>
+            <div class="container 1">
+                <div><img src="https://dummyimage.com/362x243" alt="더미1"></div>
+            </div>
+            <div class="container 2">
+                <div><img src="https://dummyimage.com/362x243" alt="더미2"></div>
+            </div>
+            <div class="container 3">
+                <div><img src="https://dummyimage.com/362x243" alt="더미3"></div>
+            </div>
+            <div class="container 4">
+                <div><img src="https://dummyimage.com/362x243" alt="더미4"></div>
+            </div>
+            <div class="container 5">
+                <div>
+                    <h4>이벤트1</h4>
+                    <p>05.01 – 05.07</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quidem nam vero mollitia tempore
+                        dicta, harum culpa corporis beatae, facere dolorum. Nihil animi provident tenetur repudiandae,
+                        tempore ipsa. Pariatur,</p>
+                </div>
+
+            </div>
+            <div class="container 6">
+                <div>
+                    <h4>이벤트2</h4>
+                    <p>05.01 – 05.07</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quidem nam vero mollitia tempore
+                        dicta, harum culpa corporis beatae, facere dolorum. Nihil animi provident tenetur repudiandae,
+                        tempore ipsa. Pariatur,</p>
+                </div>
+            </div>
+            <div class="container 7">
+                <div>
+                    <h4>이벤트3</h4>
+                    <p>05.01 – 05.07</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quidem nam vero mollitia tempore
+                        dicta, harum culpa corporis beatae, facere dolorum. Nihil animi provident tenetur repudiandae,
+                        tempore ipsa. Pariatur,</p>
+                </div>
+            </div>
+            <div class="container 8">
+                <div>
+                    <h4>이벤트4</h4>
+                    <p>05.01 – 05.07</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quidem nam vero mollitia tempore
+                        dicta, harum culpa corporis beatae, facere dolorum. Nihil animi provident tenetur repudiandae,
+                        tempore ipsa. Pariatur,</p>
+                </div>
+            </div>
+            <li>
+                <a href="#">자세히보기</a>
+                <a href="#">자세히보기</a>
+                <a href="#">자세히보기</a>
+                <a href="#">자세히보기</a>
+            </li>
+        </div>
+    </section>
+
+    <!-- 섹션4 -->
+    <section id="contact" class="section4">
+        <div class="xxx">
+            <h3>연락하기</h3>
+
+            <div class="container 9>
+                            <input type=" text" name="user_name" placeholder="Name"">
+                        </div>
+                        <div class=" container 10">
+                <input type="email" name="user_email" placeholder="Email">
+            </div>
+            <div class="container 11">
+                <input type="text" name="user_subject" placeholder="Subject">
+            </div>
+            <div class="container 12">
+                <input type="text" name="user_comment" placeholder="Comment">
+            </div>
+            <div class="but">
+                <button type="submit">SEND MESSAGE</button>
+            </div>
+            </form>
+        </div>
+        <img src="https://dummyimage.com/1496x810&" alt="지도">
+    </section>
+
+    <footer>
+        <p>Copyright 2023 CYS Nike korea. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

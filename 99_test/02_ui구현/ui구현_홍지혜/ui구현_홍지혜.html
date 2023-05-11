@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>꽃가게_홍지혜</title>
+
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 링크 디자인 */
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* 목록의 마커 제거 */
+        li {
+            list-style: none;
+        }
+
+        /* border */
+        section,
+        footer,
+        section li,
+        #main_img h2,
+        #menu h3,
+        #menu img,
+        header:not(nav) {
+            border: 1px solid #000;
+        }
+
+        img {
+            border-bottom: 1px solid #000;
+        }
+
+        #news img {
+            margin-bottom: 10px;
+            border-top: 1px solid #000;
+        }
+
+        /* 겹치는 선 지움 */
+        .section #lineL {
+            border-left: none;
+        }
+
+        #menu li {
+            border: none;
+        }
+
+        section,
+        ul,
+        section li {
+            border-bottom: none;
+        }
+
+        #menu,
+        #main_img {
+            border-top: none;
+        }
+
+        li:nth-of-type(4) {
+            border-right: none;
+        }
+
+        /* header */
+        header {
+            box-sizing: border-box;
+            position: fixed;
+            z-index: 99;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            background: #fff;
+            padding: 0 32px;
+            height: 54px;
+        }
+
+        /* 네비게이션 정렬 */
+        nav li {
+            display: inline-block;
+            margin: 16px;
+        }
+
+        /* section common */
+        section {
+            width: 1496px;
+            margin: 0 auto;
+        }
+
+        .section {
+            padding-top: 81px;
+        }
+
+        .section h2 {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .section h2+p {
+            margin-bottom: 32px;
+        }
+
+        /* section 1 */
+        #main_img {
+            position: relative;
+        }
+
+        #main_img h2 {
+            position: absolute;
+            padding: 8px 16px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* section 2,3 common */
+        ul {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        section li {
+            display: inline-block;
+            width: 362px;
+        }
+
+        /* section 2 */
+        #menu {
+            position: relative;
+        }
+
+        #menu h3 {
+            position: absolute;
+            padding: 5px;
+        }
+
+        #menu li:nth-of-type(1) {
+            margin-bottom: 27px;
+        }
+
+        #menu ul {
+            margin-right: 0.5px;
+        }
+
+        #menu img {
+            margin-bottom: -5px;
+        }
+
+        #menu h2 {
+            margin-bottom: 48px;
+        }
+
+        /* section 3 */
+        #event li h3 {
+            margin: 16px 0 8px;
+        }
+
+        #event li p {
+            margin: 8px 0;
+        }
+
+        /* 이벤트 목록 버튼 디자인 */
+        #event li a {
+            display: block;
+            background: #ccc;
+            text-align: center;
+            padding: 8px 0;
+        }
+
+        /* section 4 */
+        /* input style */
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #cecece;
+        }
+
+        /* botton style */
+        button {
+            height: 36px;
+            width: 160px;
+            background: #000;
+            border-style: none;
+            color: #fff;
+            margin-top: 16px;
+            margin-bottom: 48px;
+        }
+
+        button:hover {
+            background-color: #d7d7d7;
+            color: #000;
+        }
+
+        /* footer */
+        footer {
+            text-align: center;
+            padding: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <h1 class="logo"><a href="#">the<b>Pescade</b>Flowery</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#flower">Flower</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header> <!-- header //-->
+
+
+    <!-- section1 -->
+    <section id="main_img">
+        <!-- main image -->
+        <img src="https://dummyimage.com/1496x810&text=+" alt="도메인">
+        <!-- main title -->
+        <h2>The<b>Pescade</b>Flowery</a></h2>
+    </section> <!-- section1 //-->
+
+    <!-- section2 -->
+    <section id="menu" class="section">
+        <!-- menu title -->
+        <h2 id="flower">Flower</h2>
+        <!-- menu list-->
+        <ul>
+            <li>
+                <h3 id="lineL">daisy</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="데이지" id="lineL">
+            </li>
+            <li>
+                <h3>sunflower</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="해바라기">
+            </li>
+            <li>
+                <h3>rose</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="장미">
+            </li>
+            <li>
+                <h3>dahlia</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="달리아">
+            </li>
+            <li>
+                <h3 id="lineL">Ranunculus</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="라넌큘러스" id="lineL">
+            </li>
+            <li>
+                <h3>hydrangea</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="수국">
+            </li>
+            <li>
+                <h3>carnation</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="카네이션">
+            </li>
+            <li>
+                <h3>Chrysanthemum</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="국화">
+            </li>
+        </ul>
+    </section> <!-- section2 //-->
+
+    <!-- section3 -->
+    <section id="event" class="section">
+        <!-- event title -->
+        <h2 id="about">About</h2>
+        <!-- event 내용 -->
+        <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.</P>
+        <!-- event list -->
+        <ul>
+            <li id="lineL">
+                <img src="https://dummyimage.com/362x243&text=+" alt="봄">
+                <h3>Spring</h3>
+                <p>봄에 피는 꽃</p>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                <a href="#">보러가기</a>
+            </li>
+            <li>
+                <img src="https://dummyimage.com/362x243&text=+" alt="여름">
+                <h3>Summer</h3>
+                <p>여름에 피는 꽃</p>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                <a href="#">보러가기</a>
+            <li>
+                <img src="https://dummyimage.com/362x243&text=+" alt="가을">
+                <h3>Autumn</h3>
+                <p>가을에 피는 꽃</p>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                <a href="#">보러가기</a>
+            </li>
+            <li>
+                <img src="https://dummyimage.com/362x243&text=+" alt="겨울">
+                <h3>Winter</h3>
+                <p>겨울에 피는 꽃</p>
+                <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                <a href="#">보러가기</a>
+            </li>
+        </ul>
+    </section> <!-- section3 //-->
+
+    <!-- section4 -->
+    <section id="news" class="section">
+        <!-- contact -->
+        <h2 id="contact">Contact</h2>
+        <!-- contact 내용 -->
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod, dolorum?</p>
+        <!-- from -->
+        <form action="message.php" method="post">
+            <input type="text" name="user_name" placeholder="Name">
+            <input type="email" name="user_email" placeholder="Email">
+            <input type="text" name="user_subject" placeholder="Subject">
+            <input type="text" name="user_comment" placeholder="Comment">
+            <button type="submit">Send Message</button>
+        </form>
+        <!-- map -->
+        <img src="https://dummyimage.com/1496x837&text=+" alt="지도">
+    </section> <!-- section4 //-->
+
+    <!-- footer -->
+    <footer>
+        <p>&copy;2023 JH hong. All rights reserved.</p>
+    </footer> <!-- footer// -->
+
+</body>
+
+</html>
