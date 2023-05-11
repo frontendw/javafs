@@ -7,6 +7,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ui구현_지동민</title>
     <link rel="stylesheet" href="css/wireframe2.css">
+    <style>
+        /* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #000;
+    background: #fff;
+}
+
+a {
+    color: #000;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    padding: 0 32px;
+    height: 54px;
+    background: gold;
+}
+
+.logo {
+    float: left;
+}
+
+nav {
+    float: right;
+}
+
+nav li {
+    display: inline-block;
+}
+
+section {
+    width: 1496px;
+    margin: 0 auto;
+}
+
+.section {
+    padding-top: 81px;
+}
+
+.section h2 {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+.section h2 + p {
+    margin-bottom: 32px;
+}
+
+#main_img {
+    position: relative;
+}
+
+#main_img h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #555;
+    padding: 8px 24px;
+}
+
+#menu ul::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+#menu li {
+    background: #555;
+    margin-bottom: 16px;
+    display: inline-block;
+    color: #fff;
+    text-align: left;
+    left: 50%;
+    top: 50%;
+}
+
+#menu li:not(:nth-of-type(4)) {
+    margin-right: 8px;
+}
+
+#menu h2 {
+    margin-bottom: 48px;
+}
+
+#event_img {
+    position: relative;
+}
+
+#event_img h2{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #555;
+    padding: 8px 24px;
+}
+
+#event li h3 {
+    margin: 8px 0 8px;
+}
+
+#event li a {
+    width: 362px;
+    height: 36px;
+    margin: 8px 0;
+}
+
+#event ul::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+#event li {
+    float: left;
+    width: 360px;
+    height: 240px;
+    margin: 0;
+}
+
+#event h2+p {
+    margin-bottom: 4px;
+}
+
+#event li:not(:nth-of-type(4)) {
+    margin-right: 8px;
+}
+
+#event li a {
+    display: block;
+    background: #ccc;
+    text-align: center;
+    padding: 8px 0;
+    margin-top: 8px;
+}
+
+footer {
+    height: 81px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 32px 0;
+}
+    </style>
 </head>
 
 <body>
