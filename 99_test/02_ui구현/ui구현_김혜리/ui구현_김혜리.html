@@ -7,6 +7,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>하이브_김혜리</title>
     <link rel="stylesheet" href="/70_project/project2/css/wireframe.css">
+    <style>
+/* 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #000;
+    background: #fff;
+}
+a {
+    color: #000;
+}
+/* 목록 마커 제거 */
+li {
+    list-style: none;
+}
+/* 헤더 */
+header {
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    width: 100%;
+    padding: 0 32px;
+    height: 54px;
+    background:#999 ;
+}
+.logo {
+    float: left;
+}
+nav {
+    float: right
+}
+nav li {
+    display: inline-block;
+}
+/* 섹션 공통 */
+section {
+    width: 1496px;
+    margin: 0 auto;
+}
+.section {
+    padding-top: 81px;
+}
+.section h2 {
+    margin-bottom: 54px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+}
+.section h2 + p {
+    margin-bottom: 32px;
+}
+
+/* 섹션1 */
+#main_img {
+    position: relative;
+}
+#main_img h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 8px 32px;
+    background: #555;
+}
+/* 섹션2,3 공통 */
+li {
+    float: left;
+    width: 362px;
+    
+}
+ul::after {
+    content: '';
+    clear: both;
+    display: block;
+}   
+li:not(:nth-of-type(4n)) {
+    margin-right: 16px;
+}
+/* 섹션2 */
+#artist h2 {
+    margin-bottom: 48px;
+}
+
+/* 섹션3 */
+#news li h3 {
+    margin: 16px 0 8px;
+}
+#news li p {
+    margin: 8px 0 16px;
+}
+#news li a {
+    display: block;
+    background: #ccc;
+    text-align: center;
+    padding: 8px 0;
+}
+
+/* 섹션4 */
+/* 푸터 */
+footer {
+    height: 81px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 32px 0;
+}
+
+    </style>
 </head>
 
 <body>
