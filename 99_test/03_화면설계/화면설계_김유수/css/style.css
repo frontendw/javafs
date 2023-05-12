@@ -1,0 +1,739 @@
+@charset "UTF-8";
+/* reset */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+section {
+    width: 1496px;
+    margin: 0 auto;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #000;
+    background: #fff;
+}
+
+a {
+    color: #333
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+
+}
+
+nav a {
+    text-decoration: none;
+}
+
+a:link,
+a:visited {
+    color: black;
+}
+
+/* typo */
+@font-face {
+    font-family: 'sunbatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/SunBatang-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cafe24';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Cafe24ClassicType-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'pretend';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1 {
+    font-family: sunbatang;
+}
+
+h2 {
+    font-family: cafe24;
+    letter-spacing: 2px;
+    font-size: 24px;
+}
+
+h3 {
+    font-family: cafe24;
+    font-size: 24PX;
+}
+
+section h2 {
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 3px
+}
+
+a {
+    background: linear-gradient(0deg, yellow, yellow) no-repeat right bottom / 0 100%;
+    transition: background-size 500ms;
+}
+
+a:hover {
+    background-size: 100% 100%;
+    background-position: left;
+}
+
+
+/* header */
+header {
+    height: 75px;
+    border: 1px solid #000;
+    padding: 0 24px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99999;
+    background: #fff;
+}
+
+header .container {
+    display: flex;
+}
+
+header a {
+    text-decoration: none;
+}
+.logo {
+    padding: 12px;
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-underline-offset: 7px;
+    text-decoration-color: red;
+    text-decoration-thickness: 1px;
+
+}
+
+
+
+.logo .star {
+    vertical-align: bottom;
+    width: 30px;
+    height: 30px;
+}
+
+nav a {
+    letter-spacing: 2px;
+    font-size: 24px;
+    font-family: cafe24;
+    padding: 8px 16px;
+}
+
+nav ul {
+    display: flex;
+    margin-right: 200px;
+    margin-left: 120px;
+
+}
+
+nav li {
+    margin-top: 16px;
+    margin-right: 48px;
+    margin-left: 88px;
+
+}
+
+.lang h2 {
+    margin-top: 18px;
+    margin-left: 60px;
+
+
+}
+
+/* section0 */
+.part0 {
+    margin: 0 auto;
+    background: url(../images/poster.jpg) no-repeat 50% 50%/contain fixed;
+    margin-bottom: 144px;
+    height: 1000px;
+}
+
+
+
+
+
+/* section1 */
+.part1 {
+    background-color: black;
+    padding-top: 24px;
+    padding-bottom: 120px;
+    color:white
+}
+
+
+.wish1{
+    position: relative;
+    left: 600px;
+    bottom: -100px;
+    animation-name: move1;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: white;
+    width: 300px;
+    height: 100px;
+    font-family: sunbatang;
+    font-size: 24px;
+    top: -300px;
+}
+
+@keyframes move1 {
+    0%{
+        left:600;
+        
+    }
+    25% {
+        left: 1000px;
+    }
+
+    50% {
+        left:1200px;
+     }
+
+    75% {
+        left: 1400px;}
+       
+    100% {
+        left: 600px;
+    }
+}
+
+.wish2{
+    position: relative;
+    animation-name: move2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: white;
+    width: 250px;
+    height: 100px;
+    font-family: sunbatang;
+    font-size: 34px;
+}
+
+@keyframes move2 {
+    0%{
+        bottom:0;
+
+    }
+    50% {
+        bottom:500px; 
+        
+    }
+    100% {
+        bottom:0;
+        right:0;
+    }
+}
+.wish3{
+    position: relative;
+    animation-name: move3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: white;
+    width: 250px;
+    height: 100px;
+    font-family: sunbatang;
+    font-size: 40px;
+    right: -1300px;
+    top: -800px;
+}
+
+@keyframes move3 {
+    0%{
+       top: -800px;
+    }
+
+    100% {
+        top: -900px ;
+    }
+}
+.wish4{
+    position: relative;
+    animation-name: move4;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: white;
+    width: 280px;
+    height: 100px;
+    font-family: sunbatang;
+    font-size: 28px;
+    top: -800px;
+}
+
+@keyframes move4 {
+    0%{
+        bottom:0;
+        right:0;
+    }
+    50% {
+        bottom:300px; 
+        right: 200px;
+    }
+    100% {
+        bottom:0;
+        right:0;
+    }
+}
+.wish5{
+    position: relative;
+    animation-name: move5;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction:alternate;
+    color: white;
+    width: 440px;
+    height: 100px;
+    font-family: sunbatang;
+    font-size: 29px;
+    top: -1200px;
+}
+
+@keyframes move5 {
+    0%{
+        bottom:0;
+        right:0;
+    }
+    50% {
+        bottom: -300px; 
+        right: 200px;
+    }
+    100%{
+        top: 0;
+        right: 0;
+    }
+}
+
+.wish6{
+    position: relative;
+    animation-name: move6;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction:alternate;
+    color: white;
+    width: 440px;
+    height: 100px;
+    font-family: sunbatang;
+    font-size: 30px;
+    top: -800px;
+    left: 800px;
+}
+
+@keyframes move6 {
+    0%{
+        bottom:0;
+        right:0;
+    }
+    50% {
+        bottom: -100px; 
+        left: 200px;
+    }
+    100%{
+        top: 0;
+        right: 0;
+    }
+}
+.wish7{
+    position: relative;
+    animation-name: move7;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-direction:alternate;
+    color: white;
+    width: 440px;
+    height: 100px;
+    font-family: sunbatang;
+    font-size: 24px;
+    top: -400px;
+    left: 1000px;
+}
+
+@keyframes move7 {
+    0%{
+        bottom:0;
+        
+    }
+    50% {
+        bottom: -100px; 
+    }
+    100%{
+        top: 0;
+        right: 0;
+    }
+}
+.wish8{
+    position: relative;
+    animation-name: move8;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction:alternate;
+    color: white;
+    width: 440px;
+    height: 100px;
+    font-family: sunbatang;
+    font-size: 27px;
+    top: -900px;
+    left: 1100px;
+}
+
+@keyframes move8 {
+    0%{
+        bottom:0;
+        left:0;
+    }
+    50% {
+        top: -400px; 
+        left: -00px;
+    }
+    100%{
+        top: 0;
+        right: 100;
+    }
+}
+.wish9{
+    position: relative;
+    animation-name: move9;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction:alternate;
+    color: white;
+    width: 440px;
+    height: 100px;
+    font-family: sunbatang;
+    font-size: 27px;
+    top: -900px;
+    left: 1100px;
+}
+
+@keyframes move9 {
+    0%{
+        bottom:0;
+        left: 1100px;
+    }
+    50% {
+        top: -1000px;
+        
+    }
+    
+}
+
+#dream {
+    text-align: center;
+}
+
+#dream img {
+    float: center;
+}
+
+#dream h2 {
+    margin-top: 112px;
+    margin-bottom: 56px;
+    font-family: sunbatang;
+    color: #fff;
+}
+
+
+#dream p {
+    margin-bottom: 16px;
+    font-family: sunbatang;
+    font-weight: 600;
+    color: #fff;
+    font-size: large;
+}
+
+#dream input {
+    width: 360px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#dream button {
+    text-align: center;
+    width: 360px;
+    border-radius: 10px;
+}
+
+
+/* section2 */
+
+.part2 {
+    background: lightcoral;
+    padding-top: 24px;
+    padding-bottom: 56px;
+}
+
+#show h2 {
+    margin-top: 104px;
+    margin-bottom: 24px;
+    text-align: center;
+    
+}
+
+#show li:hover{
+    transform: scale(1.1);
+    transition: 0.8s
+}
+
+#show li {
+    height: 450px;
+    background-color: rgb(241, 194, 194);
+    border-radius: 20px;
+}
+
+#show p {
+    margin-bottom: 48px;
+    font-size: x-large;
+    line-height: 1.8em;
+    font-family: pretend;
+}
+
+#show .container {
+    display: flex;
+    margin-bottom: 240px;
+    border-left: none;
+    justify-content: space-evenly;
+}
+
+#show img{
+    border-radius: 20px;
+}
+
+
+
+#show h3 {
+    padding: 32px 8px;
+    text-align: center;
+}
+
+#show li #show li:nth-child(3n) {
+    margin-right: 0px
+}
+
+
+/* section3 */
+.part3 {
+    background: violet;
+    padding-top: 120px;
+    padding-bottom: 8px;
+}
+
+#event h2 {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+#event h3 {
+    padding: 0px;
+    margin-top: 16px;
+}
+
+#event h4 {
+    margin-top: 8px;
+    font-size: larger;
+}
+
+#event img{
+    border-radius: 20px;
+}
+
+
+#event li:hover{
+    transform: scale(1.1);
+    transition: 0.8s
+}
+
+
+#event p {
+    margin-top: 8px;
+    margin-bottom: 40px;
+    font-family: pretend;
+    line-height: 1.8;
+    font-size: large;
+}
+
+#event>p {
+    font-size: x-large;
+}
+
+#event li {
+    height: 580px;
+    background: rgb(235, 201, 235);
+    border-radius: 20px;
+    
+}
+
+
+
+#event>li>p {
+    font-size: large;
+
+}
+
+#event .container {
+    display: flex;
+    width: 1496px;
+    flex-wrap: wrap;
+    margin-bottom: 144px;
+    margin-left: none;
+}
+
+#event h3,
+h4,
+p {
+    padding: 4px 8px;
+    text-align: center;
+}
+
+#event li {
+    margin-right: 184px;
+    margin-bottom: 64px;
+}
+
+#event li:nth-child(3n) {
+    margin-right: 0px;
+}
+
+.event {
+    width: 362px;
+    height: 362px;
+}
+
+
+
+
+
+
+
+/* section4 */
+.part4 {
+    background: lightsalmon;
+    padding-top: 120px;
+    padding-bottom: 184px;
+}
+
+#party {
+    text-align: center;
+}
+
+#party video{
+    border-radius: 20px;
+}
+
+
+
+#party img {
+    width: 30px;
+    height: 30px;
+}
+
+#party h2 {
+    margin-top: 64px;
+    margin-bottom: 40px;
+}
+
+#party h3 {
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-family: pretend;
+}
+
+
+/* footer */
+.part5 {
+    background: lightskyblue;
+    padding-top: 40px;
+    padding-bottom: 160px;
+
+}
+
+footer h2 {
+    margin-top: 144px;
+    margin-bottom: 56px;
+}
+
+#footer {
+    text-align: center;
+}
+
+.people{
+    width: 992px;
+    text-align: center;
+    display: inline-block;
+    transition: 0.8s
+}
+
+.people img{
+    border-radius: 20px;
+}
+
+
+.people:hover {
+    transform: scale(1.1);
+
+}
+
+
+.contact {
+    background: #fff;
+    text-align: center;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    background: lightcyan;
+}
+
+.contact h3 {
+    margin: 72px;
+    color: #000
+}
+
+input {
+    margin: 16px 560px;
+    padding: 8px;
+    width: 800px;
+    height: 40px;
+    border: #000 1px solid;
+    border-radius: 10px;
+}
+
+button {
+    width: 800px;
+    height: 32px;
+    margin: 0 560px;
+    border-radius: 5px;
+}
+
+.contact h3 {
+    font-size: 24px;
+    letter-spacing: 5px;
+}
+
+.contact h4 {
+    padding: 24px;
+    height: 64px;
+    margin-bottom: 40px;
+}

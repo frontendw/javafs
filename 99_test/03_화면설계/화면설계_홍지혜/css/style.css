@@ -1,0 +1,281 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* typo */
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #000;
+}
+
+h1 {
+    font-size: 3.2rem;
+    font-family: 'Caveat', cursive;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2.4rem;
+    font-family: 'Caveat', cursive;
+    font-weight: 400;
+}
+
+#main_img h2 {
+    font-size: 6.8rem;
+}
+
+#main_img:hover h2 {
+    text-shadow: 2px 2px lightpink;
+}
+
+
+h3 {
+    font-size: 1.8rem;
+    font-family: 'Caveat', cursive;
+}
+
+nav li {
+    font-size: 1.8rem;
+    font-family: 'Caveat', cursive;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 0 32px;
+    height: 54px;
+    background: linear-gradient(rgba(255, 255, 255, 0.7),
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255)), url(../images/background.jpg);
+}
+
+/* nav */
+nav li {
+    display: inline-block;
+    text-align: center;
+    padding: 17px 17px;
+    line-height: 1;
+}
+
+nav span {
+    display: block;
+    text-indent: -999em;
+    transition: 0.3s;
+    height: 2px;
+    width: 0;
+    background: lightcoral;
+}
+
+li:hover span {
+    width: 100%;
+}
+
+/* section common */
+section {
+    width: 1496px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    padding-top: 54px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+.section h2+p {
+    margin-bottom: 32px;
+}
+
+/* section 1 */
+#main_img {
+    position: relative;
+    top: 54px;
+    width: 100%;
+    overflow: hidden;
+    height: 810px;
+    background: url(../images/logo.png) no-repeat top/contain;
+}
+
+#main_img h2 {
+    position: absolute;
+    padding: 8px 16px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #000000;
+    transition: .2s;
+}
+
+/* section 2,3 common */
+
+
+section ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* section 2 */
+#menu {
+    position: relative;
+}
+
+#menu img {
+    transition: .5s;
+}
+
+#menu li {
+    overflow: hidden;
+    height: 243px;
+    width: 362px;
+    border-radius: 10px;
+}
+
+#menu h3 {
+    z-index: 22;
+    position: absolute;
+    padding: 5px;
+    color: #fff;
+    background: #777777bb;
+    border-radius: 10px 0 10px;
+    transition: .5s;
+}
+
+#menu li:nth-of-type(1) {
+    margin-bottom: 27px;
+}
+
+#menu h2 {
+    margin-bottom: 48px;
+}
+
+#menu li:hover img {
+    transform: scale(1.03);
+}
+
+#menu li:hover h3 {
+    background: rgba(240, 128, 128, 0.8);
+}
+
+/* section 3 */
+
+#event div {
+    overflow: hidden;
+    height: 243px;
+    width: 362px;
+}
+
+#event li {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#event li:hover {
+    border-radius: top 20px;
+    box-shadow: 0px 0px 10px 0.001px rgba(0, 0, 0, 0.1);
+}
+
+#event li h3 {
+    margin: 8px;
+}
+
+#event li p {
+    margin: 8px;
+}
+
+/* 이벤트 목록 버튼 디자인 */
+#event a {
+    display: block;
+    background: #eee;
+    text-align: center;
+    padding: 8px 0;
+    margin-top: 16px;
+}
+
+#event a:hover {
+    background: rgba(240, 128, 128, 0.5);
+}
+
+/* section 4 */
+/* input style */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #cecece;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid lightcoral;
+}
+
+/* botton style */
+button {
+    padding: 12px 16px;
+    margin: 16px 0 54px;
+    border: none;
+    background: #eee;
+}
+
+button:hover {
+    background-color: rgba(240, 128, 128, 0.5);
+}
+
+.map {
+    height: 830px;
+}
+
+/* footer */
+footer {
+    background: linear-gradient(rgba(255, 255, 255),
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.7)), url(../images/background.jpg);
+    text-align: center;
+    padding: 32px 0;
+}

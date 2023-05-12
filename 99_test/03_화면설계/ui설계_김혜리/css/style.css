@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+/* reset */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+body {
+    color: #000;
+    background: #fff;
+}
+a {
+    color: #000;
+}
+/* 목록에 마커 제거 */
+li {
+    list-style: none;
+}
+img {
+    width: 100%;
+    vertical-align: top;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+body {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Noto Sans KR', sans-serif;
+
+}
+h1 {
+    font-size: 3.2rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+h3 {
+    font-size: 1.8rem;
+}
+/* header */
+header {
+    position: fixed;
+    top:0;
+    z-index: 9999;
+    width: 100%;
+    height: 54px;
+    padding: 0 32px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+.logo {
+    float: left;
+}
+nav {
+    float: right;
+}
+nav li {
+    display: inline-block;
+}
+
+/* section common */
+section {
+    width: 1496px;
+    margin: 0 auto;
+}
+.section {
+    padding-top: 81px;
+}
+.section h2 {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+}
+.section h2 + p {
+    margin-bottom: 32px;
+}
+
+
+/* section2, 3 common */
+#artist li, #news li {
+    float:left;
+    width: 362px;
+    padding: 10px;
+}
+#artist ul::after, #news ul::after {
+    content:'';
+    clear: both;
+    display: block;
+}
+#artist li:not(:nth-of-type(4n)), #news li:not(:nth-of-type(4n)) {
+    margin-right: 16px;
+}
+
+/* section2 */
+#artist h2 {
+    margin-bottom: 48px;
+}
+#artist h3 {
+    padding: 12px 16px;
+    margin: 16px 0 54px;
+    border: none;
+    background: #000;
+    color: #fff;
+    text-align: center;
+}
+
+/* section3 */
+#news li h3 {
+    margin: 16px 0 8px;
+}
+#news li p {
+    margin: 8px 0;
+}
+#news li a {
+    display: block;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0;
+    margin-top: 16px;
+}
+
+/* section4 */
+#contact input {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+}
+#contact button {
+    padding: 12px 16px;
+    margin: 16px 0 54px;
+    border: none;
+    background: #000;
+    color: #fff;
+}
+.map {
+    height: 830px;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* footer */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding:32px 0;
+}
