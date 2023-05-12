@@ -84,6 +84,13 @@ section {
     margin-bottom: 32px;
 }
 
+/* section1 */
+#main_img h2 {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+}
 
 /* section2, 3 common */
 #artist li, #news li {
