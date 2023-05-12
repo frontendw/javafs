@@ -117,10 +117,6 @@ section {
     position: relative;
     display: flex;
     justify-content: center;
-    width: 1000px;
-}
-#main_img img {
-    /* width: 100%; */
 }
 
 /* section 2,3 common */

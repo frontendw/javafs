@@ -1,0 +1,581 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
+
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    color: black;
+    font: 1.6rem/1.8 'Noto Sans KR', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* header */
+header {
+    z-index: 9999;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 54px;
+}
+
+/* nav */
+nav {
+    height: 100%;
+}
+
+header ul {
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+header li {
+    margin: 0 8px;
+}
+
+header i {
+    margin-right: 8px;
+}
+
+header a {
+    padding: 4px 8px;
+}
+
+header a:hover {
+
+    background-color: #ccc;
+}
+
+/* section1 */
+#home {
+    position: relative;
+    background: url(../images/pk_profile.png) no-repeat 50% 50%/cover fixed;
+    height: 100vh;
+}
+
+/* logo */
+.logo {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    font-size: 36px;
+    font-style: italic;
+    padding: 12px 24px;
+    text-align: center;
+}
+
+.logo a {
+    color: white;
+}
+
+/* section2 */
+.wrap {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#about {
+    perspective: 1000px;
+    text-align: center;
+    width: 1920px;
+    height: 800px;
+    margin: 0 auto 200px auto;
+    position: relative;
+    perspective: 800px;
+}
+
+.name_card {
+    width: 520px;
+    height: 330px;
+    border: 5px solid black;
+    position: absolute;
+    top: 38%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+    font-weight: bolder;
+    font-size: 1.6rem;
+}
+
+.name_card h2 {
+    font-size: 3rem;
+    margin-bottom: 24px;
+}
+
+.name_card div {
+    padding: 8px 10px 0px;
+    width: 200px;
+    height: 288px;
+}
+
+.name_card p {
+    margin-bottom: 16px;
+}
+
+.container {
+    width: 1920px;
+    margin: 0 auto;
+}
+
+.program_language {
+    width: 400px;
+    height: 380px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 17%;
+    left: 9%;
+    font-weight: bolder;
+    font-size: 1.6rem;
+    transform: rotateY(10deg);
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 99%);
+    justify-content: space-around;
+    perspective: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.program_language h2 {
+    font-size: 3rem;
+    border-bottom: 5px solid white;
+    width: 100%;
+    height: 80px;
+    padding: 16px;
+}
+
+.program_language h3 {
+    font-size: 2rem;
+    border-bottom: 5px solid white;
+}
+
+.program_language div {
+    border: 5px solid white;
+    transform: rotateY(30deg);
+}
+
+.program_language div:nth-of-type(1) {
+    width: 173px;
+    height: 200px;
+    margin-left: 16px;
+}
+
+.program_language div:nth-of-type(2) {
+    margin-top: 8px;
+    width: 180px;
+    height: 170px;
+}
+
+.program_language p {
+    background-color: white;
+    margin-top: 16px;
+    font-size: 1.8rem;
+}
+
+.front p:nth-of-type(1) {
+    color: #f1662a;
+}
+
+.front p:nth-of-type(2) {
+    color: #1978ba;
+}
+
+.front p:nth-of-type(3) {
+    color: #f2bf4f;
+}
+
+.back p:nth-of-type(1) {
+    color: #e32b2c;
+}
+
+.back p:nth-of-type(2) {
+    color: #3748a5;
+}
+
+.graph {
+    width: 410px;
+    height: 400px;
+    background-color: black;
+    color: white;
+    position: relative;
+    position: absolute;
+    top: 17%;
+    right: 8.5%;
+    font-weight: bolder;
+    font-size: 1.6rem;
+    transform: rotateY(-9deg);
+    clip-path: polygon(0 0, 100% 0, 100% 97%, 0% 85%);
+    perspective: 800px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.graph img {
+    position: absolute;
+    top: 22%;
+    right: 3%;
+    width: 300px;
+    height: 280px;
+    clip-path: polygon(15% 1%, 98% 0, 98% 99%, 15% 90%);
+
+}
+
+.graph span {
+    background-color: white;
+    color: black;
+    z-index: 1;
+    font-size: 11px;
+    font-weight: bolder;
+}
+
+.graph span:nth-of-type(1) {
+    position: absolute;
+    top: 28%;
+    left: 48%;
+    font-size: 12px;
+    transform: rotateY(-11deg);
+}
+
+.graph span:nth-of-type(2) {
+    position: absolute;
+    top: 38%;
+    left: 79%;
+}
+
+.graph span:nth-of-type(3) {
+    position: absolute;
+    top: 66%;
+    left: 79%;
+}
+
+.graph span:nth-of-type(4) {
+    position: absolute;
+    top: 81.7%;
+    left: 50%;
+    transform: rotateY(-11deg);
+    font-size: 12px;
+}
+
+.graph span:nth-of-type(5) {
+    position: absolute;
+    top: 64%;
+    left: 37%;
+}
+
+.graph span:nth-of-type(6) {
+    position: absolute;
+    top: 39%;
+    left: 37%;
+}
+
+.graph h2 {
+    font-size: 2.5rem;
+    border-bottom: 5px solid white;
+    width: 100%;
+    height: 70px;
+    padding-top: 16px;
+}
+
+.hidden {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 145px;
+    right: 64px;
+    background-color: white;
+    clip-path: polygon(46% 56%, 46% 59%, 38% 48%, 46% 38%, 77% 30%, 76% 79%);
+}
+
+.graph1 {
+
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 145px;
+    right: 64px;
+    background-color: white;
+    clip-path: polygon(47% 55%, 45% 57%, 39% 48%, 47% 39%, 77% 30%, 76% 79%);
+    transition: all 0s .5s;
+    transform: scale(0);
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.graph2 {
+    width: 158px;
+    height: 160px;
+    position: absolute;
+    top: 145px;
+    right: 66px;
+    background-color: white;
+    clip-path: polygon(48% 53.5%, 45.5% 55.5%, 41% 48.5%, 48.5% 40%, 77% 32%, 76% 76.5%);
+    transition: all 0s .5s;
+    transform: scale(0);
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.graph:hover>.graph1 {
+    background-color: red;
+    width: 160px;
+    height: 160px;
+    transform: scale(1);
+    transition: all 2.7s .3s;
+
+
+
+}
+
+.graph:hover>.graph2 {
+    background-color: #ffbbbb;
+    width: 158px;
+    height: 160px;
+    transform: scale(1);
+    transition: all 3s .3s;
+}
+
+.graph div:last-of-type {
+    padding: 8px;
+    border: 5px solid white;
+    position: absolute;
+    top: 40%;
+    left: 3%;
+    transform: rotateY(-25deg);
+    font-size: 2rem;
+}
+
+.note1,
+.note2,
+.note3 {
+    position: absolute;
+    background: url(../images/note.png) no-repeat;
+    text-align: center;
+}
+
+.note1 span,
+.note2 span,
+.note3 span {
+    display: inline-block;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 26px;
+    line-height: 1.6em;
+}
+
+.note1 {
+    left: 40%;
+    top: 75%;
+    width: 325px;
+    height: 320px;
+    transform: rotateX(30deg);
+    background-position: -10px;
+}
+
+.note1 span {
+    margin-top: 72px;
+    margin-left: 40px;
+    width: 152px;
+    height: 192px;
+}
+
+.note2 {
+    left: 20%;
+    top: 80%;
+    width: 232px;
+    height: 312px;
+    transform: rotate(-20deg);
+    background-position: -354px -20px;
+}
+
+.note2 span {
+    margin-top: 64px;
+    width: 152px;
+    height: 192px;
+    background-color: white;
+}
+
+.note3 {
+    left: 65%;
+    top: 80%;
+    width: 232px;
+    height: 312px;
+    transform: rotate(20deg);
+    background-position: -608px -20px;
+}
+
+.note3 span {
+    margin-top: 72px;
+    margin-left: 24px;
+    width: 152px;
+    height: 192px;
+}
+
+
+
+/* section3 */
+.parallax1 {
+    position: relative;
+    background: url(../images/pk_camera.png) no-repeat 50% 50%/cover fixed;
+    height: 100vh;
+}
+
+/* section4 */
+#portfolio {
+    margin: 0 auto;
+    padding-top: 80px;
+    margin-bottom: 80px;
+    text-align: center;
+    width: 1496px;
+    height: 1024px;
+    position: relative;
+}
+
+.portfolio_img {
+    height: 700px;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.portfolio_img div {
+    display: inline-block;
+    width: 440px;
+    height: 264px;
+    border: 2px solid #333;
+    overflow: hidden;
+
+}
+
+#portfolio h2 {
+    font-size: 5rem;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.494);
+    padding-bottom: 24px;
+}
+
+#portfolio span {
+    font-size: 32px;
+    background-color: black;
+    color: white;
+    box-sizing: content-box;
+    padding: 8px 24px;
+}
+
+.portfolio_img h3 {
+    font-size: 2.5rem;
+    width: 100%;
+    height: 43px;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.494);
+}
+
+.portfolio_img img {
+    width: 100%;
+    height: auto;
+}
+
+/* section5 */
+.parallax2 {
+    position: relative;
+    background: url(../images/flower.png) no-repeat 50% 50%/cover fixed;
+    height: 100vh;
+}
+
+.parallax1 h2,
+.parallax2 h2 {
+    opacity: 0;
+}
+
+#contact {
+    width: 1496px;
+    height: 1080px;
+    margin: 80px auto;
+    padding: 40px 0 40 0;
+    text-align: center;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
+}
+
+#contact h2 {
+    font-size: 5rem;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.494);
+    width: 100%;
+    height: 120px;
+}
+
+.work {
+    display: flex;
+    justify-content: space-around;
+}
+
+.map {
+    margin-top: 80px;
+    width: 100%;
+}
+
+.map h3 {
+    font-size: 3rem;
+    width: 100%;
+}
+
+iframe {
+    margin-top: 40px;
+    margin-bottom: 24px;
+    width: 80%;
+    height: 400px;
+}
+
+#contact p {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+input {
+    margin: 0 40px 16px 40px;
+    width: 200px;
+    height: 30px;
+}
+
+button {
+    width: 200px;
+    height: 40px;
+}
+
+/* footer */
+footer {
+    border-top: 5px solid black;
+    padding-top: 16px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.222);
+    text-align: center;
+}
+
+footer a {
+    margin: 0 8px;
+}

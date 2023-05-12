@@ -1,0 +1,647 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
+
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전체 기본 폰트사이즈 계산하기 쉽게 10px로 설정,
+    a태그 링크 클릭시 부드러운 스크롤 적용 */
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+/* 본문 전체 글씨 크기, 색상 및 글씨체 적용,
+    페이지 너비 및 여백 조정 */
+body {
+    font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
+    width: 100%;
+    column-rule: #333;
+    margin: 0 auto;
+}
+
+/* a태그 글자색은 body 글자 색을 상속받지 않아 직접 지정 */
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* 이미지 파일 사용시 너비를 부모 요소의 100% 크기로 적용 
+    수직축 정렬 기준을 top으로 설정*/
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+/* 모든 li 요소 앞에 나타는 표시 보이지 않도록 삭제 */
+li {
+    list-style: none;
+}
+
+/* 지도 너비 및 높이 부모 요소 크기 100%로 설정, 비율 상관 X */
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!header!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!header!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!header!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* 헤더 영역 전체 설정 */
+header {
+    height: 54px;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+}
+
+/* 헤더 안의 ul 높이 설정, 자식 요소가 플렉스 정렬 되도록 지정 */
+header ul {
+    height: 54px;
+    display: flex;
+}
+
+/* 헤더 ul의 자식 속성 */
+header li {
+    height: 54px;
+    width: 88px;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* 네비 안의 li 요소 호버시 rgba효과 지정 */
+header li:hover {
+    background: rgba(100, 100, 100, 0.8);
+}
+
+/* 네비 자식 요소 플렉스 정렬되도록 지정 */
+nav {
+    display: flex;
+}
+
+/* 네비 안의 div 너비 및 여백 지정 */
+nav div {
+    margin: 1.5rem 0 1.5rem 2rem;
+    width: 88px;
+}
+
+/* 네비 안의 div 안의 a태그 설정,
+    크기 조절을 위해 블록요소로 지정,
+    이미지를 불러왔고 크기가 부모보다 커서 
+    크기를 div의 80%크기가 되도록 조정
+     */
+nav div a {
+    display: block;
+    width: 80%;
+}
+
+/* 네비게이션 우측 부분 설정 */
+nav .right {
+    display: flex;
+    height: 54px;
+    width: 400px;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    transform: translateX(960px);
+}
+
+/* 네비게이션 우측 안의 버튼(a태그) 정렬 */
+.right a {
+    width: 200px;
+    padding-top: 12px;
+    text-align: center;
+}
+
+/* 우측 네비의 가로 폭 지정,
+   자식요소인 a태그, i(아이콘)와 input태그를 
+   플렉스 정렬되도록 지정 */
+.right .deep {
+    display: flex;
+    width: 480px;
+    height: 54px;
+    margin: 0;
+}
+
+/* 우측 네비 자식 요소인 i(아이콘) 영역 설정 */
+.deep i {
+    width: 48px;
+    text-align: center;
+    padding-top: 18px;
+}
+
+/* 우측 네비 자식 요소인 input 설정 */
+.deep input {
+    width: 240px;
+    height: 32px;
+    margin-top: 12px;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section1!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section1!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section1!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* 섹션1 설정 */
+#section1 {
+    height: 880px;
+    margin-bottom: 32px;
+    font-size: 8px;
+}
+
+/* 섹션1의 h1(로고) 설정*/
+#section1 .logo {
+    height: 32px;
+    /* outline: 10px solid red; */
+}
+
+/* 섹션1안의 div인 section1의 설정 */
+.section1 {
+    position: relative;
+    background-image: url(../images/nike-just-do-it.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    background-attachment: fixed;
+    width: 1496px;
+    height: 880px;
+    margin: 0 auto;
+    /* outline: 10px solid red; */
+    z-index: 9997;
+    vertical-align: top;
+}
+
+/* div안의 p 설정 */
+.section1 p {
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 50%;
+    padding: 16px;
+    margin: 0 auto;
+    width: 800px;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    font-size: 1.5rem;
+    white-space: pre;
+}
+
+/* div 호버시 애니메이션 동작 설정 */
+.section1:hover p {
+    animation: light 1s 2 forwards;
+}
+
+/* 애니메이션 동작시 깜빡이는 효과를 
+주기위해 opacity 적용 */
+@keyframes light {
+    0% {
+        opacity: .8;
+        animation-timing-function: ease-out;
+    }
+
+    50% {
+        opacity: .4;
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        opacity: .8;
+        animation-timing-function: ease-in;
+    }
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section2!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section2!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section2!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* 섹션2 설정 */
+#event {
+    width: 1496px;
+    height: 960px;
+    padding-top: 16px;
+    margin: 0 auto;
+}
+
+/* 섹션2의 h2설정 */
+#event h2 {
+    border-bottom: 1px solid #ccc;
+    margin: 32px 0;
+}
+
+/* 섹션2안의 div 공통 설정 */
+#event .com_event {
+    display: flex;
+    height: 800px;
+    width: 1120px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* 공통 div안의 div 설정 */
+.com_event .sevent1 {
+    width: 360px;
+    height: 243px;
+    background: url(../images/메인.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5px;
+}
+/* 공통 div안의 div 설정 */
+.com_event .sevent2 {
+    width: 360px;
+    height: 243px;
+    background: url(../images/nike-just-do-it.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5px;
+}
+/* 공통 div안의 div 설정 */
+.com_event .sevent3 {
+    width: 360px;
+    height: 243px;
+    background: url(../images/멤버데이즈-혜택.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5px;
+}
+/* 공통 div안의 div 설정 */
+.com_event .coment1 {
+    width: 360px;
+    margin: 5px;
+}
+/* 공통 div안의 div 설정 */
+.com_event .coment2 {
+    width: 360px;
+    margin: 5px;
+}
+/* 공통 div안의 div 설정 */
+.com_event .coment3 {
+    width: 360px;
+    margin: 5px;
+}
+/* 공통 div안의 div 설정 */
+.com_event .sevent4 {
+    width: 360px;
+    height: 243px;
+    background: url(../images/메인.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5px;
+}
+/* 공통 div안의 div 설정 */
+.com_event .sevent5 {
+    width: 360px;
+    height: 243px;
+    background: url(../images/nike-just-do-it.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5px;
+}
+/* 공통 div안의 div 설정 */
+.com_event .sevent6 {
+    width: 360px;
+    height: 243px;
+    background: url(../images/멤버데이즈-혜택.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 5px;
+}
+/* 공통 div안의 div 설정 */
+.com_event .coment4 {
+    width: 360px;
+    margin: 5px;
+}
+/* 공통 div안의 div 설정 */
+.com_event .coment5 {
+    width: 360px;
+    margin: 5px;
+}
+/* 공통 div안의 div 설정 */
+.com_event .coment6 {
+    width: 360px;
+    margin: 5px;
+}
+
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section3!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section3!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section3!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* 섹션3 전체 설정, 자식요소를 플렉스 정렬 지정, 
+플렉스 방향은 세로 정렬 */
+#section3 {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 1496px;
+    height: 1000px;
+}
+/* 섹션3 h2 설정 */
+#section3 h2 {
+    border-bottom: 1px solid #ccc;
+    margin: 32px 0 0 8px;
+}
+/* 섹션3내부 p태그 설정 */
+#section3 p {
+    margin: 16px 0 8px 8px;
+}
+/* 섹션3내부 div설정,div하위 자식요소 플렉스 지정, 
+범위 초과시 내려가도록 설정 */
+#section3 .sec3img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1488px;
+    z-index: 5;
+}
+/* 섹션3의 자식 div안의 div 설정 */
+.sec3img .low {
+    width: 360px;
+    padding: 8px;
+}
+
+/* 섹션3의 자식 div안의 div안의 div설정 */
+.low div {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+/* 섹션3안의 a태그 설정 */
+#section3 a {
+    margin: 10px;
+    width: 120px;
+
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section4!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section4!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section4!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* 섹션4 전체 설정 */
+#CustomerService {
+    width: 1496px;
+    height: 880px;
+    margin: 0 auto;
+}
+/* 섹션4 h2설정 */
+#CustomerService h2 {
+    border-bottom: 1px solid #ccc;
+    margin: 32px 0 0 8px;
+}
+/* 섹션4 내부 p태그 부모요소 div설정 */
+#CustomerService .n2 {
+    margin-top: 16px;
+    margin-left: 8px;
+
+}
+/* 섹션4 내부 div 공통 적용 */
+.cs_common {
+    width: 1496px;
+    height: 600px;
+    display: flex;
+}
+
+/* 섹션4 CustomerService 좌측 psinfo 영역 설정 */
+.psinfo {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 8px;
+    justify-content: space-evenly;
+}
+/* 섹션4 CustomerService 좌측 psinfo안의 p태그 설정 */
+.psinfo p {
+    width: 104px;
+    height: 32px;
+    background: #333;
+    color: #fff;
+}
+
+/* 섹션4 psinfo 내부 요소인 인풋과 버튼 설정 */
+#CustomerService input,
+button {
+    padding: 0 8px;
+    height: 32px;
+}
+/* 섹션4 psinfo 내부 요소인 버튼 설정 */
+#CustomerService button {
+    padding-left: 8px;
+    margin-top: 16px;
+    margin-bottom: 40px;
+    width: 160px;
+}
+
+/* 섹션4 CustomerService 중앙 subQ 영역 설정 */
+.subQ {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    width: 20%;
+    justify-content: space-evenly;
+
+}
+/* div 안의 a태그에 호버시 opacity적용 */
+.subQ a:hover {
+    opacity: 0.5;
+}
+/* div안의 a태그설정 */
+.subQ a {
+    height: 32px;
+    width: 104px;
+    margin-left: 1rem;
+    margin-top: 32px;
+    text-align: center;
+    background: #333;
+    color: #fff;
+}
+/* div안의 p태그 설정 */
+.subQ p {
+    height: 80px;
+    padding: 0 0 1rem 4px;
+    color: #333;
+    white-space: pre;
+}
+
+/* 섹션4 우측 여백에 애니메이션 효과 부여 */
+.scene {
+    width: 20%;
+    height: 200px;
+    margin: 0 auto;
+    perspective: 1000px;
+    perspective-origin: 10% -50%;
+}
+
+.cube {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.cube_face {
+    position: absolute;
+    /* left: 25%; */
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 200px;
+}
+
+.cube_face_front {
+    background-image: url(../images/Nike_logo.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid black;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    color: seagreen
+}
+
+.cube_face_back {
+    background-image: url(../images/Nike_logo.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid black;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    color: seagreen
+}
+
+.cube_face_left {
+    background-image: url(../images/Nike_logo.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid black;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    color: seagreen
+}
+
+.cube_face_right {
+    background-image: url(../images/Nike_logo.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid black;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    color: seagreen
+}
+
+.cube_face_top {
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid black;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    color: seagreen
+}
+
+.cube_face_bottom {
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid black;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    color: seagreen
+}
+
+.cube_face_front {
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+.cube_face_back {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+.cube_face_left {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.cube_face_right {
+    transform: rotateY(270deg) translateZ(100px);
+}
+
+.cube_face_top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.cube_face_bottom {
+    transform: rotateX(270deg) translateZ(100px);
+}
+
+.cube {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    animation: rotateY 10s infinite linear;
+}
+
+@keyframes rotateY {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section5!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section5!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!section5!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+/* 섹션5 전체 설정 */
+#map {
+    width: 1496px;
+    height: 880px;
+    margin: 0 auto;
+}
+/* 섹션5 내부 h2설정 */
+#map h2 {
+    border-bottom: 1px solid #ccc;
+    margin: 32px 0 32px 8px;
+}
+/* 섹션5 내부 어드레스 설정 */
+#map address {
+    margin-left: 8px;
+}
+
+/* 섹션5 내부 div 크기 조정,
+    구글 지도 사이즈 조절 */
+.map {
+    width: 724px;
+    height: 486px;
+    margin: 8px;
+}
+
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!footer!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!footer!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!footer!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* 푸터 설정 */
+footer {
+    height: 108px;
+    margin: 0 auto;
+    padding: 24px;
+    text-align: center;
+    color: #fff;
+    background: #000;
+}
+
+/* 푸터 영역이 검은색이라 글씨 흰색 적용 */
+footer a {
+    color: #fff;
+}
