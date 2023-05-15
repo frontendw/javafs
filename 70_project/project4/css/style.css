@@ -22,7 +22,7 @@ body {
 }
 a {
     text-decoration: none;
-    color: #333;
+    color: #777;
 }
 
 /* 공통 */
@@ -96,15 +96,16 @@ nav .sub {
 }
 
 /* 메인 콘텐츠 */
-#contents div {
+#contents > div {
     width: 400px;
     height: 200px;
 }
 /* 탭 메뉴 */
 .tabs {
-    padding: 24px 0;
+    padding: 24px 24px 24px 0;
+    background-clip: content-box;
 }
-.tabs input, .tabs div {
+.tabs input, .tabs > div {
     display: none;
 }
 #btn1:checked ~ #tab1, #btn2:checked ~ #tab2 {
@@ -127,9 +128,27 @@ nav .sub {
 }
 
 /* 탭 메뉴 - 공지사항 */
+#tab1 li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #ccc;
+}
+#tab1 a {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    /* 말줄임 ...효과 */
+    text-overflow: ellipsis;
+}
+#tab1 a:hover {
+    color: #333;
+}
+
 /* 탭 메뉴 - 갤러리 */
-#tab2 img {
+#tab2 a {
+    display: inline-block;
     width: 110px;
+    margin-right: 8px;
 }
 
 /* 배너 */
