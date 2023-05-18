@@ -20,8 +20,9 @@
         */
 
         // 입력
-        let stuNum = prompt("학생은 몇 명인가요?");
-        let colNum = prompt("한 줄에 몇 명씩 앉습니가?");
+        let stuNum = Number(prompt("학생은 몇 명인가요?"));
+        let colNum = Number(prompt("한 줄에 몇 명씩 앉습니가?"));
+        let rowNum;
 
         // 처리
         if (stuNum % colNum === 0) {
