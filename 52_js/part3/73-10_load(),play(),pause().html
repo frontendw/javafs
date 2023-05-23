@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        .box {
+            width: 800px;
+        }
+        .box video {
+            width: 100%;
+        }
+        .btnSet li {
+            float: left;
+            margin: 0 20px;
+            font: bold 18px/2 arial;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <video>
+            <source src="../assets/mov_bbb.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <ul class="btnSet">
+        <li class="load">load</li>
+        <li class="play">play</li>
+        <li class="pause">pause</li>
+    </ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        /* 
+            $('video').get(n) ~ 비디오 참조 (단, n = 0, 1, 2, ...)
+            $('video').get(n).load() ~ 비디오 불러오기
+            $('video').get(n).play() ~ 비디오 재생하기
+            $('video').get(n).pause() ~ 비디오 불러오기
+        */
+
+        $(function () {
+            var vid = $('video').get(0);
+            $('.load').on('click', function(){
+                vid.load();
+            });
+            $('.play').on('click', function(){
+                vid.play();
+            });
+            $('.pause').on('click', function(){
+                vid.pause();
+            });
+        });
+    </script>
+</body>
+
+</html>

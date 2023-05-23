@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            background: red;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        /* 
+            $('선택자').animate({속성: 값}, 시간, '가속도', function(){코드;}) ~ 모션후 새로운 모션 실행
+        */
+
+        $(function(){
+            $('div').on('mouseenter', function(){
+                $('div').stop().animate({width: '500px', height: '500px'}, 800, function(){
+                    $('div').stop().animate({backgroundColor: 'blue'}, 700);
+                });
+            });
+            $('div').on('mouseleave', function(){
+                $('div').stop().animate({width: '300px', height: '300px'}, 800, function(){
+                    $('div').stop().animate({backgroundColor: 'red'}, 700);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

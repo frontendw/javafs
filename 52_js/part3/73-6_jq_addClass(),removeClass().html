@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        li {
+            font-size: 20px;
+            margin-left: 50px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background: #888;
+            margin: 50px;
+        }
+        div.on {
+            width: 400px;
+            height: 400px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>클래스 추가</li>
+        <li>클래스 제거</li>
+    </ul>
+    <div></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        /* 
+            $('선택자').addClass('클래스') ~ 요소의 클래스 추가
+            $('선택자').removeClass('클래스') ~ 요소의 클래스 제거
+        */
+        
+        $('li').eq(0).on('click', function(){
+            $('div').addClass('on');
+        });
+        $('li').eq(1).on('click', function(){
+            $('div').removeClass('on');
+        });
+    </script>
+</body>
+
+</html>

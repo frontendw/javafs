@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        li {
+            font-size: 30px;
+            margin-left: 50px;
+        }
+        div {
+            float:left;
+            width: 400px;
+            height: 400px;
+            margin: 50px;
+            font-size: 40px;
+            color: #fff;
+        }
+        .box1 {
+            background: blue;
+        }
+        .box2 {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>박스1 hide</li>
+        <li>박스1 show</li>
+        <li>박스2 fadeOut</li>
+        <li>박스2 fadeIn</li>
+    </ul>
+
+    <div class="box1">박스1</div>
+    <div class="box2">박스2</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        /* 
+            $('선택자').hide() ~ 숨김
+            $('선택자').show() ~ 보임
+            $('선택자').fadeOut(시간) ~ 서서히 숨김
+            $('선택자').fadeIn(시간) ~ 서서히 보임
+        */
+
+        $(function(){
+            $('li').eq(0).on('click', function(){
+                $('.box1').hide();
+            });
+            $('li').eq(1).on('click', function(){
+                $('.box1').show();
+            });
+            $('li').eq(2).on('click', function(){
+                $('.box2').fadeOut();
+            });
+            $('li').eq(3).on('click', function(){
+                $('.box2').fadeIn();
+            });
+        });
+    </script>
+</body>
+
+</html>
