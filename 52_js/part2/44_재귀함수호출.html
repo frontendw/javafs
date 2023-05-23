@@ -25,13 +25,22 @@
         */
 
         /* 
+                함수: ten()
                 변수: i
-                제어문: for
+                제어문: if
                 메서드: write()
         */
         // 1부터 10까지 출력
-        
+        let i = 0;
 
+        function ten() {
+            i++;
+            if (i >= 11) return;
+            document.write(i, '<br>');
+            ten();
+        }
+
+        ten();
     </script>
 </body>
 
