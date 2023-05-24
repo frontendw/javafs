@@ -34,12 +34,16 @@
             배열 객체에 저장된 데이터 가져오기
                 참조변수[인덱스번호];
                 인덱스 번호는 0부터 시작
+            
+            배열객체.length ~ 배열 값 개수
         */
 
         let arr1 = new Array();
         arr1[0] = 10;
         arr1[1] = 20;
         arr1[2] = 30;
+        arr1[3] = 40;
+        arr1[4] = 50;
 
         document.write(arr1, '<br>');
         
@@ -49,10 +53,19 @@
         let arr3 = [true, false];
         document.write(arr3, '<br>');
 
-        // 배열 값을 가져오기
-        document.write(arr1[0], '<br>');
-        document.write(arr1[1], '<br>');
-        document.write(arr1[2], '<br>');
+        // 배열 값을 가져오기3: for ~ in
+        for (let b in arr1) {
+            document.write(b, arr1[b], '<br>');
+        }
+
+        // 배열 값을 가져오기2: for
+        for (let i = 0; i < arr2.length; i++) {
+            document.write(arr2[i], '<br>');
+        }
+
+        // 배열 값을 가져오기1
+        document.write(arr3[0], '<br>');
+        document.write(arr3[1], '<br>');
         
     </script>
 </body>
