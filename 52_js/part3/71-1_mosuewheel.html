@@ -25,31 +25,22 @@
         <p></p>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script>
         /* 
-            이벤트 형식:
-            $('선택자').on('mousewheel', function(e, delta){
-                if (delta > 0) {
-                    // 마우스 휠을 올렸을 때 실행할 코드
-                } else if (delta < 0) {
-                    // 마우스 휠을 내렸을 때 실행할 코드
-                }
-            });
         */
 
-        $(function(){
-            $('div').on('mousewheel', function(e, delta){
-                if (delta > 0) {
-                    $(this).css({backgroundColor: 'red'});
-                    $('p').text('마우스 휠을 올렸습니다.');
-                } else if (delta < 0) {
-                    $(this).css({backgroundColor: 'blue'});
-                    $('p').text('마우스 휠을 내렸습니다.');
-                }
-            });
-        });
+        const divTag = document.querySelector('div');
+        const pTag = document.querySelector('p');
+
+        divTag.onwheel = function(e){
+            if (e.deltaY > 0) {
+                this.style.backgroundColor = 'red';
+                pTag.innerText = '마우스 휠을 올렸습니다.';
+            } else {
+                this.style.backgroundColor = 'blue';
+                pTag.innerText = '마우스 휠을 내렸습니다.';
+            }
+        };
     </script>
 </body>
 
