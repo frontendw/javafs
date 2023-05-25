@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
+</head>
+
+<body>
+    <h1>문자열 객체</h1>
+    <script>
+        /* 
+            indexOf('찾을문자'): 객체의 왼쪽부터 문자열을 찾아 최초 일치하는 index 번호 반환 (없으면 -1)            
+            length: 문자열의 문자 총 개수 반환
+        */
+
+        /* 
+            문제> 이메일 주소를 입력받아 유효성 검사를 하시오.
+            형식: id@naver.com
+
+            변수: userEmail, arrUrl, chk1, chk2
+            제어문: if, if ~ else, for
+            메서드: prompt(), indexOf(), alert(), write()
+        */
+        
+        // 변수
+        let chk1 = false, chk2 = false;
+        const arrUrl = ['.com', '.co.kr', '.net', '.or.kr', '.go.kr'];
+        // 입력
+        const userEmail = prompt('이메일 주소를 입력하세요.');
+        
+        // 처리
+        // @있으면 0이상 정수, 없으면 -1
+        userEmail.indexOf('@')
+
+        // 출력
+        if (chk1 && chk2) {
+            document.write(userEmail);
+        } else {
+            alert('잘못 입력하셨습니다.');
+        }
+
+    </script>
+</body>
+
+</html>
