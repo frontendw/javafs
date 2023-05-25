@@ -23,23 +23,37 @@
             변수: userEmail, arrUrl, chk1, chk2
             제어문: if, if ~ else, for
             메서드: prompt(), indexOf(), alert(), write()
+            속성: length
         */
         
         // 변수
         let chk1 = false, chk2 = false;
         const arrUrl = ['.com', '.co.kr', '.net', '.or.kr', '.go.kr'];
+        
         // 입력
         const userEmail = prompt('이메일 주소를 입력하세요.');
         
         // 처리
         // @있으면 0이상 정수, 없으면 -1
-        userEmail.indexOf('@')
+        // chk1 변수에 @가 있으면 true, 없으면 false
+        if (userEmail.indexOf('@') > 0) {
+            chk1 = true;
+        }
+
+        // chk2 변수에 .com, .co.kr, ...이 있으면 true, 없으면 false
+        for (let i = 0; i <= arrUrl.length; i++){
+            if (userEmail.indexOf(arrUrl[i]) > 0) {
+                chk2 = true;
+            }
+        }
 
         // 출력
         if (chk1 && chk2) {
             document.write(userEmail);
+            location.href = 'https://naver.com';
         } else {
             alert('잘못 입력하셨습니다.');
+            location.reload();
         }
 
     </script>
