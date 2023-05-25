@@ -1,0 +1,546 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;900&display=swap');
+
+@font-face {
+    font-family: 'Dovemayo_gothic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.1/Dovemayo_gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MBC1961GulimM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/MBC1961GulimM.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff;
+}
+
+/* 목록의 마커 제거 */
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* typo */
+html {
+    font-size: 10px;
+}
+
+body {
+    font: 2rem/1.8 'Dovemayo_gothic', verdana, sans-serif, 'Noto Sans KR';
+    color: #333;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: 4px;
+}
+
+h2,
+h3 {
+    font-family: 'MBC1961GulimM', 'Segoe UI', sans-serif, 'Noto Sans KR';
+    font-weight: 400;
+}
+
+#home h2 {
+    color: rgb(255, 165, 0);
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.sale1,
+.sale2,
+.sale3,
+.sale4 {
+    font-size: 10rem;
+    opacity: 0.7;
+}
+
+button {
+    color: #fff;
+}
+
+button:hover {
+    color: #000;
+}
+
+::placeholder {
+    color: #ccc;
+}
+
+.anim_text1 {
+    font-size: 3.6rem;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* section2 */
+#best h3 {
+    color: #fff;
+}
+
+/* section3 */
+#sale_news .sale_contants h3 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#sale_news .sale_contants p:nth-of-type(2) {
+    font-size: 1.5rem;
+}
+
+
+/* footer */
+footer {
+    color: #777;
+    font-size: 100%;
+}
+
+
+
+/* css */
+/* header */
+header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+
+nav {
+    display: none;
+}
+
+/* section1 #home */
+#home {
+    position: relative;
+}
+
+#home h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.anim_text1 {
+    line-height: 1;
+    padding: 8px 16px 8px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#home .anim_text2 {
+    display: none;
+}
+
+/* section 2~4 common */
+.section {
+    padding: 81px 30px 0;
+}
+
+.section h2 {
+    line-height: 1;
+    border-bottom: 1px solid #f1f1f1;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+#region {
+    margin-bottom: 16px;
+}
+
+.section li {
+    margin-bottom: 16px;
+}
+
+/* section2 #best */
+#best li {
+    position: relative;
+    cursor: pointer;
+}
+
+#best h3 {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 38%;
+    text-align: center;
+    padding: 2px 12px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#best li:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+/* section3 #sale_news */
+#sale_news>p {
+    margin-bottom: 40px;
+}
+
+#sale_news div {
+    position: relative;
+}
+
+.sale1,
+.sale2,
+.sale3,
+.sale4 {
+    color: orange;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: rotate(40deg);
+    transform-origin: 70% -50%;
+}
+
+#sale_news li p:first-of-type {
+    margin: 8px 0;
+}
+
+#sale_news a {
+    display: block;
+    text-align: center;
+    background: #ccc;
+    padding: 6px 0;
+    margin-top: 16px;
+}
+
+#sale_news a:hover {
+    background: rgb(255, 165, 0);
+}
+
+/* section4 #contact */
+#contact input,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+}
+
+#contact input:focus,
+textarea:focus {
+    outline: none;
+    border: 2px solid rgb(255, 165, 0);
+}
+
+#contact button {
+    padding: 16px 24px;
+    margin: 20px 0 45px;
+    background: #000;
+}
+
+#contact button:hover {
+    background: rgb(255, 165, 0);
+}
+
+/* footer */
+footer {
+    background: #000;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer span:nth-of-type(1),
+footer span:nth-of-type(3) {
+    display: none;
+}
+
+.map {
+
+    height: 300px;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 600 이상 */
+@media (min-width: 600px) {
+
+    /* typo */
+    #home h2 {
+        font-size: 5vw;
+    }
+
+    .sale1,
+    .sale2,
+    .sale3,
+    .sale4 {
+        font-size: 10vw;
+        opacity: 0.7;
+    }
+
+    /* common */
+    section {
+        margin: 0 auto;
+    }
+
+    /* header */
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /* nav */
+    nav {
+        display: block;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav ul li:not(:first-of-type) {
+        margin-left: 44px;
+    }
+
+    nav a::after {
+        content: '';
+        display: block;
+        height: 2px;
+        background: rgba(255, 165, 0);
+        transition: .3s;
+        transform: scaleX(0);
+    }
+
+    nav a:hover::after {
+        transform: scaleX(1);
+    }
+
+    .main_search {
+        display: none;
+    }
+
+    .main_search input:focus {
+        outline: none;
+        border: 2px solid orange;
+    }
+
+    .main_search i {
+        cursor: pointer;
+    }
+
+    /* section1 */
+    #home {
+        position: relative;
+    }
+
+    #home .anim_text1 {
+        background: none;
+    }
+
+    #home .anim_text2 {
+        position: absolute;
+        top: 60%;
+        display: inline;
+    }
+
+    /* section2~4 */
+    .section ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .section li {
+        width: calc(50% - 8px);
+    }
+
+    /* section2 */
+    #best li:hover {
+        transform: scale(1.05);
+        z-index: 1;
+    }
+
+    #best h3 {
+        width: 60%;
+        text-align: center;
+        padding: 0;
+    }
+
+    /* section3 */
+    #sale_news li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #sale_news li .sale_contants {
+        flex-grow: 1;
+    }
+
+    /* section4 */
+    /* footer */
+    .map {
+        height: 40vw;
+    }
+
+    footer span:nth-of-type(1),
+    footer span:nth-of-type(3) {
+        display: inline;
+    }
+
+    footer span:nth-of-type(2) {
+        display: none;
+    }
+}
+
+
+
+/* 992 이상 */
+@media (min-width: 992px) {
+
+    /* type */
+    .sale1,
+    .sale2,
+    .sale3,
+    .sale4 {
+        font-size: 5vw;
+        opacity: 0.7;
+    }
+
+    /* common */
+    .section {
+        padding:0;
+    }
+    /* header */
+    header {
+        position: relative;
+    }
+
+    .main_search {
+        display: block;
+    }
+
+    .main_search ul {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between;
+        width: 20%;
+    }
+
+    .main_search ul li:first-of-type {
+        width: 90%;
+    }
+
+    .main_search li:nth-of-type(2) {
+        margin-top: 3px;
+        margin-left: 10px;
+    }
+
+    .main_search input {
+        padding-left: 10px;
+        width: 100%;
+        height: 32px;
+        border: 2px solid rgba(255, 165, 0, 0.5);
+    }
+
+    .section {
+        max-width: 1496px;
+        margin: 0 auto;
+    }
+
+    /* section1 */
+    #home {
+        max-width: 1496px;
+    }
+
+    #home .anim_text1 {
+        display: none;
+    }
+
+    #home .anim_text2 {
+        top: 50%;
+        animation: move 2s forwards;
+    }
+
+    @keyframes move {
+        0% {
+            left: 0;
+            opacity: 0;
+        }
+
+        100% {
+            left: 50%;
+            opacity: 1;
+            animation-timing-function: ease-out;
+        }
+    }
+
+    /* section2 */
+    section ul {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .section li {
+        width: calc(25% - 8px);
+    }
+
+    #best h3 {
+        width: 50%;
+        text-align: center;
+        padding: 0;
+    }
+
+    /* section3 */
+
+    /* section4 */
+    /* footer */
+}
