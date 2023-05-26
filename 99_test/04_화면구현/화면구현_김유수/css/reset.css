@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+section {
+    width: 1496px;
+    margin: 0 auto;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #000;
+    background: #fff;
+}
+
+a {
+    color: #333
+}
+
+/* 목록의 마커 제거 */
+li {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;
+
+}
+
+nav a {
+    text-decoration: none;
+}
+
+a:link,
+a:visited {
+    color: black;
+}
