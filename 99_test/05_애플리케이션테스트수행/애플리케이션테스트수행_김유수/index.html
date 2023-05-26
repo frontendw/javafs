@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
+    <title>애플리케이션_테스트_수행_김유수</title>
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* typo */
+        @font-face {
+            font-family: 'PyeongChangPeace-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+        *{
+            font-family: 'PyeongChangPeace-Bold';
+            font-size: 30px;
+        }
+        body {
+            font: 1.5rem/1.8 sans-serif;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        h3 { font-size: 15px;}
+        /* header */
+
+        header {
+            width: 100%;
+            background: #ffffff; 
+            height: 185px;
+        }
+
+        header h1 {
+            text-align: center;
+            padding-top: 70px;
+            animation-name: logo;
+            animation-iteration-count: initial;
+            animation-direction: alternate;
+            animation-duration: 2s;
+        }
+
+        @keyframes logo {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* nav */
+
+        /* navigation */
+        nav {
+            z-index: 1;
+            position: relative;
+            width: 100%;
+            height: 30px;
+            display: block;
+        }
+
+        .nav_bg {
+            height: 220px;
+            width: 100%;
+            background: rgb(67, 126, 85);
+            position: absolute;
+            display: none;
+        }
+
+        .sec h2 {
+            text-indent: -9999px;
+            height: 0px;
+        }
+
+        /* 1depth: main */
+        .main {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            height: 60px;
+            font-size: 16px;
+            font-weight: 500;
+            background: #333;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main>li {
+            position: relative;
+            width: 160px;
+            margin-right: 10px;
+        }
+
+        .main>li>a {
+            display: block;
+            width: 100%;
+            padding: 5px 0;
+            color: #fff;
+            text-align: left;
+        }
+
+        .main>li:hover>a {
+            background: #ccc;
+            color: #333;
+        }
+
+
+
+        /* 2depth: sub */
+        .sub {
+            display: none;
+            padding-top: 15px;
+        }
+        .sub a {
+            display: block;
+            width: 100%;
+            color: #ccc;
+            font-size: 14px;
+            font-weight: 300;
+            padding: 3px 0px;
+            text-align: left;
+        }
+
+        .sub a:hover {
+            background: rgb(1, 51, 16);
+        }
+
+        
+        /* slide */
+
+
+        .slide {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slide ul {
+            position: relative;
+            left: 0;
+            top: 0;
+            display: flex;
+            width: 400%;
+            animation: slide 9s infinite;
+        }
+
+        .slide li {
+            width: 100%;
+            height: 500px;
+            text-indent: -9999px;
+        }
+
+        .slide li:first-of-type,
+        .slide li:last-of-type {
+            background-image: url(images/slide1.png);
+        }
+
+        .slide li:nth-of-type(2) {
+            background: url(images/slide2.png);
+        }
+
+        .slide li:nth-of-type(3) {
+            background: url(images/slide3.png);
+        }
+
+        @keyframes slide {
+            0% {
+                left: 0;
+            }
+
+            5% {
+                left: -100%;
+            }
+
+            33% {
+                left: -100%;
+            }
+
+            38% {
+                left: -200%
+            }
+
+            66% {
+                left: -200%;
+            }
+
+            71% {
+                left: -300%;
+            }
+
+            99.99% {
+                left: -300%;
+            }
+
+            100% {
+                left: 0%;
+            }
+
+        }
+
+        footer {
+            background: #090f05;
+            height: 185px;
+            text-align: center;
+            color: #fff;
+        }
+
+        footer p {
+            padding-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><img src="images/logo.png" alt="logo"></h1>
+    </header>
+    <nav>
+        <div class="nav_bg"></div>
+        <ul class="main">
+            <li><a href="#">축제소개</a>
+                <ul class="sub">
+                    <li><a href="#">Festival 소개</a></li>
+                    <li><a href="#">행사장 안내</a></li>
+                    <li><a href="#">조직위원회</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><h2>예약안내</h2></a>
+                <ul class="sub">
+                    <li><a href="#">예약하기</a></li>
+                    <li><a href="#">예약확인/취소</a></li>
+                    <li><a href="#">단체예약문의</a></li>
+                </ul>
+            </li>
+            <li><a href="#">아티스트</a>
+                <ul class="sub">
+                    <li><a href="#">고릴라즈</a></li>
+                    <li><a href="#">메이저 레이저</a></li>
+                    <li><a href="#">아우스게인</a></li>
+                    <li><a href="#">타임로드</a></li>
+                </ul>
+            </li>
+            <li><a href="#">커뮤니티</a>
+                <ul class="sub">
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">사진갤러리</a></li>
+                    <li><a href="#">영상갤러리</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <section class="sec">
+        <h2>slide</h2>
+        <div class="slide">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>1</li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p>Copyright Valley Festival. All rights reserved</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('.main > li').mouseenter(function () {
+                $('.sub', ).stop().slideDown();
+            });
+            $('.main > li').mouseleave(function () {
+                $('.sub', ).stop().slideUp();
+            });
+        });
+
+        $(function () {
+            $('.main > li').mouseenter(function () {
+                $('.nav_bg', ).stop().slideDown();
+            });
+            $('.main > li').mouseleave(function () {
+                $('.nav_bg', ).stop().slideUp();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

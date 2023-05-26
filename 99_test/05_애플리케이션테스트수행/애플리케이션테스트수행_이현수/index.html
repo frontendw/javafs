@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valley Festival_이현수</title>
+    <style>
+        @font-face {
+            font-family: karla;
+            src: url(font/Karla-VariableFont_wght.ttf);
+        }
+
+        /* 초기화 */
+        html {
+            font-size: 10px;
+        }
+
+        .wrap {
+            /* width: 1200px; */
+            margin: 0 auto;
+        }
+
+        body {
+            background: #ffffff;
+            color: #333333;
+            font: 1.5rem/1.6 sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333333;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        /* 헤더 */
+        /* 로고 */
+
+        .logo {
+            background: #5B5798;
+            height: 100px;
+        }
+
+        /* 메인타이틀 애니메이션 적용 */
+        .logo h1 {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            animation: logo 4s forwards;
+        }
+
+        @keyframes logo {
+            0% {
+                left: 45%;
+            }
+
+            100% {
+                left: 50%;
+            }
+        }
+
+        /* 네비 */
+        nav {
+            height: 40px;
+            background: #ff2a71;
+        }
+
+        /* 1depth */
+        .main {
+            display: flex;
+            justify-content: center;
+        }
+
+        .main>li {
+            width: 140px;
+            height: 40px;
+            text-align: center;
+        }
+
+        .main>li>a {
+            line-height: 40px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            margin: 8px 16px;
+        }
+
+        .main>li a:hover {
+            background: #FFE3EA;
+        }
+
+        /* 2depth */
+        .sub {
+            display: none;
+        }
+
+        .sub {
+            position: relative;
+            z-index: 2;
+            height: 100px;
+            background: #abffb592;
+        }
+
+        .sub>li {
+            text-align: center;
+        }
+
+        .sub>li a {
+            padding: 2px 4px;
+            font-size: 1.2rem;
+            color: #000000;
+        }
+
+        .main>li>a:hover+.sub {
+            display: block;
+        }
+
+        /* 슬라이드 이미지 */
+        .slide {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        /* 슬라이드 제목 폰트적용 */
+        .slide h2 {
+            position: absolute;
+            z-index: 3;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            font: 3rem karla, sans-serif;
+            text-shadow: 1px 1px 3px #333333;
+        }
+        /* 슬라이드 이미지 애니메이션 적용 */
+        .slide ul {
+            position: relative;
+            display: flex;
+            left: 0;
+            top: 0;
+            width: 400%;
+            animation: slide 12s infinite;
+            overflow: hidden;
+        }
+
+
+        @keyframes slide {
+            0% {
+                left: 0;
+            }
+
+            5% {
+                left: -100%;
+            }
+
+            33% {
+                left: -100%;
+            }
+
+            38% {
+                left: -200%;
+            }
+
+            66% {
+                left: -200%;
+            }
+
+            71% {
+                left: -300%;
+            }
+
+            99% {
+                left: -300%;
+            }
+
+            99.99% {
+                left: -300%
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+
+        /* 푸터 */
+        footer {
+            background: rgb(0, 0, 0);
+            height: 80px;
+            color: #808080;
+            text-align: center;
+            line-height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Valley Festival</h1>
+        </div>
+        <nav>
+            <ul class="main">
+                <li>
+                    <a href="#">축제소개</a>
+                    <ul class="sub">
+                        <li><a href="#">Festival 소개</a></li>
+                        <li><a href="#">행사장 안내</a></li>
+                        <li><a href="#">조직위원회</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">예약안내</a>
+                    <ul class="sub">
+                        <li><a href="#">예약하기</a></li>
+                        <li><a href="#">예약확인/취소</a></li>
+                        <li><a href="#">단체예약문의</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">아티스트</a>
+                    <ul class="sub">
+                        <li><a href="#">고릴라즈</a></li>
+                        <li><a href="#">메이저 레이저</a></li>
+                        <li><a href="#">아우스게인</a></li>
+                        <li><a href="#">타임로드</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">커뮤니티</a>
+                    <ul class="sub">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">사진갤러리</a></li>
+                        <li><a href="#">영상갤러리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="slide">
+            <h2>Valley Festival</h2>
+            <ul>
+                <li><img src="imges/valley1.jpg" alt="페스티벌1"></li>
+                <li><img src="imges/valley2.jpg" alt="페스티벌2"></li>
+                <li><img src="imges/valley3.jpg" alt="페스티벌3"></li>
+                <li><img src="imges/valley1.jpg" alt="페스티벌1"></li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p>Copyright Valley Festival. All rights reserved.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $(".main > li").mouseenter(function () {
+            $(".sub").stop().slideDown();
+        });
+        $(".main > li").mouseleave(function () {
+            $(".sub").stop().slideUp();
+        });
+    </script>
+</body>
+
+</html>

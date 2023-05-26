@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ValleyFestival_김종우</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Single+Day&display=swap');
+
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+            background: #ffffff;
+            color: #333;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        body {
+            font: 1.5rem/1.8 sans-serif;
+        }
+
+        /* header */
+        header {
+            font-size: 5rem;
+            text-align: center;
+            height: 150px;
+            background: #cbcbcb;
+            padding: 30px 0;
+        }
+
+        header div {
+            position: relative;
+            opacity: 0;
+        }
+
+        .ani {
+            animation: opa 5s forwards;
+        }
+
+        @keyframes opa {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* nav */
+        /* 1 depth */
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        .main>li {
+            float: left;
+            width: 200px;
+            height: 60px;
+            margin: 0 40px;
+            background: #000;
+            text-align: center;
+
+        }
+
+        .main>li>a {
+            display: block;
+            font-size: 1.6rem;
+            font-weight: bold;
+            line-height: 60px;
+            color: #fff;
+            transition: .3s;
+        }
+
+        .main>li>a:hover {
+            background: #555;
+
+        }
+
+        /* 2depth */
+        .sub {
+            display: none;
+            padding: 10px 0 20px 0;
+            background: #777;
+            opacity: 0.9;
+
+        }
+
+        .sub a {
+            padding: 4px 8px;
+            font-size: 1.4rem;
+            font-weight: bold;
+
+        }
+
+        .sub a:hover {
+            background: #999;
+            color: #fff;
+
+        }
+
+        #wrap {
+            width: 100%;
+        }
+
+        header {
+            height: 150px;
+            background: #cbcbcb;
+        }
+
+
+        nav {
+            height: 60px;
+        }
+
+        h1 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h1 a {
+            color: #fff;
+            font-size: 4rem;
+            text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        #slide {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        #slide>ul {
+            display: flex;
+            width: 400%;
+            padding: 0;
+            position: relative;
+            animation: slide 9s infinite;
+            z-index: -1;
+        }
+
+        #slide ul li {
+            width: 100%;
+            height: 500px;
+            z-index: -1;
+
+        }
+
+        #slide>ul>li:nth-of-type(1) {
+            background-image: url(./images/Slide1.png);
+        }
+
+        #slide>ul>li:nth-of-type(2) {
+            background-image: url(./images/Slide2.png);
+        }
+
+        #slide>ul>li:nth-of-type(3) {
+            background-image: url(./images/Slide3.png);
+        }
+
+        #slide ul li:nth-of-type(4) {
+            background-image: url(./images/Slide1.png);
+        }
+
+        @keyframes slide {
+            0% {
+                left: 0;
+            }
+
+            5% {
+                left: 0%;
+            }
+
+            33% {
+                left: -100%;
+            }
+
+            38% {
+                left: -100%;
+            }
+
+            66% {
+                left: -200%;
+            }
+
+            71% {
+                left: -200%;
+            }
+
+            99% {
+                left: -300%;
+            }
+
+            99.99% {
+                left: -300%;
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+
+        footer {
+            height: 150px;
+            color: #fff;
+            font-size: 2rem;
+            background: #5c5c5c;
+            text-align: center;
+            padding: 55px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="ani">Valley Festival</div>
+    </header>
+    <div id="wrap">
+        <nav id="gnb">
+            <ul class="main">
+                <li>
+                    <a href="#">축제소개</a>
+                    <ul class="sub">
+                        <li><a href="#">Fsetival 소개</a></li>
+                        <li><a href="#">행사장 안내</a></li>
+                        <li><a href="#">조직위원회</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">예약안내</a>
+                    <ul class="sub">
+                        <li><a href="#">예약하기</a></li>
+                        <li><a href="#">예약확인/취소</a></li>
+                        <li><a href="#">단체예약문의</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">아티스트</a>
+                    <ul class="sub">
+                        <li><a href="#">고릴라즈</a></li>
+                        <li><a href="#">에이저 레인저</a></li>
+                        <li><a href="#">아우스게인</a></li>
+                        <li><a href="#">타임로드</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">커뮤니티</a>
+                    <ul class="sub">
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">사진갤러리</a></li>
+                        <li><a href="#">영상갤러리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="logo">
+            <h1><a href="logo">Valley Festival</a></h1>
+            <div id="slide">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>Copyright Vallery Festival. All rights reserved</footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('nav').mouseenter(function () {
+                $('.sub').stop().slideDown();
+            });
+            $('nav').mouseleave(function () {
+                $('.sub').stop().slideUp();
+            });
+        });
+
+    </script>
+</body>
+
+</html>
