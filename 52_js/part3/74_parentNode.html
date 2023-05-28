@@ -12,14 +12,12 @@
     <p><span class="txt1">텍스트</span></p>
     <p><span class="txt2">텍스트</span></p>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         /* 
-            $('선택자').parent() ~ 부모 요소 선택
+            요소.parentNode ~ 부모 요소 선택
         */
 
-        
-        $('.txt1').parent().css({border: '1px solid red'});
+        document.querySelector('.txt1').parentNode.style.border = '1px solid red';
     </script>
 </body>
 
