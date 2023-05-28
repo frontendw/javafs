@@ -21,17 +21,15 @@
 
     <script>
         /* 
-            $('선택자').width() ~ 요소의 너비 반환
-            $('선택자').height() ~ 요소의 높이 반환
-            $('선택자').width(값) ~ 요소의 너비 설정
-            $('선택자').height(값) ~ 요소의 높이 설정
+            요소.offsetWidth ~ 패딩, 테두리 및 스크롤 막대를 포함하여 요소의 볼 수 있는 너비(픽셀 단위)를 반환
+            요소.offsetHeight ~ 패딩, 테두리 및 스크롤 막대를 포함하여 요소의 볼 수 있는 높이(픽셀 단위)를 반환
         */
 
         const divTag = document.querySelector('div');
         
         divTag.onclick = function () {
             let w = this.offsetWidth;
-            this.offsetHeight = w + 'px';
+            this.style.height = w + 'px';
             console.log(w);
         };
     </script>
