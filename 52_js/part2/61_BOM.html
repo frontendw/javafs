@@ -12,20 +12,32 @@
     <h1>브라우저 객체</h1>
     <script>
         /* 
-             브라우저 객체 모델(BOM, Browser Object Model)
-             window, document, screen, location, history, navigator
+            브라우저 객체 모델(BOM, Browser Object Model)
+            window
+                - 브라우저 창이 열릴 때마다 하나씩 만들어진다.
+                - 브라우저 창 안의 최상위에 있다.
+            document
+                - 웹 문서마다 하나씩 있으며 <body> 태그를 만나면 만들어진다.
+                - HTML 문서의 정보가 담겨 있다.
+            location
+                - 현재 페이지의 URL 정보가 담겨 있다.
+            screen
+                - 현재 사용하는 화면 정보를 다룬다.
+            history
+                - 현재 창에서 사용자의 방문 기록을 저장한다.
+            navigator
+                - 현재 사용하는 브라우저의 정보가 들어 있다.
 
-             window: 브라우저 객체의 최상위 객체
-
-             alert('메시지'): 알림 창 출력
-             prompt('텍스트'[, '기본텍스트']): 프롬프트 창 입력
-             confirm('메시지'): 확인/취소 창
+            window 객체는 기본 객체이므로 'window.'를 생략할 수 있다.
+            alert('메시지'): 알림 창 출력
+            prompt('텍스트'[, '기본텍스트']): 프롬프트 창 입력
+            confirm('메시지'): 확인/취소 창
              
-             open('URL', '새 창 이름', '새 창 옵션'): URL 페이지를 새 창으로 열기
-             close(): 창 닫기
+            open('URL', '창 이름', '창 옵션'): URL 페이지를 새 창으로 열기
+            close(): 창 닫기
 
-             setInterval(함수, 시간): 일정한 시간(밀리초) 간격으로 코드를 반복 실행
-             setTimeout(함수, 시간): 일정한 시간(밀리초) 후에 코드를 한 번 실행
+            setInterval(함수, 시간): 일정한 시간(밀리초) 간격으로 코드를 반복 실행
+            setTimeout(함수, 시간): 일정한 시간(밀리초) 후에 코드를 한 번 실행
         */
 
     </script>
