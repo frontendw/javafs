@@ -35,25 +35,27 @@
         <li class="pause">pause</li>
     </ul>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         /* 
-            $('video').get(n) ~ 비디오 참조 (단, n = 0, 1, 2, ...)
-            $('video').get(n).load() ~ 비디오 불러오기
-            $('video').get(n).play() ~ 비디오 재생하기
-            $('video').get(n).pause() ~ 비디오 불러오기
+            비디오요소.load() ~ 비디오 불러오기
+            비디오요소.play() ~ 비디오 재생하기
+            비디오요소.pause() ~ 비디오 불러오기
         */
 
-            var vid = $('video').get(0);
-            $('.load').on('click', function(){
-                vid.load();
-            });
-            $('.play').on('click', function(){
-                vid.play();
-            });
-            $('.pause').on('click', function(){
-                vid.pause();
-            });
+        const loadBtn = document.querySelector('.load');
+        const playBtn = document.querySelector('.play');
+        const pauseBtn = document.querySelector('.pause');
+        const videoBox = document.querySelector('video');
+
+        loadBtn.onclick = function(){
+            videoBox.load();
+        };
+        playBtn.onclick = function(){
+            videoBox.play();
+        };
+        pauseBtn.onclick = function(){
+            videoBox.pause();
+        };
     </script>
 </body>
 

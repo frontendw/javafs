@@ -32,19 +32,22 @@
     </ul>
     <div></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         /* 
-            $('선택자').addClass('클래스') ~ 요소의 클래스 추가
-            $('선택자').removeClass('클래스') ~ 요소의 클래스 제거
+            요소.classList.add('클래스') ~ 요소의 클래스 추가
+            요소.classList.remove('클래스') ~ 요소의 클래스 제거
         */
-        
-        $('li').eq(0).on('click', function(){
-            $('div').addClass('on');
-        });
-        $('li').eq(1).on('click', function(){
-            $('div').removeClass('on');
-        });
+
+        const li0 = document.querySelectorAll('li')[0];
+        const li1 = document.querySelectorAll('li')[1];
+        const box = document.querySelector('div');
+
+        li0.onclick = function(){
+            box.classList.add('on');
+        };
+        li1.onclick = function(){
+            box.classList.remove('on');
+        };
     </script>
 </body>
 

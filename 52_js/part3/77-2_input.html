@@ -21,20 +21,6 @@
             부모노드.appendChild(자식노드) ~ 부모 노드에 자식 노드 연결
         */
 
-        document.querySelector('button').onclick = newRegister;
-
-        function newRegister() {
-            const newItem = document.createElement('li');
-            const subject = document.querySelector('#subject');
-            const newText = document.createTextNode(subject.value);
-
-            newItem.appendChild(newText);
-
-            const itemList = document.querySelector('#itemList');
-            itemList.appendChild(newItem);
-
-            subject.value='';
-        }
     </script>
 </body>
 

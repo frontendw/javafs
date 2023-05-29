@@ -8,31 +8,24 @@
     <title>HTML+CSS+JS</title>
     <style>
         div {
-            float: left;
             width: 200px;
             height: 200px;
-            margin: 50px;
-        }
-        .box1 {
             background: blue;
-        }
-        .box2 {
-            background: red;
+            margin-top: 300px;
         }
     </style>
 </head>
 
 <body>
-    <div class="box1"></div>
-    <div class="box2"></div>
+    <div></div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         /* 
-            $('선택자').css({속성명: 값});
+            요소.offsetTop ~ 창 끝에서 요소의 y축 위치 반환
         */
 
-        $('.box2').css({width: '300px', height: '300px'});
+        let ab = document.querySelector('div').offsetTop;
+        alert(ab);
     </script>
 </body>
 

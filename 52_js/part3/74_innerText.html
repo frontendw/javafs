@@ -39,16 +39,7 @@
             요소.textContent = '문자열'; ~ 문자열 설정
         */
 
-        const liTags = document.querySelectorAll('li');
-        const divTag = document.querySelector('div');
 
-        for (let i = 0; i < liTags.length; i++) {
-            liTags[i].onclick = function () {
-                let txt = this.innerText;
-                divTag.innerText = txt;
-                divTag.style.background = txt;
-            };
-        }
     </script>
 </body>
 

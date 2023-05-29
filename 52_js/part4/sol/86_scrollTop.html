@@ -23,18 +23,17 @@
 <body>
     <p></p>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         /* 
-            $(window).scrollTop() ~ 창에서 스크롤한 양 반환
+            document.documentElement ~ <html> 요소 반환
+            document.querySelector('html')
+            document.documentElement.scrollTop ~ 창에서 스크롤한 양 반환
         */
 
-        $(function () {
-            $(window).on('scroll', function (e) {
-                var ab = $(this).scrollTop();
-                $('p').text(ab);
-            });
-        });
+        window.onscroll = function (e) {
+            let ab = document.documentElement.scrollTop;
+            document.querySelector('p').innerText = ab;
+        };
     </script>
 </body>
 
