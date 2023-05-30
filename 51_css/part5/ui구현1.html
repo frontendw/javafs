@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ui구현</title>
-    <link rel="stylesheet" href="css/wireframe2.css">
+    <!-- <link rel="stylesheet" href="css/wireframe2.css"> -->
     <style>
         /* reset */
         * {
@@ -15,9 +15,14 @@
             box-sizing: border-box;
         }
 
+        html {
+            font-size: 10px;
+        }
+
         body {
             color: #000;
             background: #fff;
+            font-size: 1.5rem;
         }
 
         a {
@@ -27,6 +32,7 @@
         li {
             list-style: none;
         }
+
         img {
             vertical-align: top;
         }
@@ -35,25 +41,20 @@
         header {
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
-            align-content:center;
-            /* align-items: center; */
+            /* flex-wrap: wrap;
+            align-content:center; */
+            align-items: center;
             position: fixed;
             top: 0;
             z-index: 9999;
             width: 100%;
             padding: 0 32px;
-            height: 154px;
+            height: 54px;
             background: gold;
         }
 
         .logo {
-            height: 30px;
-            background: red;
-        }
-        nav {
-            background: red;
-            height:30px;
+            font-size: 1.5rem;
         }
 
         nav li {
@@ -104,13 +105,15 @@
             justify-content: space-between;
             flex-wrap: wrap;
         }
+
         #menu li {
             position: relative;
             width: 362px;
             margin-bottom: 16px;
             color: #fff;
         }
-        #menu li h3  {
+
+        #menu li h3 {
             position: absolute;
             width: 100px;
             line-height: 40px;
@@ -119,49 +122,23 @@
             background: #555;
         }
 
-        /* 섹션3 */
-        #event_img {
-            position: relative;
+        /* 섹션3: 이벤트 */
+        #event h2+p {
+            margin-bottom: 4px;
         }
 
-        #event_img h2 {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            background: #555;
-            padding: 8px 24px;
-        }
-
-        #event li h3 {
-            margin: 8px 0 8px;
-        }
-
-        #event li a {
-            width: 362px;
-            height: 36px;
-            margin: 8px 0;
-        }
-
-        #event ul::after {
-            content: '';
-            clear: both;
-            display: block;
+        #event ul {
+            display: flex;
         }
 
         #event li {
-            float: left;
             width: 360px;
             height: 240px;
             margin: 0;
         }
 
-        #event h2+p {
-            margin-bottom: 4px;
-        }
-
-        #event li:not(:nth-of-type(4)) {
-            margin-right: 8px;
+        #event li h3 {
+            margin: 8px 0 8px;
         }
 
         #event li a {
@@ -170,8 +147,12 @@
             text-align: center;
             padding: 8px 0;
             margin-top: 8px;
+            width: 362px;
+            height: 36px;
+            margin: 8px 0;
         }
 
+        /* 푸터 */
         footer {
             height: 81px;
             background: #000;
@@ -245,16 +226,19 @@
                 <img src="https://www.dummyimage.com/362x243&text=+">
                 <h3>event1</h3>
                 <p>9999.01.02 ~ 9999.01.10</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente sint architecto, eaque repudiandae
-                    neque rem.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eaque officia enim similique
+                    repellat corporis rem alias at! Non omnis ad consectetur reiciendis corporis magni delectus
+                    molestias obcaecati illo assumenda est quam commodi ea, architecto, aliquam voluptatibus. Distinctio
+                    eos, possimus hic nisi, earum ducimus numquam quas ex, ullam quasi odit.</p>
                 <a href="#">Contact</a>
             </li>
             <li>
                 <img src="https://www.dummyimage.com/362x243&text=+">
                 <h3>event2</h3>
                 <p>9999.01.15 ~ 9999.01.31</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente sint architecto, eaque repudiandae
-                    neque rem.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptatem ducimus, aspernatur,
+                    natus inventore, illo harum alias maxime assumenda nisi autem distinctio molestias? Consectetur
+                    laborum maiores cupiditate officiis, mollitia commodi.</p>
                 <a href="#">Contact</a>
             </li>
             <li>
@@ -269,30 +253,32 @@
                 <img src="https://www.dummyimage.com/362x243&text=+">
                 <h3>event4</h3>
                 <p>9999.02.06 ~ 9999.02.28</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente sint architecto, eaque repudiandae
-                    neque rem.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum ut, sunt natus deserunt consequatur
+                    labore accusantium explicabo omnis temporibus vero optio. Minima ipsum tempora repellat debitis, est
+                    illum corrupti voluptatem ex vel neque. Natus inventore doloremque debitis, praesentium doloribus
+                    delectus?</p>
                 <a href="#">Contact</a>
             </li>
         </ul>
     </section>
-    <section id="event" class="section">
-        <section id="news" class="section">
-            <h2>메가소식</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae enim vel accusantium consequatur similique
-                dolores!</p>
-            <p>Lets get in touch and talk about your next project.</p>
-            <form action="message.php" method="post">
-                <input type="text" name="user_name" placeholder="Name">
-                <input type="email" name="user_email" placeholder="Email">
-                <input type="text" name="user_subject" placeholder="Subject">
-                <input type="text" name="user_comment" placeholder="Comment">
-                <button type="submit">SEND MESSAGE</button>
-            </form>
-            <img src="https://dummyimage.com/1496x837&text=+" alt="메가커피 지도">
-        </section>
-        <footer>
-            <p>Copyright 2023 MagaCoffee. All rights reserved.</p>
-        </footer>
+
+    <section id="news" class="section">
+        <h2>메가소식</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae enim vel accusantium consequatur similique
+            dolores!</p>
+        <p>Lets get in touch and talk about your next project.</p>
+        <form action="message.php" method="post">
+            <input type="text" name="user_name" placeholder="Name">
+            <input type="email" name="user_email" placeholder="Email">
+            <input type="text" name="user_subject" placeholder="Subject">
+            <input type="text" name="user_comment" placeholder="Comment">
+            <button type="submit">SEND MESSAGE</button>
+        </form>
+        <img src="https://dummyimage.com/1496x837&text=+" alt="메가커피 지도">
+    </section>
+    <footer>
+        <p>Copyright 2023 MagaCoffee. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>

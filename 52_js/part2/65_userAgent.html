@@ -24,12 +24,32 @@
             location.reload(); -> 브라우저 새로 고침
 
             navigator.userAgent;
-                - 기본 플랫폼
-                - 운영체제 정보
-                - 사용중인 브라우저의 엔진 이름
-                - 사용 중인 브라우저 이름
-                - 같은 엔진을 사용 중이며 호환 가능한 다른 브라우저
+                - 기본 플랫폼: Mozilla/5.0
+                - 운영체제 정보: Windows NT 10.0; Win64; x64
+                - 사용중인 브라우저의 엔진 이름: AppleWebKit/537.36 (KHTML, like Gecko)
+                - 사용 중인 브라우저 이름: Chrome/113.0.0.0
+                - 같은 엔진을 사용 중이며 호환 가능한 다른 브라우저: Safari/537.36
+
+                Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36
+
+                Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.57
+
+                Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/113.0
+
+                mozilla/5.0 (linux; android 13; sm-a716s build/tp1a.220624.014; wv) applewebkit/537.36 (khtml, like gecko) version/4.0 chrome/113.0.5672.132 mobile safari/537.36;kakaotalk 2410230
+
+                Mozilla/5.0 (iPhone; CPU iPhone OS 16_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/113.0.5672.121 Mobile/15E148 Safari/604.1
+
+
+
+            요소.indexOf('문자열') ~ 색인번호, 찾는 문자열이 없으면 -1
+
+            적응형
+            www.naver.com ~ 데스크탑
+            m.naver.com ~ 모바일
         */
+
+        console.log(navigator.userAgent);
 
         var info = navigator.userAgent.toLowerCase();
         var osImg = null;
@@ -46,9 +66,8 @@
 
         document.write('<img src=\'../assets/' + osImg + '\'>', '<br>');
 
-        var scr = screen;
-        var sc_w = scr.width;
-        var sc_h = scr.height;
+        var sc_w = screen.width;
+        var sc_h = screen.height;
 
         document.write('모니터 해상도 너비:' + sc_w + 'px', '<br>');
         document.write('모니터 해상도 높이:' + sc_h + 'px', '<br>');
