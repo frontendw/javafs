@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>회원 가입</h1>
     <input type="text" id="userId">
     <input type="password" id="userPw">
     <button id="memberBtn">회원가입</button>
-
     <script>
         let userId = document.querySelector('#userId');
         let userPw = document.querySelector('#userPw');
         let memberBtn = document.querySelector('#memberBtn');
 
-        document.onchange = member;
-
-        function member() {
+        memberBtn.onclick = function () {
             userId = userId.value;
             userPw = userPw.value;
-        }
 
-        memberBtn.onclick = function(){
-            location.href = 'login.html';
+            location.href = 'login.html?' + userId + '/' + userPw;
         };
-
     </script>
 </body>
+
 </html>

@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <input type="text" id="newId">
     <input type="password" id="newPw">
     <button id="loginBtn">로그인</button>
     <a href="member.html">회원가입</a>
-
     <script>
-        import {userId, userPw} from 'member.html';
-        const newId = document.querySelector('#newId');
-        const newPw = document.querySelector('#newPw');
+        let newId = document.querySelector('#newId');
+        let newPw = document.querySelector('#newPw');
+        let loginBtn = document.querySelector('#loginBtn');
+        
+        let temp = location.href.split('?');
+        let data = temp[1].split('/');
+        let userId = data[0];
+        let userPw = data[1];
 
-        document.onchange = login;
+        loginBtn.onclick = login;
 
         function login() {
-            console.log(newId.value);
-            console.log(newPw.value);
-            console.log(userId.value);
-            console.log(userPw.value);
+            newId = newId.value;
+            newPw = newPw.value;
+
+            if (newId == userId && newPw == userPw) {
+                location.href = 'mukjippa.html';
+            } else {
+                alert('잘못 입력하셨습니다.');
+                location.reload();
+            }
         }
+
     </script>
 </body>
+
 </html>
