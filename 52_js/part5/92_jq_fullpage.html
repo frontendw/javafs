@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullPage</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #fullpage div {
+            height: 100vh;
+        }
+
+        #section1 {
+            background: #FF5F45;
+        }
+
+        #section2 {
+            background: #0798EC;
+        }
+
+        #section3 {
+            background: #FC6C7C;
+        }
+
+        #section4 {
+            background: #FEC401;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fullpage">
+        <div id="section1" class="section">섹션1</div>
+        <div id="section2" class="section">섹션2</div>
+        <div id="section3" class="section">섹션3</div>
+        <div id="section4" class="section">섹션4</div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <script>
+        /* 
+            이벤트: mousewheel
+            메서드: mousewheel(), prev(), next(), offset().top, stop(), animate()
+            키워드: this
+        */
+
+        $('.section').mousewheel(function (e, delta) {
+            if (delta > 0) {
+                var prev = $(this).prev().offset().top;
+                $('html,body').stop().animate({ scrollTop: prev }, 1400, 'easeOutExpo');
+            } else if (delta < 0) {
+                var next = $(this).next().offset().top;
+                $('html,body').stop().animate({ scrollTop: next }, 1400, 'easeOutExpo');
+            }
+        });
+    </script>
+</body>
+
+</html>
