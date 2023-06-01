@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullPage</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #fullpage div {
+            height: 100vh;
+        }
+
+        #section1 {
+            background: #FF5F45;
+        }
+
+        #section2 {
+            background: #0798EC;
+        }
+
+        #section3 {
+            background: #FC6C7C;
+        }
+
+        #section4 {
+            background: #FEC401;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="fullpage">
+        <div id="section1" class="section">섹션1</div>
+        <div id="section2" class="section">섹션2</div>
+        <div id="section3" class="section">섹션3</div>
+        <div id="section4" class="section">섹션4</div>
+    </div>
+    <script>
+        /* 
+            이벤트: mousewheel
+            메서드: mousewheel(), prev(), next(), offset().top, stop(), animate()
+            키워드: this
+        */
+
+        const sections = document.querySelectorAll('.section');
+
+        window.onscroll = function (e) {
+            for (let i = 0; i < sections.length; i++) {
+                sections[i].onwheel = function (e) {
+                    if (e.deltaY > 0) {
+                        window.scrollTo({top: window.innerHeight, behavior: 'smooth'});
+                    } else {
+                        console.log('마우스휠올림');
+                        window.scrollTop = window.innerHeight;
+                    }
+                };
+            }
+        }
+    </script>
+</body>
+
+</html>
