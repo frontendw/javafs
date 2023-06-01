@@ -61,7 +61,7 @@
     </div>
 
     <div id="lightbox">
-        <img src="images/pic_1.jpg" alt="" id="lightboxImage">
+        <img src="../assets/pic_1.jpg" alt="" id="lightboxImage">
     </div>
 
     <script>
@@ -83,6 +83,18 @@
             메서드: getAttribute(), setAttribute()
             사용자 정의 함수: showLightbox()
         */
+
+        const lightbox = document.querySelector('#lightbox');
+        const lightboxImg = document.querySelector('#lightboxImage');
+        const imgs = document.querySelectorAll('.pic');
+
+        for (let i = 0; i < imgs.length; i++) {
+            imgs[i].onclick = showLightbox;
+        }
+
+        function showLightbox() {
+            lightbox.style.display = 'block';
+        }
 
     </script>
 </body>
