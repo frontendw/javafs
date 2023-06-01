@@ -68,7 +68,10 @@
         function member() {
             const userId = memberId.value;
             const userPw = memberPw.value;
-            location.href = '93_login.html?' + userId + '/' + userPw;
+            // location.href = '93_login.html?' + userId + '/' + userPw;
+            sessionStorage.setItem('id', userId);
+            sessionStorage.setItem('pw', userPw);
+            location.href = '93_login.html';
         }
     </script>
 </body>

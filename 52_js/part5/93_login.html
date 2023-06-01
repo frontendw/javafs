@@ -69,11 +69,13 @@
     <script>
         // 데이터베이스(Database, DB)
         // location.href = 93_login.html?userId/userPw;
-        let temp = location.href.split('?');
-        let data = temp[1].split('/');
-        console.log(data);
-        const userId = data[0];
-        const userPw = data[1];
+        // let temp = location.href.split('?');
+        // let data = temp[1].split('/');
+        // console.log(data);
+        // const userId = data[0];
+        // const userPw = data[1];
+        const userId = sessionStorage.getItem(id);
+        const userPw = sessionStorage.getItem(pw);
 
         const loginId = document.querySelector('#loginId');
         const loginPw = document.querySelector('#loginPw');
@@ -84,6 +86,7 @@
         loginBtn.onclick = login;
         
         function login(){
+            console.log(sessionStorage.getItem(id));
             let newId = loginId.value;
             let newPw = loginPw.value;
 
