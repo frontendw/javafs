@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <!-- ECMAScript 6 -->
     <h1>화살표 함수</h1>
     <p>화살표 함수는 익명 함수에만 사용할 수 있다.</p>
     <script>
@@ -16,8 +17,9 @@
             익명 함수
             let 변수 = function (매개변수1, 매개변수2, ...) {실행코드;};
             
-            화살표 함수
+            화살표(=>) 함수
             let 변수 = (매개변수1, 매개변수2, ...) => {실행코드;}
+            let 변수 = 매개변수 => 실행코드;
 
             1) 매개변수가 없을 경우
             let 변수 = () => {실행코드;}
@@ -33,6 +35,10 @@
 
         */
 
+        let num1 = function (a, b) {
+            document.write('나는 ' + a + '번째 함수이다.<br>');
+            document.write('나는 ' + b + '번째 함수이다.<br>');
+        }
         let num1 = (a, b) => {
             document.write('나는 ' + a + '번째 함수이다.<br>');
             document.write('나는 ' + b + '번째 함수이다.<br>');
