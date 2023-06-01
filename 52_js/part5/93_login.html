@@ -74,8 +74,8 @@
         // console.log(data);
         // const userId = data[0];
         // const userPw = data[1];
-        const userId = sessionStorage.getItem(id);
-        const userPw = sessionStorage.getItem(pw);
+        const userId = localStorage.getItem('id');
+        const userPw = localStorage.getItem('pw');
 
         const loginId = document.querySelector('#loginId');
         const loginPw = document.querySelector('#loginPw');
@@ -86,7 +86,7 @@
         loginBtn.onclick = login;
         
         function login(){
-            console.log(sessionStorage.getItem(id));
+            console.log(localStorage.getItem('id'));
             let newId = loginId.value;
             let newPw = loginPw.value;
 
