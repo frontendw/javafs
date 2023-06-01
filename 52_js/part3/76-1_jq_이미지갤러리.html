@@ -62,18 +62,16 @@
             위에 큰 이미지가 클릭한 썸네일 이미지와 같은 이미지로 표시되도록 하시오.
 
             선택자: #pic(큰이미지), .small(작은이미지)
-            함수: gallery
-            키워드: this
+            키워드: $(this)
         */
-        const bigImg = $('#pic');
-        const thumbImg = $('.small');
-
-        let gallery = function() {
+        
+        $('.small').click(function () {
             let imgSrc = $(this).attr('src');
-            bigImg.attr('src', imgSrc);
-        }
+            $('#pic').attr('src', imgSrc);
+        });
 
-        thumbImg.onclick = gallery;
+        
+
 
 
 
