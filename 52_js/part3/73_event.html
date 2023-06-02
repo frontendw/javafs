@@ -24,15 +24,18 @@
             background: blue;
         }
         p {
+            position: fixed;
+            right:0;
             font-size: 30px;
         }
     </style>
 </head>
 
 <body>
+    <p>이벤트가 발생했습니다.</p>
+    <input type="text">
     <div class="box1">박스1</div>
     <div class="box2">박스2</div>
-    <p></p>
 
     <script>
         /* 
@@ -40,7 +43,7 @@
 
             이벤트 종류
             1. 마우스 이벤트: click, mouseenter, mouseleave, mousemove
-            2. 키보드 이벤트: keydown, keypress, keyup
+            2. 키보드 이벤트: keydown, keyup
             3. 윈도우 이벤트: scroll, resize
 
             이벤트 처리기(이벤트 핸들러): 이벤트가 발생할 때 그 이벤트에 반응하여 실행하는 함수
@@ -69,6 +72,7 @@
         // .box1을 클릭하면 함수를 호출한다.
         const box1 = document.querySelector('.box1');
         const box2 = document.querySelector('.box2');
+        const inputTag = document.querySelector('input');
         const pTag = document.querySelector('p');
 
         box1.onclick = function () {
@@ -93,6 +97,14 @@
         };
         window.onresize = function(){
             pTag.innerText = '창의 크기 조정되었습니다.';
+        };
+
+        inputTag.onkeydown = function(){
+            pTag.innerText = '키보드 키를 눌렀습니다.';
+        };
+
+        inputTag.onkeyup = function(){
+            pTag.innerText = '키보드 키를 눌렀다 떼었습니다.';
         };
 
     </script>
