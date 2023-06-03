@@ -51,12 +51,15 @@
         */
 
         $('.section').mousewheel(function (e, delta) {
-            if (delta > 0) {
-                var prev = $(this).prev().offset().top;
-                $('html,body').stop().animate({ scrollTop: prev }, 1400, 'easeOutExpo');
+            console($(this).prev());
+            if (delta > 0 && $(this).prev() != null) {
+                let prev = $(this).prev().offset().top;
+                console.log(prev);
+                $('html').stop().animate({ scrollTop: prev }, 1400, 'easeOutExpo');
             } else if (delta < 0) {
-                var next = $(this).next().offset().top;
-                $('html,body').stop().animate({ scrollTop: next }, 1400, 'easeOutExpo');
+                let next = $(this).next().offset().top;
+                console.log(next);
+                $('html').stop().animate({ scrollTop: next }, 1400, 'easeOutExpo');
             }
         });
     </script>
