@@ -43,10 +43,10 @@
         const li1 = document.querySelectorAll('li')[1];
         const box = document.querySelector('div');
 
-        li0.onmouseenter = function(){
+        li0.onclick = function(){
             box.classList.add('on');
         };
-        li1.onmouseleave = function(){
+        li1.onclick = function(){
             box.classList.remove('on');
         };
     </script>

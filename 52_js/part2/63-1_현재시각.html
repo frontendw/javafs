@@ -22,11 +22,16 @@
 </head>
 
 <body>
+    <!-- 
+        요소.toLocaleDateString() ~ 날짜를 문자열로
+        요소.toLocaleTimeString() ~ 시간을 문자열로
+     -->
+     
     <p>현재 시각 <span id="current" class="display"></span></p>
     <script>
-        setInterval(displayNow, 1000);
+        setInterval(timer, 1000);
 
-        function displayNow() {
+        function timer() {
             var now = new Date();
             var currentTime = now.toLocaleTimeString();
 
