@@ -58,9 +58,11 @@
             wArea.innerHTML = week;
 
             let hh = d.getHours();
-            // 13 ~ 23
-            if (hh >= 13) {
-                hh = 'PM ' + (hh - 12) + '시';
+            if (hh >= 22) {
+                hh = 'PM<br> ' + (hh - 12) + '시';
+            // 13 ~ 21
+            } else if (hh >= 13) {
+                hh = '<span class="pm">PM</span> 0' + (hh - 12) + '시';
             // 12
             } else if (hh >= 12) {
                 hh = 'PM ' + hh + '시';
