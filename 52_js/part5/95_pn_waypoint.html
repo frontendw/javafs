@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate Layout</title>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron&family=Play&display=swap');
+
+        section {
+            height: 100vh;
+        }
+
+        #section2 {
+            position: relative;
+        }
+
+        .motion {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 70%;
+            width: 300px;
+            height: 400px;
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Scroll Motion</h1>
+    <section id="section1">
+        <h1>섹션1</h1>
+    </section>
+
+    <section id="section2">
+        <h2>섹션2</h2>
+        <div class="motion">나는 스크롤하면 움직여요~</div>
+    </section>
+    <section id="section3">
+        <h2>섹션3</h2>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script>
+        /* 
+            이벤트: click
+            메서드: click(), fadeOut(), fadeIn(), addClass(), removeClass()
+            키워드: $(this)
+        */
+
+        $(".motion").waypoint(
+            function (e) {
+                if (e == "down") {
+                    $(".motion").animate({
+                        top: 200
+                    });
+                } else {
+                    $(".motion").animate({
+                        top: 800
+                    });
+                }
+            },
+            {
+                offset: "95%"
+            }
+        );
+
+
+    </script>
+</body>
+
+</html>

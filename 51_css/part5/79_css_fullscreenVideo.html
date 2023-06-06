@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullscreen Video</title>
+    <style>
+        /* 대우건설: https://www.daewooenc.com/ */
+        figure {
+            margin-left: 0;
+        }
+        .vid {
+            position: fixed;
+            left: 0;
+            top: -60px;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.9;
+        }
+        .vid video {
+            width: 100%;
+            min-width: 1600px;
+        }
+    </style>
+</head>
+
+<body>
+    <figure class="vid">
+        <video loop autoplay muted>
+            <source src="../assets/video/v.mp4" type="video/mp4">
+        </video>
+    </figure>
+
+</body>
+
+</html>

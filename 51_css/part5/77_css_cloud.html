@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cloud animation</title>
+    <style>
+        .wrap {
+            position: fixed;
+            top:0;
+            left:0;
+            width: 100%;
+            height: 100%;
+            background: url(../assets/pic_1.jpg) 0 0/cover no-repeat;
+        }
+        .wrap>img:nth-child(1) {
+            position: absolute;
+            top: 0;
+            left:-1146px;
+            animation: cloud1 110s linear infinite;
+            opacity: .8;
+        }
+        .wrap>img:nth-child(2) {
+            position: absolute;
+            top:20px;
+            left: 0;
+            animation: cloud2 100s linear infinite;
+            opacity: 0.8;
+        }
+        @keyframes cloud1 {
+            0% {left: -1146px;}
+            100% {left: 1950px;}
+        }
+        @keyframes cloud2 {
+            0% {left: 0;}
+            50% {left: 1950px; opacity: 0;}
+            50.001% {left: -1840px; opacity: 0.8;}
+            100% {left: 0;}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <img src="../assets/cloud1.png" alt="구름1">
+        <img src="../assets/cloud2.png" alt="구름2">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        /* 
+            이벤트: click
+            메서드: click(), fadeOut(), fadeIn(), addClass(), removeClass()
+            키워드: $(this)
+        */
+
+        $('.btnMenu').click(function () {
+            $(this).fadeOut();
+            $('.section').addClass('on');
+            $('nav').addClass('on');
+        });
+
+        $('nav li').click(function () {
+            $('.btnMenu').fadeIn();
+            $('.section').removeClass('on');
+            $('nav').removeClass('on');
+        });
+    </script>
+</body>
+
+</html>

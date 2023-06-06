@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate Layout</title>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron&family=Play&display=swap');
+
+        section {
+            height: 100vh;
+        }
+
+        .result {
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 200px;
+            font-size: 3em;
+        }
+
+        #section2 {
+            position: relative;
+        }
+
+        .motion {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100%;
+            width: 300px;
+            height: 400px;
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="section1">
+        <h1>$(window).scroll, scrollTop()</h1>
+        <p>scroll 이벤트는 요소의 스크롤 막대가 스크롤될 때 발생합니다.</p>
+        <p>scrollTop() 메서드는 선택한 요소의 세로 스크롤 막대 위치를 설정하거나 반환합니다.</p>
+        <div class="result">$(window).scrollTop()의 값</div>
+    </section>
+
+    <section id="section2">
+        <h2>섹션2</h2>
+        <ul>
+            <li class="motion">나는 스크롤하면 움직여요~</li>
+        </ul>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        /* 
+            이벤트: click
+            메서드: click(), fadeOut(), fadeIn(), addClass(), removeClass()
+            키워드: $(this)
+        */
+
+        $(window).scroll(function () {
+            //변수 선언
+            var win = $(window),
+                doc = $(document),
+                result = $(".result"),
+                motion = $(".motion"),
+                documentHeight = doc.height(),
+                windowHeight = win.height(),
+                windowScrollTop = win.scrollTop(),
+                speed = 1000,
+                easing = "easeOutExpo",
+                pos = 200,
+                offset = 1;
+
+            result.html(windowScrollTop + " , " + windowHeight);
+
+            if (windowScrollTop > windowHeight / offset) {
+                //참일 경우
+                motion.stop().animate({ top: pos, opacity: 1 }, speed, easing);
+            } else {
+                //거짓일 경우
+                motion.stop().animate({ top: pos * 5, opacity: 0 }, speed, easing);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
