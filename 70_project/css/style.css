@@ -33,17 +33,32 @@ header i {
 #home {
     position: relative;
     height: 930px;
-    background: url(../images/parallax1.jpg) no-repeat 50% 50%/cover fixed;
+    background: url(../images/parallax1.png) no-repeat 50% 50%/cover fixed;
 }
 
-/* 요소를 부모 안에 정가운데 배치 */
-.logo {
+/* 디지털 시계 */
+.clock {
     position: absolute;
     left: 50%;
     top: 50%;
     padding: 8px 24px;
-    background: #000;
     transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+.clock .time {
+    font-size: 5rem;
+    line-height: 1;
+}
+.clock .pm {
+    display: block;
+    text-align: left;
+    font-size: 2rem;
+}
+.clock .date {
+    font-size: 1.5rem;
+    margin-top: 8px;
+    color: #777;
 }
 
 /* section2~4 공통 */

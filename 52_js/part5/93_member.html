@@ -68,11 +68,7 @@
         function member() {
             const userId = memberId.value;
             const userPw = memberPw.value;
-            // location.href = '93_login.html?' + userId + '/' + userPw;
-            localStorage.setItem('id', userId);
-            localStorage.setItem('pw', userPw);
-            console.log(localStorage.getItem('id'));
-            location.href = '93_login.html';
+            location.href = '93_login.html?' + userId + '/' + userPw;
         }
     </script>
 </body>

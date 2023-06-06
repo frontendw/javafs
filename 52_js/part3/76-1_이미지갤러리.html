@@ -68,16 +68,17 @@
         const bigImg = document.querySelector('#pic');
         const thumbImg = document.querySelectorAll('.small');
 
-        // let gallery = function() {
-        //     let imgSrc = this.getAttribute('src');
-        //     bigImg.setAttribute('src', imgSrc);
-        // }
-
-        // 화살표 함수
-        let gallery = e => {
-            let imgSrc = e.target.getAttribute('src');
+        let gallery = function(b) {
+            console.log(this);
+            let imgSrc = b.target.getAttribute('src');
             bigImg.setAttribute('src', imgSrc);
         }
+
+        // 화살표 함수
+        // let gallery = e => {
+        //     let imgSrc = e.target.getAttribute('src');
+        //     bigImg.setAttribute('src', imgSrc);
+        // }
 
         // i = 0, 1, 2
         for (let i = 0; i < thumbImg.length; i++) {

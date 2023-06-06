@@ -10,6 +10,8 @@
         div {
             width: 200px;
             height: 400px;
+            padding: 20px;
+            border: 5px solid blue;
             margin: 50px;
             background: blue;
         }
@@ -28,8 +30,8 @@
         const divTag = document.querySelector('div');
         
         divTag.onclick = function () {
-            let w = this.offsetWidth;
-            this.style.height = w + 'px';
+            let w = divTag.offsetWidth;
+            divTag.style.height = w + 'px';
             console.log(w);
         };
     </script>
