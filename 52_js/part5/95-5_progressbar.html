@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>circle Progressbar</title>
+    <style>
+        .second {
+            position: relative;
+            padding: 20px;
+            width: 400px;
+        }
+
+        .second>strong {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -50px 0 0 -55px;
+            font-size: 4rem;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js">
+    </script>
+    <script>
+        //https://github.com/kottenator/jquery-circle-progress
+
+        $(function () {
+            var perNum = 70;
+            $('.second.circle').circleProgress({
+                value: perNum / 100,
+                startAngle: 300,
+                size: 400,
+                fill: {
+                    gradient: ["#06afe8", "#77c04a"],
+                    gradientAngle: Math.PI / 2
+                },
+                animation: {
+                    duration: 2200,
+                    easing: "swing"
+                },
+                lineCap: "butt",
+                reverse: true
+
+            }).on('circle-animation-progress', function (event, progress) {
+                $(this).find('strong').html(Math.round(perNum * progress) + '<i>%</i>');
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="second circle">
+        <strong></strong>
+    </div>
+</body>
+
+</html>
