@@ -37,6 +37,12 @@
             속성: scrollTop
             객체: window, document.documentElement
         */
+        const num = document.querySelector('p');
+
+        window.onscroll = function () {
+            let st = document.documentElement.scrollTop;
+            num.innerText = st;
+        };
     </script>
 </body>
 
