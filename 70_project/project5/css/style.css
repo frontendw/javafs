@@ -2,6 +2,78 @@
 @import url('reset.css');
 @import url('typo.css');
 
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron&family=Play&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css');
+/* reset */
+a {
+    text-decoration: none;
+}
+
+body {
+    font-size: 12px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* navigation */
+#menu {
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: -10px;
+}
+
+#menu li {
+    display: inline-block;
+}
+
+#menu a {
+    position: relative;
+    top: 5px;
+    color: #111;
+    background: #fff;
+    padding: 20px 20px 10px;
+    border-radius: 0 0 10px 10px;
+    transition: .3s;
+}
+
+#menu li.active a {
+    color: #fff;
+    background: #111;
+}
+
+#menu a:hover {
+    top: 10px;
+}
+
+/* 오른쪽 페이저 버튼 색 */
+#fp-nav ul li a span {
+    background: #fff;
+}
+
+/* 오른쪽 페이저 툴립 글자 색 */
+#fp-nav ul li .fp-tooltip {
+    color: #fff;
+}
+
+.section {
+    text-align: center;
+    font-size: 3em;
+}
+
+#section3 p {
+    position:absolute;
+    top:50%;
+    left:0%;
+    opacity:0;
+    transform:translate(-50%);
+}
+
+#footer {
+    background:#111;
+    padding: 100px 0;
+    color:#fff;
+}
+
 /* 헤더 */
 header {
     z-index: 9999;
