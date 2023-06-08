@@ -10,9 +10,8 @@
         * {
             margin: 0;
         }
-
         li {
-            list-style: none;
+            list-style:none;
         }
 
         #fullpage div {
@@ -37,22 +36,20 @@
 
         #indicator {
             position: fixed;
-            right: 0;
-            top: 50%;
+            right:0;
+            top:50%;
             transform: translateY(-50%);
             color: #fff;
-            width: 30px;
-            height: 120px;
+            width:30px;
+            height:120px;
         }
-
         #indicator li {
             position: relative;
         }
-
         #indicator li a {
             display: block;
-            width: 5px;
-            height: 5px;
+            width:5px;
+            height:5px;
             margin: 20px 0;
             border-radius: 50%;
             background: #fff;
@@ -60,28 +57,23 @@
             text-align: center;
             text-indent: -9999em;
         }
-
         #indicator li a:hover {
             transform: scale(2.2);
         }
-
-        #indicator li a:hover+span {
+        #indicator li a:hover + span {
             opacity: 1;
         }
-
         #indicator li a.on {
             transform: scale(2.5);
         }
-
-        #indicator li a.on+span {
+        #indicator li a.on + span {
             opacity: 1;
         }
-
         #indicator span {
             position: absolute;
-            right: 40px;
-            top: -8px;
-            opacity: 0;
+            right:40px;
+            top:-8px;
+            opacity:0;
         }
     </style>
 </head>
@@ -107,10 +99,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
 
     <script>
-        $('#indicator a').on('click', function (e) {
-            // a태그 기본 이벤트 제거
+        $('html').stop().animate({scrollTop: 0});
+
+        $('#indicator a').click(function(e){
+            //a 태그의 기본이벤트 제거
             e.preventDefault();
-            $('html,body').animate({ scrollTop: $(this.hash).offset().top })
+            let idx = $(this).parent().index();
+            console.log(idx);
+            let posY = $('.section').eq(idx).offset().top;
+            $('html,body').stop().animate({scrollTop: posY});
+
+            $('#indicator a').removeClass('on');
+            $(this).addClass('on');
         });
     </script>
 </body>

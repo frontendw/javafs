@@ -10,9 +10,8 @@
         * {
             margin: 0;
         }
-
         li {
-            list-style: none;
+            list-style:none;
         }
 
         #fullpage div {
@@ -37,22 +36,20 @@
 
         #indicator {
             position: fixed;
-            right: 0;
-            top: 50%;
+            right:0;
+            top:50%;
             transform: translateY(-50%);
             color: #fff;
-            width: 30px;
-            height: 120px;
+            width:30px;
+            height:120px;
         }
-
         #indicator li {
             position: relative;
         }
-
         #indicator li a {
             display: block;
-            width: 5px;
-            height: 5px;
+            width:5px;
+            height:5px;
             margin: 20px 0;
             border-radius: 50%;
             background: #fff;
@@ -60,28 +57,23 @@
             text-align: center;
             text-indent: -9999em;
         }
-
         #indicator li a:hover {
             transform: scale(2.2);
         }
-
-        #indicator li a:hover+span {
+        #indicator li a:hover + span {
             opacity: 1;
         }
-
         #indicator li a.on {
             transform: scale(2.5);
         }
-
-        #indicator li a.on+span {
+        #indicator li a.on + span {
             opacity: 1;
         }
-
         #indicator span {
             position: absolute;
-            right: 40px;
-            top: -8px;
-            opacity: 0;
+            right:40px;
+            top:-8px;
+            opacity:0;
         }
     </style>
 </head>
@@ -105,12 +97,48 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
 
     <script>
-        $('#indicator a').on('click', function (e) {
-            // a태그 기본 이벤트 제거
-            e.preventDefault();
-            $('html,body').animate({ scrollTop: $(this.hash).offset().top })
+        $('html').stop().animate({scrollTop: 0});
+
+        $('#indicator a').click(indicator);
+
+        function indicator() {
+            let idx = $(this).parent().index();
+            console.log(idx);
+            let posY = $('.section').eq(idx).offset().top;
+            $('html,body').stop().animate({scrollTop: posY});
+            tooltip(idx);
+        }
+
+        function tooltip(index) {
+            $('#indicator a').removeClass('on');
+            $('#indicator a').eq(index).addClass('on');
+        }
+
+        $('.section').mousewheel(function (e, delta) {
+            if (delta > 0) {
+                // 마우스휠을 위로 올림
+                try {
+                    tooltip($(this).index() - 1);
+                    let prev = $(this).prev().offset().top;
+                    console.log(prev);
+                    $('html').stop().animate({ scrollTop: prev });
+                } catch (err) {
+                    return false;
+                }
+            } else if (delta < 0) {
+                // 마우스휠을 아래로 내림
+                try {
+                    tooltip($(this).index() + 1);
+                    let next = $(this).next().offset().top;
+                    console.log(next);
+                    $('html').stop().animate({ scrollTop: next });
+                } catch (err) {
+                    return false;
+                }
+            }
         });
     </script>
 </body>
