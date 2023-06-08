@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate Layout</title>
+    <style>
+        span {
+            position: absolute;
+            transition: 1s ease-out
+        }
+    </style>
+</head>
+
+<body>
+    <span>따</span>
+    <span>라</span>
+    <span>다</span>
+    <span>니</span>
+    <span>기</span>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        /* 
+            이벤트: click
+            메서드: click(), fadeOut(), fadeIn(), addClass(), removeClass()
+            키워드: $(this)
+        */
+
+        const w = $('span').width() / 2;
+
+        $(window).mousemove(function (e) {
+            $('span').eq(0).css({top: e.pageY - w, left: e.pageX - w});
+            let span0Top = $('span').eq(0).offset().top;
+            let span0Left = $('span').eq(0).offset().left;
+
+            let span1Top = e.pageY - 0.5 * (e.pageY - span0Top);
+            let span1Left = e.pageX - 0.5 * (e.pageX - span0Left);
+            $('span').eq(1).css({top: span1Top, left: span1Left});
+
+            let span2Top = e.pageY - 0.5 * (e.pageY - span1Top);
+            let span2Left = e.pageX - 0.5 * (e.pageX - span1Left);
+            $('span').eq(2).css({top: span2Top, left: span2Left});
+
+            let span3Top = e.pageY - 0.5 * (e.pageY - span2Top);
+            let span3Left = e.pageX - 0.5 * (e.pageX - span2Left);
+            $('span').eq(3).css({top: span3Top, left: span3Left});
+
+            let span4Top = e.pageY - 0.5 * (e.pageY - span3Top);
+            let span4Left = e.pageX - 0.5 * (e.pageX - span3Left);
+            $('span').eq(4).css({top: span3Top, left: span4Left});
+        });
+
+    </script>
+</body>
+
+</html>

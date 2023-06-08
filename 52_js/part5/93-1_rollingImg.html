@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        /* 초기화 */
+        * {margin:0; padding:0;}
+        img {vertical-align: top; width: 190px;}
+        ul {list-style: none;}
+
+        /* 슬라이드 */
+        #slideWrap {
+            width:420px;
+            height:68px;
+        }
+        .frame {
+            width: 800px;
+            overflow: hidden;
+        }
+        #slideList {
+            display: flex;
+            position: relative;
+            width: 700px;
+            left:0;
+        }
+        #slideList.on {
+            transition: .3s;
+        }
+
+        #slideList li {
+            width: 190px;
+            margin-right: 10px;
+        }
+        #slideList:after {
+            content:'';
+            display:block;
+            clear:both;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="slideWrap">
+        <div class="frame">
+            <ul id="slideList">
+                <li><img src="../assets/pic_1.jpg" alt="이미지1"></li>
+                <li><img src="../assets/pic_2.jpg" alt="이미지2"></li>
+                <li><img src="../assets/pic_3.jpg" alt="이미지3"></li>
+                <li><img src="../assets/pic_4.jpg" alt="이미지4"></li>
+                <li><img src="../assets/pic_5.jpg" alt="이미지5"></li>
+                <li><img src="../assets/pic_1.jpg" alt="이미지1"></li>
+                <li><img src="../assets/pic_2.jpg" alt="이미지2"></li>
+                <li><img src="../assets/pic_3.jpg" alt="이미지3"></li>
+                <li><img src="../assets/pic_4.jpg" alt="이미지4"></li>
+                <li><img src="../assets/pic_5.jpg" alt="이미지5"></li>
+            </ul>
+            <div>
+                <a href="#" id="prevBtn">prev</a>
+                <a href="#" id="nextBtn">next</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slideList = document.querySelector('#slideList');
+        const prevBtn = document.querySelector('#prevBtn');
+        const nextBtn = document.querySelector('#nextBtn');
+        let num = 1;
+        let colWidth = -200;
+
+        prevBtn.onclick = prevSlide;
+        nextBtn.onclick = nextSlide;
+
+        function prevSlide() {
+            slide('prevBtn');
+        }
+        function nextSlide() {
+            slide('nextBtn');
+        }
+
+        function slide(btn) {
+            if (btn === 'prevBtn') {
+                num--;
+                slideList.classList.add('on');
+                if (num < 1) { 
+                    num = 6;
+                    slideList.classList.remove('on');
+                }
+            } else {
+                num++;
+                slideList.classList.add('on');
+                if (num > 6) {
+                    num = 1;
+                    slideList.classList.remove('on');
+                }
+            }
+            let posX = num * colWidth;
+            slideList.style.left = posX + 'px';
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

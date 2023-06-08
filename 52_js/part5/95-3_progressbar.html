@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Number Animation</title>
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+   <style>
+      @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+      .progress-bar {
+         width: 900px;
+         margin: 3rem auto;
+         border: 1px solid green;
+         position: relative;
+         height: 30px;
+      }
+
+      .progress-bar .bar {
+         position: absolute;
+         left: 0;
+         top: 0;
+         bottom: 0;
+         width: 0;
+         background: green;
+      }
+
+      .progress-bar .rate {
+         position: absolute;
+         right: 10px;
+         top: 0;
+         bottom: 0;
+         font-size: 1.2em;
+         color: green;
+         font-weight: bold;
+         line-height: 30px;
+      }
+   </style>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js">
+   </script>
+   <script>
+      $(function () {
+         var $progressBar = $('.progress-bar'),
+            $bar = $progressBar.find('.bar'),
+            $rate = $progressBar.find('.rate');
+         $rateNum = $rate.attr('data-rate');
+
+         /* 
+         bar의 너비가 60%로 바뀌는 과정이 0.5s
+         a.animate({속성:값, 속성:값, ...}, 시간, 이징, 다른할일);
+         */
+         $bar.animate({
+            width: $rateNum + '%'
+         }, 2500);
+
+         // 숫자 애니메이션 방법1
+         // var timer = setInterval(numberAnimation, 100);
+         // function numberAnimation(){
+         //    var currentRate =  $bar.width() / $progressBar.width() * 100;
+         //    if (currentRate == $rateNum) {
+         //       clearInterval(timer);
+         //    }
+         //    $rate.text(Math.floor(currentRate) + '%');
+         // }
+
+
+         // 숫자 애니메이션 방법2
+         /* 
+         $bar.animate({width:'60%'}, 2500, 'easeOutQuint', function(){console.log('끝')});
+         $bar.animate({width:'60%'}, {
+            duration: 2500, '
+            easing: easeOutQuint', 
+            progress: function(){}, //중간에 진행중에 할일
+            complete: function(){console.log('끝')}
+         });
+         */
+
+         // $({rate:0}).animate({rate:$rateNum}, {
+         //    duration: 2500,
+         //    progress: function(){
+         //       var now = this.rate;
+         //       $rate.text(Math.floor(now) + '%');
+         //    }  //중간 중간 진행중에 힐일
+         // });
+
+         // 숫자 애니메이션 방법3 - 라이브러리 활용
+         var percent_number_step = $.animateNumber.numberStepFactories.append(' %')
+         $rate.animateNumber({
+            number: $rateNum,
+            numberStep: percent_number_step
+         }, {
+            duration: 2500
+         });
+
+      }); //document ready
+   </script>
+</head>
+
+<body>
+   <div class="progress-bar">
+      <div class="bar"></div>
+      <div class="rate" data-rate="60">0%</div>
+   </div>
+</body>
+
+</html>

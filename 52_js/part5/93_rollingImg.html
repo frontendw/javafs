@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <img src="../assets/pic_1.jpg" alt="이미지1" id="gallery">
+        <div>
+            <a href="#" id="prevBtn">prev</a>
+            <a href="#" id="nextBtn">next</a>
+        </div>
+    </div>
+
+    <script>
+        const gallery = document.querySelector('#gallery');
+        const prevBtn = document.querySelector('#prevBtn');
+        const nextBtn = document.querySelector('#nextBtn');
+        let num = 1;
+
+        prevBtn.onclick = prevGallery;
+        nextBtn.onclick = nextGallery;
+
+        function prevGallery() {
+            num--;
+            console.log(num);
+            if (num < 1) num = 7;
+            gallery.setAttribute('src', '../assets/pic_' + num + '.jpg');
+        }
+
+        function nextGallery() {
+            num++;
+            if (num > 7) num = 1;
+            gallery.setAttribute('src', '../assets/pic_' + num + '.jpg');
+        }
+    </script>
+</body>
+
+</html>

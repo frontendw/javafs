@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate Layout</title>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+        @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron&family=Play&display=swap');
+
+        .section {
+            width:1496px;
+            margin: 0 auto;
+        }
+
+        #myProgress1 {
+            width: 100%;
+            background-color: #ddd;
+            margin-bottom: 16px;
+        }
+        #myProgress2 {
+            width: 100%;
+            background-color: #ddd;
+            margin-bottom: 16px;
+        }
+        #myProgress3 {
+            width: 100%;
+            background-color: #ddd;
+            margin-bottom: 16px;
+        }
+        #myProgress4 {
+            width: 100%;
+            background-color: #ddd;
+            margin-bottom: 16px;
+        }
+
+        #myBar1 {
+            width: 0%;
+            height: 30px;
+            background-color: #04AA6D;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+        #myBar2 {
+            width: 0%;
+            height: 30px;
+            background-color: #04AA6D;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+        #myBar3 {
+            width: 0%;
+            height: 30px;
+            background-color: #04AA6D;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+        #myBar4 {
+            width: 0%;
+            height: 30px;
+            background-color: #04AA6D;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+
+        #box {
+            height: 2000px;
+        }
+
+        p {
+            position: fixed;
+            right:100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <h1>Progress Bar</h1>
+        <p>Scroll Motion</p>
+        <div id="box">박스</div>
+        <div id="myProgress1">
+            <div id="myBar1">10%</div>
+        </div>
+        <div id="myProgress2">
+            <div id="myBar2">10%</div>
+        </div>
+        <div id="myProgress3">
+            <div id="myBar3">10%</div>
+        </div>
+        <div id="myProgress4">
+            <div id="myBar4">10%</div>
+        </div>
+    </div>
+
+    <br>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        /* 
+            이벤트: click
+            메서드: click(), fadeOut(), fadeIn(), addClass(), removeClass()
+            키워드: $(this)
+        */
+
+
+        // 변수 선언
+        const result = document.querySelector("p"),
+            wh = window.innerHeight,
+            pos = 200;
+
+        window.addEventListener("scroll", function () {
+            //변수 선언
+            // let st = this.pageYOffset;
+            let st = this.scrollY;
+
+            result.innerHTML = st + " , " + wh;
+
+            if (st > wh) {
+                //참일 경우
+                move();
+            } else {
+                //거짓일 경우
+            }
+        });
+
+
+        var i = 0;
+        function move() {
+            if (i == 0) {
+                i = 1;
+                var elem1 = document.getElementById("myBar1");
+                var elem2 = document.getElementById("myBar2");
+                var elem3 = document.getElementById("myBar3");
+                var elem4 = document.getElementById("myBar4");
+                var width = 0;
+                var id1 = setInterval(frame1, 50);
+                var id2 = setInterval(frame2, 50);
+                var id3 = setInterval(frame3, 50);
+                var id4 = setInterval(frame4, 50);
+                function frame1() {
+                    if (width >= 95) {
+                        clearInterval(id1);
+                        i = 0;
+                    } else {
+                        width++;
+                        elem1.style.width = width + "%";
+                        elem1.innerHTML = width + "%";
+                    }
+                }
+                function frame2() {
+                    if (width >= 85) {
+                        clearInterval(id2);
+                        i = 0;
+                    } else {
+                        width++;
+                        elem2.style.width = width + "%";
+                        elem2.innerHTML = width + "%";
+                    }
+                }
+                function frame3() {
+                    if (width >= 75) {
+                        clearInterval(id3);
+                        i = 0;
+                    } else {
+                        width++;
+                        elem3.style.width = width + "%";
+                        elem3.innerHTML = width + "%";
+                    }
+                }
+                function frame4() {
+                    if (width >= 70) {
+                        clearInterval(id4);
+                        i = 0;
+                    } else {
+                        width++;
+                        elem4.style.width = width + "%";
+                        elem4.innerHTML = width + "%";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

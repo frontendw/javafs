@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
+</head>
+
+<body>
+    <h1>시간에 따라 배경색 바꾸기</h1>
+    <p></p>
+
+    <script>
+        const bodyBg = document.querySelector('body');
+        const clock = document.querySelector('p');
+
+        setInterval(timer, 1000);
+
+        function timer() {
+            let d = new Date();
+            let time = d.getSeconds();
+            clock.innerText = time;
+            bg(time);
+        }
+
+        function bg(ss) {
+            if (ss === 30) {
+                bodyBg.style.backgroundColor = color1();
+            } else if (ss === 0) {
+                bodyBg.style.backgroundColor = color2();
+            }
+        }
+
+        // 100000 ~ 555555, 555555 ~ 999999
+        // Math.floor(Math.random() * (최댓값 - 최솟값 + 1)) + 최솟값
+        function color1() {
+            return '#' + (Math.floor(Math.random() * (555555 - 100000 + 1)) + 100000);
+        }
+        function color2() {
+            return '#' + (Math.floor(Math.random() * (999999 - 555555 + 1)) + 555555);
+        }
+
+    </script>
+</body>
+
+</html>
