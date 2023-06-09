@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업다운게임_정재욱</title>
+    <style>
+        /* 외부폰트: 이사만루 */
+        @font-face {
+            font-family: 'GongGothicMedium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* 가로 해상도: 390px */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            font: 1.5rem/1.8 'GongGothicMedium', sans-serif;
+        }
+
+        #wrap {
+            margin: 100px 30px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 32px;
+        }
+
+        button {
+            width: 100%;
+            margin: 8px 0;
+            padding: 8px;
+            font-size: 20px;
+            background: #B3A8F5;
+            cursor: pointer;
+            border-radius: 7px;
+        }
+
+        img {
+            margin-top: 16px;
+            width: 50%;
+            height: auto;
+        }
+
+        @media (min-width: 992px) {
+            img {
+                width: auto;
+                max-height: 356px;
+            }
+        }
+
+        #member {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 100px;
+            font-size: 1.5rem;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>업다운 게임</h1>
+        <div id="result">답이 궁금하시죠?</div>
+        <button id="againBtn">다시하기</button>
+        <button id="logoutBtn">게임종료</button>
+        <img src="../app/images/thankyou.gif">
+        <p id="member">계정이 없으신가요? <a href="member.html">가입하기</a></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        const againBtn = document.querySelector('#againBtn');
+        const logoutBtn = document.querySelector('#logoutBtn');
+        const result = document.querySelector('#result');
+        // 1~20 사이 정수
+        var comAnswer = Math.floor(Math.random() * 20) + 1;
+        // 시도한 횟수
+        var count = 1;
+        var userAnswer = -1;
+
+        while (userAnswer != comAnswer) {
+            var input = prompt('1~20 중 랜덤 숫자 하나를 맞춰주세요.');
+            // 유저가 숫자 입력
+            userAnswer = parseInt(input);
+
+            if (userAnswer < comAnswer) {
+                alert("UP");
+            } else if (userAnswer > comAnswer) {
+                alert("DOWN");
+            } else {
+                result.innerHTML = "<h3>정답은 </h3>" + comAnswer + " 입니다! " + count + " 번을 시도하셨어요.";
+                break;
+            }
+
+            count++;
+            // 다시하기 버튼
+            againBtn.onclick = function () {
+                location.reload();
+            };
+            // 게임종료 버튼
+            logoutBtn.onclick = function () {
+                location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

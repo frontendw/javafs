@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Roulette</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+        /* 가로 해상도: 390px */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: #424242;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        #wrap {
+            text-align: center;
+        }
+
+        img{
+            margin-top: 216px;
+        }
+
+
+        button {
+            width: 225px;
+            height: 95px;
+            margin: 16px 8px;
+            padding: 8px;
+            font-size: 30px;
+        }
+
+        #Btn{
+            margin-top: 224px;
+            background: #C00003;
+            color: #000;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <img src="images/jSurvived.png" alt="choice">
+        <button id="Btn">JOKER<br>SURVIVED</button>
+    </div>
+    <script>
+        var bullet = location.href.split('?')[1] 
+            bullet = bullet.substring(2)
+        console.log(bullet)
+
+
+        let sur = document.querySelector('#Btn')
+        sur.onclick = function(){
+            location.href = 'yTurn.html?' + bullet
+        }
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

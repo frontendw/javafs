@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <title>야바위_장준영</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+
+        @font-face {
+            font-family: 'East Sea Dokdo', cursive;
+            ;
+            src: url(../app/font/EastSeaDokdo-Regular.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            display: inline-block;
+        }
+
+        li {
+            float: left;
+            list-style: none;
+            margin: 16px;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        #all {
+
+            margin: 100px 30px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 32px;
+        }
+
+        .box {
+            display: block;
+        }
+
+        img {
+            width: 125px;
+            top: 0;
+        }
+
+        #event {
+            z-index: 22;
+            display: none;
+        }
+
+        #rel {
+            display: none;
+        }
+
+        button {
+            width: 100%;
+            margin: 8px 0;
+            padding: 8px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all">
+        <h1>야바위</h1>
+        <ul>
+            <li><img src="../app/images/ima1.jpg" alt="상자" class="box" id="box1"></li>
+            <li><img src="../app/images/ima1.jpg" alt="상자" class="box" id="box2"></li>
+            <li><img src="../app/images/ima1.jpg" alt="상자" class="box" id="box3"></li>
+            <li><img src="../app/images/ima1.jpg" alt="상자" class="box" id="box4"></li>
+        </ul>
+
+
+        <div id="vs">결과확인</div>
+
+        <button id="againBtn">다시하기</button>
+        <button id="logoutBtn">게임종료</button>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <script>
+        var box = $(".box");
+        var event = $("event");
+
+        const againBtn = document.querySelector('#againBtn');
+        const logoutBtn = document.querySelector('#logoutBtn');
+        const result1 = document.querySelector('#vs');
+
+        switch (box) {
+            case "1":
+                box = 1;
+                break;
+            case "2":
+                box = 2;
+                break;
+            case "3":
+                box = 3;
+                break;
+            case "4":
+                box = 4;
+                break;
+        }
+
+        let com = Math.floor(Math.random() * 4) + 1
+        document.write(com)
+
+
+
+        if (box == com) {
+            result1.innerHTML = "축하드립니다.";
+        } else {
+            result1.innerHTML = "틀렸습니다.";
+        }
+
+
+
+
+
+        againBtn.onclick = function () {
+            location.href = 'game.html';
+        };
+
+        logoutBtn.onclick = function () {
+            location.href = 'index.html';
+        };
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Russian Roulette</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+        /* 가로 해상도: 390px */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: #424242;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        #wrap {
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 128px;
+            margin-bottom: 56px;
+            color: #fff;
+            font-size: 34px;
+        }
+        
+        #wrap img{
+            margin-bottom: 64px;
+                   
+        }
+        input {
+            font-size: 20px;
+            border: 1px solid #444;
+            margin: 12px 32px;
+            padding: 16px;
+            background: #d9d9d9;
+        }
+
+        button {
+            width: 308px;
+            margin: 8px 32px;
+            padding: 8px 24px;
+            font-size: 20px;
+            background: #d9d9d9;
+        }
+        
+        h3 {
+            font-size: 15px;
+            color: rgb(255, 0, 0)
+        }
+        
+        p {
+            font-size: 10px;
+            color: rgb(255, 0, 0);
+        }
+        
+        
+        a {
+            color: #daa43b
+        }
+    
+        #member {
+            left: 0;
+            position: absolute;
+            bottom: 100px;
+            color: #777;
+            font-size: 1.5rem;
+            width: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>Russian Roulette</h1>
+        <img src="images/login.png" alt="login">
+        <input type="text" placeholder="ID" id="loginId">
+        <input type="text" placeholder="PW" id="loginPw">
+        <button>LOG_IN</button>
+        <p></p>
+        <p id="member">
+        <h3>Do you want to hang out with me?</h3><a href="join.html">JOIN</a></p>
+    </div>
+    <script>
+        // 데이터베이스(Database, DB)
+        let temp = location.href.split('?');
+        let data = temp[1].split('/');
+
+        const userId = data[0]
+        const userPw = data[1];
+
+        const loginId = document.querySelector('#loginId');
+        const loginPw = document.querySelector('#loginPw');
+        const loginBtn = document.querySelector('button');
+
+        // 로그인 시 입력한 아이디/패스워드
+
+        loginBtn.onclick = login;
+
+        function login() {
+            let newId = loginId.value;
+            let newPw = loginPw.value;
+
+            if (userId === newId) {
+                if (userPw === newPw) {
+                    location.href = "choice.html";
+                } else {
+                    alert('비밀번호를 잘못입력하셨습니다.')
+                    location.reload();
+                }
+            } else {
+                alert('아이디를 잘못입력하셨습니다.')
+                location.reload();
+            }
+        }
+    </script>
+</body>
+
+</html>

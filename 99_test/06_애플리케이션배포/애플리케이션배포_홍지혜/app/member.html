@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>member_홍지혜</title>
+    <script src="https://kit.fontawesome.com/3396824a06.js" crossorigin="anonymous"></script>
+    <style>
+        /* font-family: 'Montserrat', sans-serif; */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
+        /* font-family: 'Grape Nuts', sans-serif; */
+        @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+
+        /* 가로해상도: 390px */
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* --- 기본 글씨체 설정 ---  */
+        html {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 300;
+        }
+
+        h1 {
+            margin-bottom: 32px;
+            font-size: 3rem;
+        }
+
+        p {
+            padding: 5px;
+            font-size: 1.4rem;
+            color: #777;
+        }
+
+        /*  전체 여백 */
+        #wrap {
+            margin: 100px 30px 0;
+            text-align: center;
+        }
+
+        /* back btn */
+        .backpage a {
+            font-size: 2.5rem;
+            color: rgba(255, 0, 123, 0.8);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        /* logo box */
+        #header-div {
+            position: relative;
+            font-size: 4rem;
+            font-weight: 300;
+            font-family: 'Grape Nuts', sans-serif;
+            text-align: center;
+            padding: 120px 0 30px;
+        }
+
+        /* logo design*/
+        .logoimg1 {
+            position: absolute;
+            top: 40%;
+            right: 25%;
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            background: #ff179e11;
+        }
+
+        .logoimg2 {
+            position: absolute;
+            top: 60%;
+            left: 28%;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: #ff179e0f;
+        }
+
+        .logoimg3 {
+            position: absolute;
+            top: 85%;
+            left: 40%;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background: #ff179e10;
+        }
+
+        /* 회원가입 */
+        button {
+            font-size: 2rem;
+            color: #eee;
+            width: 100%;
+            margin: 8px 0;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1.5px solid rgba(255, 0, 123, 0.8);
+            background-color: #ff135e;
+        }
+
+        /* 회원가입 입력창 */
+        input {
+            font-size: 1.8rem;
+            font-weight: 100;
+            width: 100%;
+            margin: 8px 0;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            border: 1.5px solid rgba(255, 0, 123, 0.8);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input:focus::placeholder {
+            transition: .3s;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header-div">
+        <!-- logo design -->
+        <div class="backpage"><a href="index.html"><i class="fa-solid fa-chevron-left"></i></a></div>
+        <div class="logoimg1"></div>
+        <div class="logoimg2"></div>
+        <div class="logoimg3"></div>
+        To-Do List
+    </div>
+    <div id="wrap">
+        <input type="text" placeholder="아이디를 입력하세요" id="memberId">
+        <input type="password" placeholder="비밀번호를 입력하세요" id="memberPw">
+        <button>가입하기</button>
+        <p>아이디와 패스워드를 입력하여 가입하세요</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        // 변수 설정
+        const memberId = document.querySelector('#memberId');
+        const memberPw = document.querySelector('#memberPw');
+        const memberBtn = document.querySelector('button');
+
+        // 회원가입 클릭시 동작
+        memberBtn.onclick = member;
+        function member() {
+            const userId = memberId.value;
+            const userPw = memberPw.value;
+            // 로그인 페이지로 데이터 보내기
+            location.href = 'index.html?' + userId + '/' + userPw;
+        }
+    </script>
+</body>
+
+</html>

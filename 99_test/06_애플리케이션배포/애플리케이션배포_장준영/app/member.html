@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <title>야바위_장준영</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+
+        @font-face {
+            font-family: 'East Sea Dokdo', cursive;
+            ;
+            src: url(../app/font/EastSeaDokdo-Regular.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        #all {
+
+            margin: 100px 30px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 32px;
+        }
+
+        p {
+            font-size: 14px;
+            color: red;
+        }
+
+        input {
+            width: 100%;
+            font-size: 20px;
+            border: 1px solid #444;
+            margin: 8px 0;
+            padding: 16px;
+        }
+
+        button {
+            width: 100%;
+            margin: 8px 0;
+            padding: 8px;
+            font-size: 20px;
+        }
+
+        #member {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 100px;
+            font-size: 1.5rem;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all">
+        <h1>야바위 회원가입</h1>
+        <input type="text" placeholder="아이디를 입력해주세요." id="newlogid">
+        <input type="password" placeholder="비밀번호를 입력해주세요." id="newlogpw">
+        <button>회원가입</button>
+        <p>아이디와 패스워드를 입력 후 가입하기를 누르세요.</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        const memberId = document.querySelector('#newlogid');
+        const memberPw = document.querySelector('#newlogpw');
+        const memberBtn = document.querySelector('button');
+
+        //로그인 시 입력한 아이디/패스워드
+
+        memberBtn.onclick = member;
+
+        function member() {
+            let newId = memberId.value
+            let newPw = memberPw.value
+            location.href = 'index.html?' + newId + '/' + newPw;
+        }
+    </script>
+</body>
+
+</html>

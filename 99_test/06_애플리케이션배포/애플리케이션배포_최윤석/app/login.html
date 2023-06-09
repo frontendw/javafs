@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의점심_최윤석</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap');
+        /* 가로 해상도: 390px */
+
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            font: 1.5rem/1.8 'Noto Serif', serif;
+            margin: 0 auto;
+            background: #000;
+            max-width: 390px;
+
+
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        #wrap {
+            text-align: center;
+        }
+
+
+        #mainImg {
+            background: url(images/라면.png);
+        }
+
+        #space {
+            margin: 0 30px 0;
+        }
+
+        h1 {
+            margin: 3.2rem 0 3.2rem;
+            font-size: 6rem;
+            color: #f00;
+            text-shadow: 1px 2px tomato;
+            height: 26rem;
+            line-height: 26rem;
+        }
+
+        /* font color*/
+        p,
+        #member {
+            color: #eee;
+        }
+
+        a {
+            color: #f00;
+        }
+
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        p:first-of-type {
+            margin-top: 18rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        input,
+        button {
+            border-radius: 1rem;
+            width: 100%;
+            margin: 8px 0;
+            font-size: 1.6rem;
+            padding: 16px;
+
+
+        }
+
+        button {
+            font-weight: 700;
+            cursor: pointer;
+            background: #fff;
+        }
+
+        input:hover,
+        button:hover {
+            background: #ccc;
+        }
+
+        #member {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 100px;
+            font-size: 1.5rem;
+        }
+
+        #copyright {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 50px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="mainImg">
+            <h1>오늘의 점심</h1>
+        </div>
+        <div id="space">
+            <input type="text" placeholder="아이디를 입력하세요." id="loginId">
+            <input type="password" placeholder="비밀번호를 입력하세요." id="loginPw">
+            <button>로그인</button>
+            <p>아이디와 패스워드를 입력후 
+            <br>로그인하세요.</p>
+            <p id="member">계정이 없으신가요? <a href="index.html">가입하기</a></p>
+            <p id="copyright">Copyright 2023 최윤석. All rights reserved.</p>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        // 데이터베이스(Database, DB)
+        // location.href = index.html?userId/userPw;
+        let temp = location.href.split('?');
+        let data = temp[1].split('/');
+        console.log(data);
+        const userId = data[0];
+        const userPw = data[1];
+
+        const loginId = document.querySelector('#loginId');
+        const loginPw = document.querySelector('#loginPw');
+        const loginBtn = document.querySelector('button');
+
+        // 로그인 시 입력한 아이디/패스워드
+
+        loginBtn.onclick = login;
+
+        function login() {
+            let newId = loginId.value;
+            let newPw = loginPw.value;
+
+            if (userId === newId) {
+                if (userPw === newPw) {
+                    location.href = "service.html";
+                } else {
+                    alert('비밀번호를 잘못입력하셨습니다.')
+                    location.reload();
+                }
+            } else {
+                alert('아이디를 잘못입력하셨습니다.')
+                location.reload();
+            }
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
