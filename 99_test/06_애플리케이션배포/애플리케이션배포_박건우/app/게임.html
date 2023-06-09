@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>빠칭코게임_박건우</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @font-face {
+            font-family: 'KOTRA_BOLD-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: white;
+            overflow: hidden;
+        }
+
+        section {
+            margin: 0 auto;
+            width: 390px;
+            height: 900px;
+            padding: 20px 15px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+
+        .score {
+            width: 100%;
+            height: 200px;
+            padding: 12px 8px 0px;
+            border: 3px solid black;
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .score div {
+            display: flex;
+        }
+
+        .score div:first-of-type {
+            justify-content: center;
+            width: 100%;
+        }
+
+        .score div h3 {
+            margin-top: 2px;
+            margin-left: 6px;
+        }
+
+        .score img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .score p {
+            width: 100%;
+            font-weight: bold;
+            text-decoration: line-through double;
+        }
+
+        #main {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            top: 40px;
+        }
+
+        .slotmachine {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: -14px;
+        }
+
+        .slide1,
+        .slide2,
+        .slide3 {
+            border-radius: 5px;
+            width: 80px;
+            height: 157px;
+            top: 77px;
+            overflow: hidden;
+            border: 2px solid #FFBA38;
+            border-top: 1px solid #FFBA38;
+            border-bottom: 1px solid #FFBA38;
+        }
+
+        .slide1 {
+            position: absolute;
+            left: 53px;
+        }
+
+        .slide2 {
+            position: absolute;
+            left: 141px;
+        }
+
+        .slide3 {
+            position: absolute;
+            left: 229px;
+        }
+
+        .slot1,
+        .slot2,
+        .slot3 {
+            position: absolute;
+            animation: slide .3s infinite;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @keyframes slide {
+            0% {
+                top: 0;
+            }
+
+            13% {
+                top: -100%;
+
+            }
+
+            26% {
+                top: -200%
+            }
+
+            39% {
+                top: -300%
+            }
+
+            52% {
+                top: -400%;
+            }
+
+            65% {
+                top: -500%
+            }
+
+            78% {
+                top: -600%;
+            }
+
+            91% {
+                top: -700%;
+            }
+
+            99% {
+                top: -800%
+            }
+
+            99.99% {
+                top: -800%;
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+
+        .page {
+            width: 80px;
+            height: 157px;
+            display: flex;
+            align-items: center;
+            padding-left: 8px;
+            background-color: white;
+        }
+
+        .page img {
+            width: 60px;
+            height: 60px;
+        }
+
+        .btn1,
+        .btn2 {
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            background-color: #C20000;
+            border: none;
+            border-radius: 50%;
+            top: 279px;
+            letter-spacing: 0.5px;
+            font-weight: bold;
+            font-family: 'KOTRA_BOLD-Bold';
+
+        }
+
+        .btn1 {
+            left: 98px;
+
+        }
+
+        .btn2 {
+            left: 212px;
+
+        }
+
+        .lightbox_wrap1,
+        .lightbox_wrap2,
+        .lightbox_wrap3 {
+            position: absolute;
+            top: 77px;
+            z-index: 100;
+            border-radius: 5px;
+            width: 80px;
+            height: 157px;
+            border: 2px solid #FFBA38;
+            border-top: 1px solid #FFBA38;
+            border-bottom: 1px solid #FFBA38;
+            display: none;
+            font-size: 100px;
+            padding-left: 8px;
+        }
+
+        .lightbox_wrap1 {
+            background-color: white;
+            left: 53px;
+        }
+
+        .lightbox_wrap2 {
+            background-color: white;
+            left: 141px;
+        }
+
+        .lightbox_wrap3 {
+            background-color: white;
+            left: 229px;
+        }
+
+        .lightbox1,
+        .lightbox2,
+        .lightbox3 {
+            width: 60px;
+            height: 60px;
+            margin-right: 7px;
+        }
+
+        .result {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 40%);
+            z-index: 9999;
+            width: 288px;
+            height: 172px;
+            padding-top: 32px;
+            background-color: hsla(0, 0%, 80%, 0.8);
+            border-radius: 15PX;
+            animation: result 1s forwards paused;
+            animation-play-state: paused;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .result h3 {
+            font-size: 40px;
+            margin-bottom: 8px;
+        }
+
+        .result button {
+            border: none;
+            background-color: #C20000;
+            padding: 8px 16px;
+            border-radius: 15px;
+            border: 2px solid black;
+        }
+
+        .result div {
+            display: flex;
+            justify-content: space-around;
+            padding: 0 24px;
+        }
+
+        .result i {
+            margin-top: 8px;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        @keyframes result {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+            height: 18%;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            text-align: center;
+            padding-top: 24px;
+        }
+
+        footer h3 {
+            margin-top: 8px;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            font-size: 12px;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        footer a,
+        footer i {
+            color: white;
+            font-size: 28px;
+        }
+
+        footer a {
+            text-decoration-line: underline;
+            text-decoration-style: double;
+            text-underline-offset: 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- seciton -->
+    <section>
+        <audio class="bgm" src="audio/망치끝에걸린달빛.mp3" autoplay=true></audio>
+        <div class="score">
+            <div>
+                <img src="images/img7.jpg" alt="img7">
+                <img src="images/img7.jpg" alt="img7">
+                <img src="images/img7.jpg" alt="img7">
+                <h3> = 1등</h3>
+            </div>
+            <div>
+                <img src="images/img6.jpg" alt="img6">
+                <img src="images/img6.jpg" alt="img6">
+                <img src="images/img6.jpg" alt="img6">
+                <h3> = 2등</h3>
+            </div>
+            <div>
+                <img src="images/img5.jpg" alt="img5">
+                <img src="images/img5.jpg" alt="img5">
+                <img src="images/img5.jpg" alt="img5">
+                <h3> = 3등</h3>
+            </div>
+            <div>
+                <img src="images/img4.jpg" alt="img4">
+                <img src="images/img4.jpg" alt="img4">
+                <img src="images/img4.jpg" alt="img4">
+                <h3> = 4등</h3>
+            </div>
+            <div>
+                <img src="images/img2.jpg" alt="img2">
+                <img src="images/img2.jpg" alt="img2">
+                <img src="images/img2.jpg" alt="img2">
+                <h3> = 5등</h3>
+            </div>
+            <div>
+                <img src="images/img3.jpg" alt="img3">
+                <img src="images/img3.jpg" alt="img3">
+                <img src="images/img3.jpg" alt="img3">
+                <h3> = 6등</h3>
+            </div>
+            <div>
+                <img src="images/img1.jpg" alt="img1">
+                <img src="images/img1.jpg" alt="img1">
+                <img src="images/img1.jpg" alt="img1">
+                <h3> = 7등</h3>
+            </div>
+            <p>당첨 확률 : 2.0408163265306%</p>
+        </div>
+        <div id="main">
+            <img class="slotmachine" src="images/slotimg.jpg" alt="slotmachine">
+            <div class="slide1">
+                <div class="slot1">
+                    <div class="p1 page"><img src="images/img1.jpg" alt="img1"></div>
+                    <div class="p2 page"><img src="images/img2.jpg" alt="img2"></div>
+                    <div class="p3 page"><img src="images/img3.jpg" alt="img3"></div>
+                    <div class="p4 page"><img src="images/img4.jpg" alt="img4"></div>
+                    <div class="p5 page"><img src="images/img5.jpg" alt="img5"></div>
+                    <div class="p6 page"><img src="images/img6.jpg" alt="img6"></div>
+                    <div class="p7 page"><img src="images/img7.jpg" alt="img7"></div>
+                    <div class="p1 page"><img src="images/img1.jpg" alt="img1"></div>
+                </div>
+            </div>
+            <div class="lightbox_wrap1"><img src="" class="lightbox1" alt="choseimg"></div>
+            <div class="slide2">
+                <div class="slot2">
+                    <div class="p3 page"><img src="images/img3.jpg" alt="img3"></div>
+                    <div class="p1 page"><img src="images/img1.jpg" alt="img1"></div>
+                    <div class="p2 page"><img src="images/img2.jpg" alt="img2"></div>
+                    <div class="p6 page"><img src="images/img6.jpg" alt="img6"></div>
+                    <div class="p7 page"><img src="images/img7.jpg" alt="img7"></div>
+                    <div class="p4 page"><img src="images/img4.jpg" alt="img4"></div>
+                    <div class="p5 page"><img src="images/img5.jpg" alt="img5"></div>
+                    <div class="p5 page"><img src="images/img5.jpg" alt="img5"></div>
+                </div>
+            </div>
+            <div class="lightbox_wrap2"><img class="lightbox2" src="" alt="choseimg"></div>
+
+            <div class="slide3">
+                <div class="slot3">
+                    <div class="p7 page"><img src="images/img7.jpg" alt="img7"></div>
+                    <div class="p1 page"><img src="images/img1.jpg" alt="img1"></div>
+                    <div class="p2 page"><img src="images/img2.jpg" alt="img2"></div>
+                    <div class="p6 page"><img src="images/img6.jpg" alt="img6"></div>
+                    <div class="p3 page"><img src="images/img3.jpg" alt="img3"></div>
+                    <div class="p5 page"><img src="images/img5.jpg" alt="img5"></div>
+                    <div class="p4 page"><img src="images/img4.jpg" alt="img4"></div>
+                    <div class="p4 page"><img src="images/img4.jpg" alt="img4"></div>
+                </div>
+            </div>
+            <div class="lightbox_wrap3"><img src="" class="lightbox3" alt="choseimg"></div>
+
+            <div class="result">
+                <h3>결과</h3>
+
+                <div>
+                    <button><a href="게임.html">게임 재시작 <br> <i class="fa-solid fa-arrow-down"
+                                style="color: #000000;"></i></a></button>
+                    <button><a href="로그인.html">게임 끝내기 <br> <i class="fa-sharp fa-solid fa-arrow-up"
+                                style="color: #000000;"></i></a></button>
+                </div>
+            </div>
+            <audio class="btn_audio" src="audio/btn_sound.m4a"></audio>
+            <button class="btn1"> START </button>
+            <button class="btn2"> STOP </button>
+
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
+            // 브금 재생
+            let BGM = document.querySelector(".bgm");
+            BGM.play();
+            BGM.autoplay = true;
+            BGM.loop = true;
+            BGM.volume = 0.15;
+            // 전역함수 선언
+            let go_btn = document.querySelector(".btn1");
+            let stop_btn = document.querySelector(".btn2");
+            let lbox1 = document.querySelector(".lightbox1");
+            let lbox2 = document.querySelector(".lightbox2");
+            let lbox3 = document.querySelector(".lightbox3");
+            let lbox_wrap1 = document.querySelector(".lightbox_wrap1");
+            let lbox_wrap2 = document.querySelector(".lightbox_wrap2");
+            let lbox_wrap3 = document.querySelector(".lightbox_wrap3");
+            // 빠칭코 뽑기
+            let c1 = Math.floor(Math.random() * (7)) + 1;
+            let c2 = Math.floor(Math.random() * (7)) + 1;
+            let c3 = Math.floor(Math.random() * (7)) + 1;
+
+            // 빠칭코 출력
+            let num = 0;
+            go_btn.onclick = function () {
+                location.href = "게임.html"
+            }
+            // 한 번 클릭시 효과 발생
+            stop_btn.onclick = function () {
+                const btn_sound = document.querySelector(".btn_audio");
+                btn_sound.volume = 1;
+                btn_sound.play();
+                num++
+                let sl1 = document.querySelector(".slot1");
+                let sl2 = document.querySelector(".slot2");
+                let sl3 = document.querySelector(".slot3");
+                let r = document.querySelector(".result");
+                let rt = document.querySelector(".result h3");
+
+                // 당첨 여부 확인
+                lbox1.setAttribute("src", ("images/img" + c1 + ".jpg"));
+                lbox2.setAttribute("src", ("images/img" + c2 + ".jpg"));
+                lbox3.setAttribute("src", ("images/img" + c3 + ".jpg"));
+
+                if (c1 == c2 && c2 == c3 && c3 == c1) {
+                    rt.innerText = "당첨!";
+                } else if (c1 == c2 || c2 == c3 || c3 == c1) {
+                    rt.innerText = "아쉽네요 2개!";
+                } else {
+                    rt.innerText = "꽝!";
+                }
+
+                // 룰렛 멈추는 함수
+                if (num == 1) {
+                    sl1.style.animationPlayState = "paused";
+                    lbox_wrap1.style.display = "block";
+                }
+                else if (num == 2) {
+                    sl2.style.animationPlayState = "paused";
+                    lbox_wrap2.style.display = "block";
+
+                }
+                else if (num == 3) {
+                    sl3.style.animationPlayState = "paused";
+                    lbox_wrap3.style.display = "block";
+                    r.style.animationPlayState = "running";
+                }
+
+            }
+
+        </script>
+    </section>
+    <footer>
+        <h4>장시간 게임은 정신건강을 해칠 수 있습니다.</h4>
+        <h3>도박 중독 상담은 국번 없이 <a href="https://www.kcgp.or.kr/pcMain.do"><b>1336</b></a> <i class="fa-solid fa-arrow-left"
+                style="color: #fff;"></i></h3>
+        <p>Copyrigth by pk0426</p>
+    </footer>
+</body>
+
+</html>

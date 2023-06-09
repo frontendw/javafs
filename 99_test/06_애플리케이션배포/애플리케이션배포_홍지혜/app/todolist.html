@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todoList_홍지혜</title>
+    <script src="https://kit.fontawesome.com/3396824a06.js" crossorigin="anonymous"></script>
+    <style>
+        /* font-family: 'Montserrat', sans-serif; */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap');
+
+        /* font-family: 'Grape Nuts', sans-serif; */
+        @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* --- 기본 글씨체 설정 ---  */
+        html {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 10px;
+            overflow: hidden;
+        }
+
+        /* 로고 디자인 */
+        .backpage a {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2.5rem;
+            color: rgba(255, 0, 123, 0.8);
+        }
+
+        .logoimg1 {
+            position: absolute;
+            top: 40%;
+            right: 25%;
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            background: #ff179e11;
+        }
+
+        .logoimg2 {
+            position: absolute;
+            top: 60%;
+            left: 28%;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: #ff179e0f;
+        }
+
+        .logoimg3 {
+            position: absolute;
+            top: 85%;
+            left: 40%;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background: #ff179e10;
+        }
+
+        /* 전체 여백 */
+        main {
+            padding: 20px;
+        }
+
+        /* logo box */
+        #header-div {
+            position: relative;
+            font-size: 4rem;
+            font-weight: 300;
+            text-align: center;
+            font-family: 'Grape Nuts', sans-serif;
+            padding: 120px 0 30px;
+        }
+
+        /* list Box */
+        #main-div {
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+        }
+
+        #main-div::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        #main-div::-webkit-scrollbar-thumb {
+            height: 5%;
+            background-color: rgba(104, 207, 211, 0);
+            border-radius: 10px;
+        }
+
+        #main-div::-webkit-scrollbar-track {
+            background-color: rgba(206, 206, 206, 0);
+        }
+
+        /* list input */
+        input {
+            font-size: 1.5rem;
+            font-weight: 100;
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 30px;
+            border: none;
+            border-radius: 10px;
+            border: 1.5px solid rgba(255, 0, 123, 0.8);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        input:focus::placeholder {
+            transition: .3s;
+            color: #ccc;
+        }
+
+        /* list - li */
+        .todo-box {
+            font-size: 1.5rem;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 5px 0;
+            border-bottom: 1px solid rgba(120, 120, 120, 0.15);
+            transition: .3s;
+        }
+
+        .todo-box p:nth-child(2) {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: rgba(206, 206, 206, 0.5);
+        }
+
+        .todo-box p:nth-child(2):hover {
+            font-size: 2.5rem;
+            color: rgb(255, 75, 75);
+            transition: .8s;
+            cursor: pointer;
+        }
+
+        .todo-text {
+            padding-right: 20px;
+        }
+
+        /* 효과 */
+        .transition-start {
+            padding-top: 1rem;
+            opacity: 0;
+        }
+
+        .transition {
+            padding-top: 0;
+            opacity: .8;
+            transition: all 1s;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="header-div">
+            To-Do List
+            <!-- back btn -->
+            <div class="backpage"><a href="index.html"><i class="fa-solid fa-chevron-left"></i></a></div>
+            <!-- logo design -->
+            <div class="logoimg1"></div>
+            <div class="logoimg2"></div>
+            <div class="logoimg3"></div>
+        </div>
+    </header>
+
+    <main>
+        <input onkeyup=enter() type="text" placeholder="오늘의 할 일은 무엇인가요?">
+        <div id="main-div">
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        const inputValue = document.querySelector('input');
+        const mainDiv = document.querySelector('#main-div');
+        const toDobox = document.querySelector('.todo-box');
+        // 정렬할 때 필요한 숫자 
+        let keyValue = 0;
+        // 시간 출력 함수 
+        const makeTime = function () {
+            // 현재 시간 저장 
+            let nowDate = new Date();
+            let year = nowDate.getFullYear();
+            let month = nowDate.getMonth();
+            let date = nowDate.getDate();
+            let hour = nowDate.getHours();
+            let min = String(nowDate.getMinutes());
+            let sec = nowDate.getSeconds();
+            // 현재 분이 한 자리의 경우 앞에 0을 붙여주는 조건문 
+            if (min < 10) {
+                let newMin = '0' + min;
+                return (`${year}.${month + 1}.${date}_${hour}:${newMin}:${sec}`);
+            } else {
+                let newMin = min;
+                return (`${year}.${month + 1}.${date}_${hour}:${newMin}:${sec}`);
+            };
+        };
+
+        // todo 만드는 함수 
+        const makeTodo = function (localObj) {
+            // 새로운 tododiv 만들기
+            const newTodo = document.createElement("div");
+            const newTodoText1 = document.createElement("p");
+            const newTodoText2 = document.createElement("p");
+            const todoText = document.createElement('span');
+            const time = document.createElement('span');
+            // div 안에 자식 추가
+            newTodo.appendChild(newTodoText1);
+            newTodo.appendChild(newTodoText2);
+            // p 안에 자식 
+            newTodoText1.appendChild(todoText);
+            newTodoText1.appendChild(time);
+            // p 안의 text 설정
+            todoText.innerHTML = localObj.text;
+            // span 안의 text 설정 
+            time.innerHTML = localObj.time;
+            // p 안의 del 설정
+            newTodoText2.innerHTML = 'X'
+            // class 추가
+            todoText.setAttribute("class", "todo-text");
+            newTodo.setAttribute("class", "todo-box");
+            // 효과 클래스 추가 
+            newTodo.classList.add("transition-start");
+            setTimeout(() => {
+                newTodo.classList.add("transition");
+            }, 30);
+            newTodoText2.setAttribute("onclick", "del()");
+            // mainDiv 안에 넣기 
+            mainDiv.appendChild(newTodo);
+        }
+
+        // // toDo 리스트를 추가하는 함수 
+        const toDo = function () {
+            const normalList = [];
+            const sortedKey = [];
+
+            const nowTime = makeTime()
+            for (let i = 0; i < localStorage.length; i++) {
+                const localObj = JSON.parse(localStorage.getItem(localStorage.key(i)))
+                normalList.push(localObj);
+            }
+            // sortList 정렬 후 출력 
+            for (let item = 0; item < normalList.length; item++) {
+                sortedKey.push(normalList[item].keyValue);
+            }
+            // 정렬 
+            sortedKey.sort();
+            // input 에 들어온 text 설정
+            let text = inputValue.value;
+            let maxNum = 0;
+            // 정렬 
+            if (localStorage.length > 0) {
+                // max 구할 수 없는 경우
+                if (localStorage.length === 1) {
+                    maxNum = sortedKey[0] + 1;
+                    keyValue = maxNum
+                } else {
+                    maxNum = (Math.max.apply(null, sortedKey)) + 1;
+                    keyValue = maxNum;
+                }
+            } else {
+                keyValue += 1
+            }
+            // localStorage 객체 형태로 저장
+            const obj = { 'keyValue': keyValue, 'text': text, 'time': nowTime };
+            localStorage.setItem(text, JSON.stringify(obj));
+            // localStorage 객체 불러오기 
+            const localObj = JSON.parse(localStorage.getItem(text));
+            // todo div 만들기
+            makeTodo(localObj);
+            // 스크롤 맨 아래로 고정
+            mainDiv.scrollTop = mainDiv.scrollHeight;
+            // input 값 초기화 
+            inputValue.value = '';
+        }
+
+        // 엔터 이벤트가 일어날 때 함수
+        const enter = function () {
+            if (window.event.keyCode == 13 && (inputValue.value)) {
+                toDo();
+            }
+        }
+
+        const del = function () {
+            // todo 의 부모를 찾아서 todo 를 삭제 
+            const div = event.target.parentNode
+            mainDiv.removeChild(event.target.parentNode);
+            // localStorage key 값에 해당하는 text에 접근 
+            const key = div.childNodes[0].childNodes[0].innerHTML;
+            localStorage.removeItem(key);
+        }
+
+        const sortedList = [];
+        const sortList = [];
+        const keyList = [];
+
+        // 화면에 출력 
+        const list = function () {
+            // localStorage 값으로 list 를 만드는 과정 
+            for (let i = 0; i < localStorage.length; i++) {
+                const localObj = JSON.parse(localStorage.getItem(localStorage.key(i)))
+                sortList.push(localObj);
+            }
+            // sortList 정렬 후 출력 
+            for (let item = 0; item < sortList.length; item++) {
+                keyList.push(sortList[item].keyValue);
+            }
+            // 정렬 
+            keyList.sort();
+            // 정렬된 key 로 맞는 value 찾고, 새로운 리스트 sortedList 에 순서대로 저장.
+            for (let i = 0; i < keyList.length; i++) {
+                for (let j = 0; j < sortList.length; j++) {
+                    if (sortList[j].keyValue === keyList[i]) {
+                        sortedList.push(sortList[j]);
+                    } else {
+                        continue
+                    }
+                }
+            }
+            // 중복제거
+            const norepeatList = Array.from(new Set(sortedList));
+            // 정렬된 리스트로 List 출력 
+            for (let i = 0; i < norepeatList.length; i++) {
+                makeTodo(norepeatList[i]);
+            }
+        }
+
+        list();
+    </script>
+</body>
+
+</html>

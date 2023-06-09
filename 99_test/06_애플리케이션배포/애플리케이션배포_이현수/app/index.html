@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위게임_이현수</title>
+    <style>
+        /* 가로 해상도: 390px */
+        @font-face {
+            font-family: GothicA1;
+            src: url(font/GothicA1.ttf);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        #wrap {
+            margin: 100px 30px 0;
+            text-align: center;
+        }
+
+        /* Gothica1 폰트적용 */
+        h1 {
+            font-family: GothicA1, sans-serif;
+            margin-bottom: 32px;
+        }
+
+        p {
+            font-size: 14px;
+            color: red;
+        }
+
+        input {
+            width: 100%;
+            font-size: 20px;
+            border: 1px solid #444;
+            margin: 8px 0;
+            padding: 16px;
+        }
+
+        button {
+            width: 100%;
+            margin: 8px 0;
+            padding: 8px;
+            font-size: 20px;
+        }
+
+        #member {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 300px;
+            color: #777;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>주사위게임</h1>
+        <input type="text" placeholder="아이디를 입력하세요." id="loginId">
+        <input type="text" placeholder="패스워드를 입력하세요." id="loginPw">
+        <button>로그인</button>
+        <p>아이디와 패스워드를 입력후 로그인하세요.</p>
+        <p id="member">계정이 없으신가요? <a href="member.html">가입하기</a></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        const loginId = document.querySelector('#loginId');
+        const loginPw = document.querySelector('#loginPw');
+        const loginBtn = document.querySelector('button');
+
+        loginBtn.onclick = login;
+        
+        function login() {
+            if (localStorage.getItem("loginId") != null) {
+                let newId = loginId.value;
+                let newPw = loginPw.value;
+
+                if (localStorage.getItem("loginId") === newId) {
+                    if (localStorage.getItem("loginPw") === newPw) {
+                        location.href = "game.html";
+                    } else {
+                        alert('비밀번호가 잘못되었습니다.');
+                        location.reload();
+                    }
+                } else {
+                    alert('아이디를 잘못 입력하셨습니다.');
+                    location.reload();
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

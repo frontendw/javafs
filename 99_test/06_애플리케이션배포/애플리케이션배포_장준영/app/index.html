@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <title>야바위_장준영</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+        @font-face {
+            font-family: 'East Sea Dokdo', cursive;;
+            src: url(../app/font/EastSeaDokdo-Regular.ttf);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        #all {
+
+            margin: 100px 30px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 32px;
+        }
+
+        p {
+            font-size: 14px;
+            color: red;
+        }
+
+        input {
+            width: 100%;
+            font-size: 20px;
+            border: 1px solid #444;
+            margin: 8px 0;
+            padding: 16px;
+        }
+
+        button {
+            width: 100%;
+            margin: 8px 0;
+            padding: 8px;
+            font-size: 20px;
+        }
+
+        #member {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 100px;
+            font-size: 1.5rem;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="all">
+        <h1>야바위</h1>
+        <input type="text" placeholder="아이디를 입력해주세요." id="logid">
+        <input type="password" placeholder="비밀번호를 입력해주세요." id="logpw">
+        <button>로그인</button>
+        <p>아이디와 패스워드를 입력 후 로그인 하세요.</p>
+        <p id="member">계정이 없으신가요? <a href="member.html">가입하기</a></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        let temp = location.href.split('?');
+        let data = temp[1].split('/');
+        console.log(data);
+        const rightId = data[0];
+        const rightPw = data[1];
+
+        //로그인 시 입력한 아이디/패스워드
+        const loginId = document.querySelector('#logid');
+        const loginPw = document.querySelector('#logpw');
+
+        const loginBtn = document.querySelector('button');
+
+
+
+
+        loginBtn.onclick = login;
+
+        function login() {
+            let newId = loginId.value
+            let newPw = loginPw.value
+            if (rightId == newId) {
+                if (rightPw == newPw) {
+                    location.href = "game.html"
+                } else {
+                    alert("패스워드를 잘 못 입력하셨습니다.")
+                    location.reload();
+                }
+            } else {
+                alert("아이디를 잘 못 입력 하셨습니다.")
+                location.reload();
+            }
+        }
+    </script>
+</body>
+
+</html>

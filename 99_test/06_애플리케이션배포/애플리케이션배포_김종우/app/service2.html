@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mukjiba_김종우</title>
+    <style>
+        @font-face {
+            font-family: 'SBAggroB';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        /* 가로 해상도: 390px */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: 'SBAggroB', serif;
+            font-size: 10px;
+        }
+
+        #wrap {
+            top: 100px;
+            margin: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin: 100px 0 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: red;
+        }
+
+        button {
+            width: 100%;
+            margin: 8px 0;
+            padding: 8px;
+            font-size: 20px;
+        }
+
+        #member {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 100px;
+            font-size: 1.5rem;
+            color: #777;
+            margin-top: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>묵찌빠</h1>
+        <div id="result">결과가 궁금하시죠?</div>
+        <button id="againBtn">다시하기</button>
+        <button id="poBtn">포춘쿠키 하러가기</button>
+        <button id="logoutBtn">그만하기</button>
+        <p>아이디와 패스워드를 입력 후 로그인하세요.</p>
+        <p id="member">계정이 없으신가요?<a href="member.html">가입하기</a></p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+
+        const againBtn = document.querySelector('#againBtn')
+        const logoutBtn = document.querySelector('#logoutBtn')
+        const result = document.querySelector('#result')
+        const poBtn = document.querySelector('#poBtn')
+
+        let game = prompt('가위, 바위, 보 셋 중 하나만 입력하세요')
+
+        switch (game) {
+            case '가위':
+                gameNum = 1;
+                break;
+            case '바위':
+                gameNum = 2;
+                break;
+            case '보':
+                gameNum = 3;
+                break;
+            default:
+                alert('잘못작성하였습니다.')
+                location.reload();
+        }
+
+        //1~3 사이 정수
+        //Math.floor(Math.random() * 3) + 1;
+        let com = Math.floor(Math.random() * 3) + 1;
+        document.write('<img src="./assets/math_img_' + com + '.jpg" alt="가위"><br>');
+
+        if (gameNum === com) {
+            result.innerHTML = '<h2>축하합니다. 맞추었습니다.</h2>';
+        } else {
+            result.innerHTML = '<p>틀렸습니다. 다음 기회에...</p>';
+        }
+
+        againBtn.onclick = function () {
+            location.reload();
+        };
+        /* 이용자가 원할경우 오늘의 운세보기 포춘쿠키로도 이동가능 */
+        poBtn.onclick = function () {
+            location.href = 'service1.html';
+        };
+        /* 그만 두길 원하면 처음화면으로 이동 */
+        logoutBtn.onclick = function () {
+            location.href = 'index.html';
+        };
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의점심_최윤석</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500;700&family=Noto+Serif+KR:wght@300;400;500;700&display=swap');
+
+        /* 가로 해상도: 390px */
+
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            font: 1.5rem/1.8 'Noto Serif', serif;
+            margin: 0 auto;
+            background: #000;
+            color: #333;
+            max-width: 390px;
+
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        #wrap {
+            text-align: center;
+        }
+
+        #mainImg {
+            background: url(images/라면.png);
+        }
+
+        #space {
+            margin: 0 30px 0;
+        }
+
+        h1 {
+            margin: 3.2rem 0 3.2rem;
+            font-size: 6rem;
+            color: #f00;
+            text-shadow: 1px 2px tomato;
+            height: 26rem;
+            line-height: 26rem;
+        }
+
+        button {
+            border-radius: 1rem;
+            width: 100%;
+            margin: 8px 0;
+            font-size: 1.6rem;
+            padding: 16px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        button:hover {
+            background: rgba(255, 50, 0, 0.9);
+        }
+
+        #strBtn {
+            margin-top: 3rem;
+        }
+
+        p {
+            color: #eee;
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        b {
+            color: rgba(255, 50, 0, 0.9);
+            border-bottom: 1px solid rgba(255, 50, 0, 0.9);
+        }
+
+        div {
+            color: #fff;
+        }
+
+        #sel1 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #sel2 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #sel2>div {
+            width: 30%;
+        }
+
+        #sel3 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #sel3>div {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        /* 최초 숨김처리 */
+        #sel1,
+        #sel2,
+        #sel3,
+        #rtyBtn {
+            display: none;
+        }
+
+        #copyright {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 50px;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <audio src="audio/Don’tStop_Blanks.mp4" autoplay loop></audio>
+    <div id="wrap">
+        <div id="mainImg">
+            <h1>오늘의 점심</h1>
+        </div>
+        <div id="space">
+            <p id="text">
+                열심히 수업 듣는 당신<br>
+                어느새 시간은 오후 1시 10분이 되었습니다.
+                <br>점심시간 입니다.
+                <br><b>오늘은 무엇을 먹을까요?</b>
+            </p>
+            <button id="strBtn" class="functionBtn">시작하기</button>
+
+            <div id="sel1">
+                <div id="kFood"><button>한식</button></div>
+                <div id="jFood"><button>일식</button></div>
+                <div id="cFood"><button>중식</button></div>
+                <div id="eFood"><button>양식</button></div>
+            </div>
+            <div id="sel2">
+                <div id="riceM"><button>밥</button></div>
+                <div id="noodleM"><button>면</button></div>
+                <div id="etcM"><button>기타</button></div>
+            </div>
+            <div id="sel3">
+                <div id="kRice">
+                    <button onclick="window.open('https://naver.me/5kLtg0na')">찌개</button>
+                    <button onclick="window.open('https://naver.me/5jAmn6Tb')">김밥</button>
+                    <button onclick="window.open('https://naver.me/GWrgKgHG')">국밥</button>
+                </div>
+                <div id="kNoodle">
+                    <button onclick="window.open('https://naver.me/F8KlHj9z')">칼국수</button>
+                    <button onclick="window.open('https://naver.me/GFpsjeai')">냉면</button>
+                </div>
+                <div id="kEtc">
+                    <button onclick="window.open('https://naver.me/x4bi95Os')">분식</button>
+                    <button onclick="window.open('https://naver.me/FYaMKaMA')">편의점</button>
+                </div>
+                <div id="jRice">
+                    <button onclick="window.open('https://naver.me/xxpYpH7P')">돈까스</button>
+                    <button onclick="window.open('https://naver.me/GIqt8v6d')">텐동</button>
+                    <button onclick="window.open('https://naver.me/xmr0im2y')">덮밥</button>
+                    <button onclick="window.open('https://naver.me/FEJdUl7z')">초밥</button>
+                </div>
+                <div id="jNoodle">
+                    <button onclick="window.open('https://naver.me/Gi9kGPGC')">라멘</button>
+                    <button onclick="window.open('https://naver.me/GqBX8B2B')">우동</button>
+                    <button onclick="window.open('https://naver.me/GqBX8B2B')">메밀소바</button>
+                </div>
+                <div id="jEtc">
+                    <button>없음</button>
+                </div>
+                <div id="cRice">
+                    <button onclick="window.open('https://naver.me/5IFT6ZD2')">볶음밥</button>
+                    <button onclick="window.open('https://naver.me/5IFT6ZD2')">짜장밥</button>
+                    <button onclick="window.open('https://naver.me/5IFT6ZD2')">짬뽕밥</button>
+                </div>
+                <div id="cNoodle">
+                    <button onclick="window.open('https://naver.me/5IFT6ZD2')">짬뽕</button>
+                    <button onclick="window.open('https://naver.me/5IFT6ZD2')">짜장면</button>
+                </div>
+                <div id="cEtc">
+                    <button onclick="window.open('https://naver.me/5IFT6ZD2')">만두</button>
+                </div>
+                <div id="eRice">
+                    <div id="rice"><button onclick="window.open('https://naver.me/5KZbVi2Z')">리조또</button></div>
+                </div>
+                <div id="eNoodle">
+                    <div id="noodle"><button onclick="window.open('https://naver.me/5ncPtzM5')">파스타</button></div>
+                </div>
+                <div id="eEtc">
+                    <button onclick="window.open('https://naver.me/GPrOEqMS')">샐러드</button>
+                    <button onclick="window.open('https://naver.me/GEAtGxKs')">샌드위치</button>
+                    <button onclick="window.open('https://naver.me/FxLCudwX')">햄버거</button>
+                </div>
+            </div>
+
+            <button id="rtyBtn" class="functionBtn">다시하기</button>
+            <button id="offBtn" class="functionBtn">종료하기</button>
+        </div>
+        <p id="copyright">Copyright 2023 최윤석. All rights reserved.</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+
+        let i = 0;
+        let j = 0;
+
+        kFood.onclick = sel11
+        jFood.onclick = sel12
+        cFood.onclick = sel13
+        eFood.onclick = sel14
+
+        riceM.onclick = sel21
+        noodleM.onclick = sel22
+        etcM.onclick = sel23
+
+
+
+
+        // 시작버튼 클릭시 titMenu 출력
+        strBtn.onclick = titMenu;
+
+        // titMenu 출력
+        function titMenu() {
+            // 스타트 버튼 숨기기
+            strBtn.style.display = 'none'
+            // 최초 선택지 등장
+            sel1.style.display = 'block'
+            sel1.style.display = 'flex'
+            // 다시하기 등장
+            rtyBtn.style.display = 'block'
+            text.style.display = 'none'
+        }
+
+
+        function sel11() {
+            i = 1 /* i에 1 할당 */
+            sel1.style.display = 'none'
+            sel2.style.display = 'block;'
+            sel2.style.display = 'flex'
+        }
+        function sel12() {
+            i = 2; /* i에 1 할당 */
+            sel1.style.display = 'none'
+            sel2.style.display = 'block'
+            sel2.style.display = 'flex'
+        }
+        function sel13() {
+            i = 3; /* i에 1 할당 */
+            sel1.style.display = 'none'
+            sel2.style.display = 'block'
+            sel2.style.display = 'flex'
+        }
+        function sel14() {
+            i = 4; /* i에 1 할당 */
+            sel1.style.display = 'none'
+            sel2.style.display = 'block'
+            sel2.style.display = 'flex'
+        }
+
+        function sel21() {
+            j = 1 /* j에 1 할당 */
+            sel2.style.display = 'none'
+
+            if (i === 1 && j === 1) {
+                sel3.style.display = 'block'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 2 && j === 1) {
+                sel3.style.display = 'block'
+                sel3.style.display = 'flex'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 3 && j === 1) {
+                sel3.style.display = 'block'
+                sel3.style.display = 'flex'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else {
+                sel3.style.display = 'block'
+                sel3.style.display = 'flex'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            }
+        }
+
+        function sel22() {
+            j = 2 /* j에 2 할당 */
+            sel2.style.display = 'none'
+
+            if (i === 1 && j === 2) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 2 && j === 2) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 3 && j === 2) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eEtc.style.display = 'none'
+            }
+        }
+
+        function sel23() {
+            j = 3 /* j에 3 할당 */
+            sel2.style.display = 'none'
+
+            if (i === 1 && j === 3) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 2 && j === 3) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else if (i === 3 && j === 3) {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+                eEtc.style.display = 'none'
+            } else {
+                sel3.style.display = 'block'
+                kRice.style.display = 'none'
+                kNoodle.style.display = 'none'
+                kEtc.style.display = 'none'
+                jRice.style.display = 'none'
+                jNoodle.style.display = 'none'
+                jEtc.style.display = 'none'
+                cRice.style.display = 'none'
+                cNoodle.style.display = 'none'
+                cEtc.style.display = 'none'
+                eRice.style.display = 'none'
+                eNoodle.style.display = 'none'
+            }
+        }
+
+        // 다시하기 버튼
+        rtyBtn.onclick = function () {
+            location.href = 'service.html';
+        };
+
+        // 나가기 버튼
+        offBtn.onclick = function () {
+            location.href = 'login.html';
+        };
+
+    </script>
+
+</body>
+
+</html>

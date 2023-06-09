@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쉼터_김혜리</title>
+    <style>
+        /* 가로 해상도: 390px */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @font-face {
+        font-family: 'GmarketSansMedium';
+        src: url('font/GmarketSansTTFMedium.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+        html {
+            font-size: 10px;
+        }
+        body {
+            font-family: 'GmarketSansMedium';
+        }
+        #wrap {
+            margin: 100px 30px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 32px;
+        }
+
+        p {
+            font-size: 14px;
+            color: red;
+        }
+
+        button {
+            width: 100%;
+            margin: 8px 0;
+            padding: 8px;
+            font-size: 20px;
+        }
+
+        #member {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 100px;
+            font-size: 1.5rem;
+            color: #777;
+        }
+
+        /* 이미지 영역 */
+
+        #prod-pic {
+            margin: 20px 20px auto 10px;
+            padding: 0;
+        }
+
+        #pic {
+            width: 200px;
+            box-shadow: 1px 1px 2px #eee;
+            outline: 1px dashed #ccc;
+            outline-offset: -7px;
+        }
+
+        #small-pic {
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        #small-pic>li {
+            float: left;
+            margin-right: 10px;
+        }
+
+        .small {
+            width: 60px;
+            height: 60px;
+        }
+
+        #small-pic img:hover {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>쉼터</h1>
+        <button id="againBtn">새로고침</button>
+        <button id="logoutBtn">로그아웃</button>
+        <p>무더운 여름입니다. 이미지를 감상하시면서 쉬어가세요</p>
+        <p>작은 이미지를 클릭하시면 커집니다.</p>
+        <p id="member">계정이 없으신가요? <a href="93_member.html">가입하기</a></p>
+    </div>
+    <div id="prod-pic">
+        <img src="image/sum1.jpg" alt="음료" id="pic">
+        <div id="small-pic">
+            <img src="image/sum1.jpg" alt="음료" class="small">
+            <img src="image/sum2.jpg" alt="해변" class="small">
+            <img src="image/sum3.jpg" alt="수박" class="small">
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script> 
+
+    <script>
+        const againBtn = document.querySelector('#againBtn');
+        const logoutBtn = document.querySelector('#logoutBtn');
+        
+        
+        againBtn.onclick = function(){
+            location.reload();
+        };
+        logoutBtn.onclick = function(){
+            location.href = '93_login.html';
+        };
+
+        
+        const bigImg = $('#pic');
+        const thumImg = $('.small');
+
+        thumImg.click(gallery)
+      
+        function gallery(){
+            let imgSrc = $(this).attr('src');
+            bigImg.attr('src', imgSrc);
+        };
+    </script>
+</body>
+
+</html>

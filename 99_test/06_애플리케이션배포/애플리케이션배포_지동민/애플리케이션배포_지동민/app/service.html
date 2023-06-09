@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임큐브시뮬레이션_지동민</title>
+    <style>
+        /* 가로 해상도: 390px */
+
+        /* 외부 폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;300;700;800&display=swap');
+
+        /* 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Geologica', sans-serif;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        /* 제목 */
+        h1 {
+            margin-bottom: 16px;
+            padding: 16px;
+            text-align: center;
+            color: skyblue;
+        }
+
+        /* 부 제목 */
+        h2 {
+            margin: 50px 4px;
+            font-size: 1.8rem;
+            text-align: right;
+        }
+
+        /* 버튼 */
+        button {
+            width: 350px;
+            margin: 18px 0;
+            padding: 8px;
+            font-size: 18px;
+        }
+
+        h3 {
+            width: 100%;
+            margin: 24px 0;
+            padding: 8px;
+            font-size: 18px;
+            text-align: center;
+            color: gold;
+        }
+
+        /* 버튼 앞 이미지 */
+        img {
+            width: 68px;
+            height: 55px;
+        }
+
+       /* 배경 이미지 */
+        body {
+            background-image: url("images/abc.png");
+            background-repeat: no-repeat;
+            background-size: 100% 140%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>게임 큐브 시뮬레이션</h1>
+    <h2 a href="#" onclick="window.open('cube.html', 'target=_blank', 'top=100, left=100, width=500, height=165')">큐브
+        등급업 확률</h2></a>
+    <h3>사용 하실 큐브를 선택해주세요~!</h3>
+    <div style="text-align: center;">
+        <img src="images/redcube.jpg">
+        <button onclick="useCube('레드')">레드 큐브 사용하기</button>
+        <img src="images/blackcube.jpg">
+        <button onclick="useCube('블랙')">블랙 큐브 사용하기</button>
+        <button id="logoutBtn">로그 아웃</button>
+    </div>
+    <script>
+
+             // 큐브 등급
+             var grade = 0;
+             function useCube(cubeType) {
+
+            // 등급 업그레이드 확률 (5%로 설정)
+            var upgradeChance = 5;
+
+            // 등급별 확률 설정 (에픽 11.25%, 유니크 3.14%, 레전더리 0.8%)
+            var gradeProbabilities = [11.25, 3.14, 0.8];
+
+            // 랜덤 등급 선택
+            var randomGrade = Math.random() * 100;
+            for (var i = 0; i < gradeProbabilities.length; i++) {
+                randomGrade -= gradeProbabilities[i];
+                if (randomGrade <= 0) {
+                    grade = i;
+                    break;
+                }
+            }
+
+            // 등급 업그레이드 여부 결정
+            var randomUpgrade = Math.random() * 100;
+            if (randomUpgrade <= upgradeChance) {
+                // 등급 업그레이드
+                grade++;
+            }
+
+            // 등급 출력
+            var gradeText = '';
+            if (grade === 0) {
+                gradeText = '레어';
+            } else if (grade === 1) {
+                gradeText = '에픽';
+            } else if (grade === 2) {
+                gradeText = '유니크';
+            } else if (grade === 3) {
+                gradeText = '레전더리';
+            }
+
+            alert(cubeType + ' 큐브 사용 결과: ' + gradeText + ' 등급');
+        }
+        const logoutBtn = document.querySelector('#logoutBtn');
+        const result = document.querySelector('#result');
+        let game = prompt('레드 큐브, 블랙 큐브 둘 중 하나만 입력하세요.');
+
+        switch (game) {
+            case '레드 큐브':
+                gameNum = 1;
+                break;
+            case '블랙 큐브':
+                gameNum = 2;
+                break;
+            default:
+                alert('레드 큐브, 블랙 큐브 둘 중 하나만 입력하세요.');
+                location.reload();
+        }
+
+        logoutBtn.onclick = function () {
+            location.href = 'index.html';
+        };
+    </script>
+</body>
+
+</html>
