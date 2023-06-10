@@ -35,11 +35,6 @@
             width: 190px;
             margin-right: 10px;
         }
-        #slideList:after {
-            content:'';
-            display:block;
-            clear:both;
-        }
     </style>
 </head>
 
@@ -98,7 +93,11 @@
                     slideList.classList.remove('on');
                 }
             }
-            let posX = num * colWidth;
+            move(num);
+        }
+
+        function move(cnt) {
+            let posX = cnt * colWidth;
             slideList.style.left = posX + 'px';
             return false;
         }
