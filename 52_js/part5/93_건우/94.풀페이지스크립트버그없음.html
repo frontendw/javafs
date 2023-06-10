@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            overflow-y: hidden;
+        }
+
+        .section {
+            height: 100vh;
+        }
+
+        #section1 {
+            background-color: aqua;
+        }
+
+        #section2 {
+            background-color: royalblue;
+        }
+
+        #section3 {
+            background-color: green;
+        }
+
+        #section4 {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="fullpage">
+        <section id="section1" class="section">
+            <h1>섹션 1</h1>
+        </section>
+        <section id="section2" class="section">
+            <h1>섹션 2</h1>
+        </section>
+        <section id="section3" class="section">
+            <h1>섹션 3</h1>
+        </section>
+        <section id="section4" class="section last">
+            <h1>섹션 4</h1>
+        </section>
+    </div>
+    <script>
+        const secs = document.querySelectorAll(".section");
+
+        for (let i = 0; i < secs.length; i++) {
+
+            secs[i].onwheel = function (e) {
+
+                if (e.deltaY < 0) {
+                    // 맨 위로 갔을 때, 반환
+                    if (this.offsetTop == 0) {
+                        return 0;
+                    }
+
+                    let prev = this.previousElementSibling.offsetTop;
+                    document.documentElement.scrollTop = prev;
+
+                } else {
+                    // 마지막으로 내려갔을 때 반환.
+                    if (this.offsetTop >= document.querySelector("#section4").offsetTop) {
+                        return 0;
+                    }
+
+                    let next = this.nextElementSibling.offsetTop;
+                    document.documentElement.scrollTop = next;
+                }
+
+            }
+
+
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

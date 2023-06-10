@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        #fullpage section {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+        }
+
+        #section1 {
+            background-color: aqua;
+            z-index: 1;
+        }
+
+        #section2 {
+            background-color: royalblue;
+        }
+
+        #section3 {
+            background-color: green;
+        }
+
+        #section4 {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="fullpage">
+        <section id="section1" class="section">
+            <h1>섹션 1</h1>
+        </section>
+        <section id="section2" class="section">
+            <h1>섹션 2</h1>
+        </section>
+        <section id="section3" class="section">
+            <h1>섹션 3</h1>
+        </section>
+        <section id="section4" class="section last">
+            <h1>섹션 4</h1>
+        </section>
+    </div>
+    <script>
+        const secs = document.querySelectorAll(".section");
+        let num = 1;
+
+        for (let i = 0; i < secs.length; i++) {
+
+            secs[i].onwheel = function (e) {
+                if (e.deltaY < 0) {
+
+                    let prev = this.previousElementSibling;
+                    prev.style.zIndex = num + 2;
+                    num = num + 1;
+
+                } else {
+
+                    let next = this.nextElementSibling;
+                    next.style.zIndex = num + 1;
+                    num = num + 1;
+
+                }
+            }
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

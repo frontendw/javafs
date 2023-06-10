@@ -12,7 +12,7 @@
             margin: 0;
             -ms-overflow-style: none;
             /* IE */
-            overflow:hidden;
+            overflow: hidden;
             /* Firefox */
         }
 
@@ -62,8 +62,9 @@
         */
 
         $('.section').mousewheel(function (e, delta) {
+            let prev;
             if (delta > 0) {
-                let prev = $(this).prev().offset().top;
+                prev = $(this).prev().offset().top;
                 console.log(prev);
                 $('html').stop().animate({ scrollTop: prev }, 1400, 'easeOutExpo');
             } else if (delta < 0) {
@@ -72,6 +73,7 @@
                 $('html').stop().animate({ scrollTop: next }, 1400, 'easeOutExpo');
             }
         });
+
     </script>
 </body>
 
