@@ -31,12 +31,14 @@
         nav {
             z-index: 99999;
             position: relative;
+            height: 31px;
             background: red;
         }
 
         .nav_bg {
             position: absolute;
             left: 0;
+            top: 31px;
             width: 100%;
             background: rgba(0, 0, 0, 0.7);
         }
@@ -48,28 +50,29 @@
             justify-content: center;
         }
         .main>li {
+            /* 삼각형 모양 기준 */
             position: relative;
             width: 160px;
+            /* 메인메뉴와 서브메뉴 모두 텍스트 가운데 */
             text-align: center;
-            font-size: 1.6rem;
-            font-weight: 500;
         }
         .main>li>a {
             display: block;
-            width: 100%;
             padding: 5px 0;
+            font-size: 1.5rem;
+            font-weight: 500;
             color: #fff;
         }
 
-        .main>li:hover>a {
+        .main>li>a:hover {
             background: #ccc;
             color: #333;
         }
 
-        .main>li:hover>a:after {
+        .main>li>a:hover:after {
             position: absolute;
             top: 30px;
-            left:50%;
+            left: 50%;
             transform: translateX(-50%);
             content: '';
             height: 0;
@@ -82,16 +85,15 @@
         /* 2depth: sub */
         .sub {
             display: none;
-            padding-top: 15px;
+            padding: 15px 0;
         }
 
         .sub a {
-            display: block;
-            width: 100%;
             color: #ccc;
-            font-size: 14px;
+            font-size: 1.4rem;
+            line-height: 2;
             font-weight: 300;
-            padding: 3px 0px;
+            padding: 3px 12px;
         }
 
         .sub a:hover {
@@ -140,13 +142,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         // 내비게이션바
-        $('.main > li').mouseenter(function () {
-            $('.sub').stop().slideDown();
-            $('.nav_bg').stop().animate({ height: 150 });
+        $('.main > li > a').mouseenter(function (e) {
+            // a태그 기본 이벤트 제거
+            e.preventDefault();
+            $('.sub').stop().slideDown(400);
+            $('.nav_bg').stop().animate({ height: 150 }, 400);
         });
         $('nav').mouseleave(function () {
-            $('.sub').stop().slideUp();
-            $('.nav_bg').stop().animate({ height: 0 });
+            $('.sub').stop().slideUp(400);
+            $('.nav_bg').stop().animate({ height: 0 }, 400);
         });
     </script>
 </body>
