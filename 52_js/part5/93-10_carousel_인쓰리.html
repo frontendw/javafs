@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>인쓰리</title>
+   <style>
+      /* 캐로셀 */
+      /* layout */
+      #carousel {position:relative; padding:0 3%;}
+      #carousel .bxslider div {padding:150px 0; text-align:center;}
+      #carousel .bxslider div span {position:relative; top:100px; opacity:0;}
+      #carousel .bxslider div img {display:inline-block;}
+
+      /* background */
+      #carousel .bxslider .bg1 {background:#a3d5f5;}
+      #carousel .bxslider .bg2 {background:#ffdbdb;}
+      #carousel .bxslider .bg3 {background:#41d0d6;}
+      #carousel .bxslider .bg4 {background:#fee98e;}
+
+      /* prev/next */
+      #carousel .btn {position:absolute; left:0; right:0; top:50%; height:100px; transform:translateY(-50%); color:#fff;}
+      #carousel .btn a {position:absolute;}
+      #carousel .prev {left:8%;}
+      #carousel .next {right:8%;}
+
+      /* pager */
+      #carousel .pager {position:absolute; bottom:5%; left:50%; transform:translateX(-50%);}
+      #carousel .pager a {float:left; width:10px; height:10px; border-radius:50%; border:1px solid #999; margin:0 15px;   cursor:pointer; transition:0.3s;}
+      #carousel .pager a img {opacity:0; transform:translate(-40%, -40%); transition:0.5s;}
+      #carousel .pager a.active img {opacity:1;}
+   </style>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+   <script>
+      $(document).ready(function(){
+         var mySlider = $('.bxslider').bxSlider({
+            // 자동 전환
+            auto: true,
+            // 슬라이드 이미지에 마우스를 올렸을 때 일시 정지
+            autoHover: true,
+            // 이전이후 버튼
+            controls: false,
+            // 페이저 버튼
+            pager: false,
+
+            // 슬라이드 전환 직전에 autoPager() 함수를 호출하여 동작 시킴
+            onSlideBefore: function(){
+               autoPager();
+            },
+            // 슬라이드 전환 직후 txtMotion() 함수를 호출하여 동작 시킴
+            onSlideAfter: function(){
+               txtMotion();
+            }
+         });
+
+         function txtMotion(){
+           // 슬라이드 전환 직후의 텍스트 모션
+           $('#carousel .bxslider div span').animate({top:0, opacity:1}); 
+         }
+
+         function autoPager(){
+            // 페이저의 이미지 변경
+            $('#carousel .pager a').removeClass('active');
+            var current = mySlider.getCurrentSlide();
+            $('#carousel .pager a').eq(current).addClass('active');
+
+            // 슬라이드 전환 직전의 텍스트 모션
+            $('#carousel .bxslider div span').css({top:100, opacity:0});
+         }
+
+         // 페이저 버튼
+         $('#carousel .pager a').click(function(e){
+            e.preventDefault();
+            var num = $(this).index();
+            mySlider.goToSlide(num);
+            return false;
+         });
+
+         // 이전 버튼
+         $('#carousel .prev').click(function(e){
+            e.preventDefault();
+            mySlider.goToPrevSlide();
+            autoPager();
+            return false;
+         });
+         // 이후 버튼
+         $('#carousel .next').click(function(e){
+            e.preventDefault();
+            mySlider.goToNextSlide();
+            autoPager();
+            return false;
+         });
+
+      });
+   </script>
+</head>
+<body>
+   <div id="carousel">
+      <!-- contents -->
+      <div class="bxslider">
+         <div class="bg1">
+            <span><img src="../assets/inthree/t1.png" alt="슬라이드 텍스트1"></span><br>
+            <img src="../assets/inthree/i1.png" alt="슬라이드 이미지1">
+         </div>
+         <div class="bg2">
+            <span><img src="../assets/inthree/t2.png" alt="슬라이드 텍스트2"></span><br>
+            <img src="../assets/inthree/i2.png" alt="슬라이드 이미지2">
+         </div>
+         <div class="bg3">
+            <span><img src="../assets/inthree/t3.png" alt="슬라이드 텍스트3"></span><br>
+            <img src="../assets/inthree/i3.png" alt="슬라이드 이미지3">
+         </div>
+         <div class="bg4">
+            <span><img src="../assets/inthree/t4.png" alt="슬라이드 텍스트4"></span><br>
+            <img src="../assets/inthree/i4.png" alt="슬라이드 이미지4">
+         </div>
+      </div><!-- //.bxslider -->
+
+      <!-- pager -->
+      <div class="pager">
+         <a class="active"><img src="../assets/inthree/d1.png" alt="페이저1"></a>
+         <a><img src="../assets/inthree/d2.png" alt="페이저2"></a>
+         <a><img src="../assets/inthree/d3.png" alt="페이저3"></a>
+         <a><img src="../assets/inthree/d4.png" alt="페이저4"></a>
+      </div>
+
+      <!-- prev/next -->
+      <div class="btn">
+         <a href="#" class="prev"><img src="../assets/inthree/prev.png" alt="이전 버튼"></a>
+         <a href="#" class="next"><img src="../assets/inthree/next.png" alt="이후 버튼"></a>
+      </div>
+
+   </div><!-- //#carousel -->
+</body>
+</html>

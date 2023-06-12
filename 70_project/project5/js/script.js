@@ -28,16 +28,44 @@ $(function () {
       });
 
     // 풀페이지 레이아웃
+    $('html').stop().animate({scrollTop: 0});
+
+    $('#indicator a').click(indicator);
+
+    function indicator() {
+        let idx = $(this).parent().index();
+        console.log(idx);
+        let posY = $('.section').eq(idx).offset().top;
+        $('html,body').stop().animate({scrollTop: posY});
+        tooltip(idx);
+    }
+
+    function tooltip(index) {
+        $('#indicator a').removeClass('on');
+        $('#indicator a').eq(index).addClass('on');
+    }
+
     $('.section').mousewheel(function (e, delta) {
-        let prev;
         if (delta > 0) {
-            prev = $(this).prev().offset().top;
-            console.log(prev);
-            $('html').stop().animate({ scrollTop: prev }, 400, 'easeOutExpo');
+            // 마우스휠을 위로 올림
+            try {
+                tooltip($(this).index() - 1);
+                let prev = $(this).prev().offset().top;
+                console.log(prev);
+                $('html').stop().animate({ scrollTop: prev });
+            } catch (err) {
+                return false;
+            }
         } else if (delta < 0) {
-            let next = $(this).next().offset().top;
-            console.log(next);
-            $('html').stop().animate({ scrollTop: next }, 400, 'easeOutExpo');
+            // 마우스휠을 아래로 내림
+            try {
+                tooltip($(this).index() + 1);
+                let next = $(this).next().offset().top;
+                console.log(next);
+                $('html').stop().animate({ scrollTop: next });
+            } catch (err) {
+                return false;
+            }
         }
     });
 });
