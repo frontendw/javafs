@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>경남아너스빌</title>
+   <style>
+      /* 초기화 */
+      * {margin:0; padding:0; box-sizing:border-box;}
+      li {list-style:none;}
+      a {text-decoration:none; color:#777;}
+      @font-face {
+         font-family:nanumsquareB;
+         src: url('font/NanumSquareB.ttf')
+      }
+      @font-face {
+         font-family:nanumsquareR;
+         src: url('font/NanumSquareR.ttf')
+      }
+      body {font:14px nanumsquareR, sans-serif; background:black;}
+
+      /* 헤더 */
+      #header {height:80px; line-height:80px; background:transparent; transition:0.5s; text-align:center;}
+      #header.active {background:#253e5c;}
+      .subBar {z-index:-1; position:absolute; top:80px; width:100%; height:0px; transition:0.3s;}
+      .subBar.active {height:180px; background:#fff;}
+
+      /* 로고 */
+      .logo a {float:left; font-size:0.8em; color:#fff; margin-left:70px;}
+
+      /* 내비게이션 */
+      .nav {display:inline-block; height:80px;}
+      .nav li a:hover {color:#c78f66;}
+
+      /* 1depth */
+      .nav .depth1 {width:640px; text-align:center; margin:0 auto;}
+      .nav .depth1 > li {float:left; width:160px;}
+      .nav .depth1 > li > a {display:inline-block; color:#fff; font:1.3em nanumsquareB, sans-serif; }
+      .nav .depth1 > li > a::after {content:""; display:block; border-bottom:2px solid #c78f66; transform:scaleX(0); transition:0.5s; padding-bottom:5px;}      
+      .nav .depth1 > li > a:hover::after {transform:scaleX(1);}
+
+      /* 2depth */
+      .nav .depth2 {height:0; line-height:2.2em; padding-top:15px; overflow:hidden; transition:0.3s;}
+      .nav .depth2.active {height:200px;}
+      .nav .depth2 li a {font-size:1.1em;}
+
+      /* util */
+      .util {float:right; margin-right:70px;}
+      .util a {color:#fff; margin-left:10px;}
+      .util .sns {display:inline-block; width:31px; height:31px; font-size:1.3em; vertical-align: middle; line-height:31px;}
+      .util .sns:hover { background-image:url('images/btn_youtube.png'); text-indent: -9999em;}
+      .util .logn::before {content:''; display:inline-block; width:5px; height:5px; background:#fff; border-radius: 50%; vertical-align: middle; margin-right:10px;}
+
+   </style>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script>
+      $(document).ready(function(){
+         $('#header').mouseenter(function(){
+            $(this).addClass('active');
+            $('.subBar').addClass('active');
+            $('.nav .depth2').addClass('active');
+            $('.depth2').addClass('active');
+         });
+         $('#header').mouseleave(function(){
+            $(this).removeClass('active');
+            $('.subBar').removeClass('active');
+            $('.nav .depth2').removeClass('active');
+            $('.depth2').removeClass('active');
+         });
+      });
+   </script>
+</head>
+<body>
+   <div id="header">
+      <h1 class="logo"><a href="#"><img src="images/header_logo.png" alt="경남아너스빌"></a></h1>
+      <div class="nav">
+         <ul class="depth1">
+            <li><a href="#">분양단지</a>
+               <ul class="depth2">
+                  <li><a href="#">분양중인 단지</a>
+                  <li><a href="#">분양예정 단지</a>
+                  <li><a href="#">분양완료 단지</a>
+                  <li><a href="#">연간분양계획</a>
+               </ul>
+            </li>
+            <li><a href="#">브랜드</a>
+               <ul class="depth2">
+                  <li><a href="#">브랜드 스토리</a>
+                  <li><a href="#">브랜드 아이덴티티</a>
+                  <li><a href="#">특화아이템</a>
+               </ul>
+            </li>
+            <li><a href="#">아너스빌 멤버스</a>
+               <ul class="depth2">
+                  <li><a href="#">아너브빌 소식</a>
+                  <li><a href="#">청약가이드</a>
+               </ul>
+            </li>
+            <li><a href="#">마이 아너스빌</a>
+               <ul class="depth2">
+                  <li><a href="#">자주 묻는 질문</a>
+                  <li><a href="#">1:1 문의</a>
+                  <li><a href="#">A/S 문의</a>
+                  <li><a href="#">관심단지 관리</a>
+                  <li><a href="#">개인정보 변경</a>
+               </ul>
+            </li>
+         </ul>
+      </div><!-- //.nav -->
+      <div class="util">
+         <a href="#" class="sns">SNS</a>
+         <a href="#" class="logn">로그인</a>
+         <a href="#" class="membership">회원가입</a>
+      </div>
+      <div class="subBar"></div>
+   </div><!-- //#header -->
+</body>
+</html>
