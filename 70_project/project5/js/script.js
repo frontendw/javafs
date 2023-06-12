@@ -13,8 +13,19 @@ $(function () {
         $('.nav_bg').stop().animate({ height: 0 }, 400);
     });
 
-    // 비디오 자동플레이
+    // 섹션1 - 비디오 자동플레이
     // $('video').get(0).play();
+
+    // 섹션1 - 캐로셀
+    $('.slider').bxSlider({
+        //자동 실행
+        auto: true,
+        stopAutoOnClick: true
+        // 일지정지와 재실행 버튼
+        // autoControls: true,
+        // pager: false,
+        // slideWidth: 1400
+      });
 
     // 풀페이지 레이아웃
     $('.section').mousewheel(function (e, delta) {
