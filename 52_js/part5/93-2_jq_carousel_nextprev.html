@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        /* 초기화 */
+        * {margin:0; padding:0;}
+        img {vertical-align: top; width: 100%;}
+        ul {list-style: none;}
+
+        /* 슬라이드 */
+        #slideWrap {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            width:90%;
+        }
+        .frame {
+            height: 90vh;
+            overflow: hidden;
+        }
+        #slideList {
+            display: flex;
+            position: relative;
+        }
+        #slideList.on {
+            transition: .3s;
+        }
+        .controls {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            background: red;
+        }
+        .controls a {
+            position: absolute;
+        }
+        #prevBtn {left: calc(50% - 700px);}
+        #nextBtn {right: calc(50% - 700px);}
+    </style>
+</head>
+
+<body>
+    <div id="slideWrap">
+        <div class="frame">
+            <ul id="slideList">
+                <li><img src="../assets/pic_1.jpg" alt="이미지1"></li>
+                <li><img src="../assets/pic_2.jpg" alt="이미지2"></li>
+                <li><img src="../assets/pic_3.jpg" alt="이미지3"></li>
+                <li><img src="../assets/pic_4.jpg" alt="이미지4"></li>
+            </ul>
+        </div>
+        <div class="controls">
+            <a href="#" id="prevBtn">prev</a>
+            <a href="#" id="nextBtn">next</a>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script>
+        const slideList = $('#slideList');
+        const slideListItem = $('#slideList').find('li');
+        const prevBtn = $('#prevBtn');
+        const nextBtn = $('#nextBtn');
+        let num = 1;
+        const slideListItemWidth = 100;
+        const slideCount = slideListItem.length + 2;
+
+        // 요소의 가로 크기
+        $('.frame').width(slideListItemWidth + '%');
+        slideList.width(slideListItemWidth * slideCount + '%');
+        slideListItem.width(slideListItemWidth + '%');
+        // 슬라이드의 처음 위치
+        slideList.css({left: -1 * slideListItemWidth + '%'});
+
+        // 처음과 마지막 이미지 복제
+        const firstSlideList = slideList.find('li:first-of-type');
+        const lastSlideList = slideList.find('li:last-of-type');
+        lastSlideList.clone().prependTo(slideList);
+        firstSlideList.clone().appendTo(slideList);
+
+        prevBtn.click(prevSlide);
+        nextBtn.click(nextSlide);
+
+        function prevSlide() {
+            slide('prevBtn');
+        }
+        function nextSlide() {
+            slide('nextBtn');
+        }
+
+        function slide(btn) {
+            if (btn === 'prevBtn') {
+                num--;
+                if (num < 1) { 
+                    num = slideListItem.length;
+                    slideList.removeClass('on');
+                    move(num+1);
+                }
+            } else {
+                num++;
+                slideList.addClass('on');
+                if (num > slideListItem.length + 1) {
+                    num = 2;
+                    slideList.removeClass('on');
+                    move(num-1);
+                }
+            }
+            setTimeout(function(){
+                slideList.addClass('on');
+                move(num);
+            }, 100); 
+        }
+
+        function move(cnt) {
+            let posX = cnt * slideListItemWidth * -1;
+            slideList.css({left: posX + '%'});
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>
