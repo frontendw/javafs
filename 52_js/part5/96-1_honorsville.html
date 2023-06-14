@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경남아너스빌</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        @import url('http://fonts.cdnfonts.com/css/trajan-pro');
+        /* reset */
+        * {margin:0; padding:0; box-sizing: border-box;}
+        li { list-style:none; }
+
+        /* section */
+        #section {position: relative; height:100vh; background:#e0d7d6;}
+        .container {position:relative; height:505px;}
+        .container > div {position:absolute; top:0; height:100%;}
+        .story {left: 0px; width:900px;}
+        .identity {right: 0px; width:920px;}
+
+        /* background text motion */
+        .bgTxt {position:relative; height:300px; font:700 90px/1em 'Trajan Pro', sans-serif; letter-spacing: -0.375px; color:#cfc0bb; overflow:hidden; white-space: nowrap;}
+        .bgTxt span {display:inline-block; vertical-align: middle;}
+        .bgTxt span::before {content:''; display:inline-block; vertical-align: middle; width:75px; height:90px; margin-right:15px; background:url('honorsville/bg_dot.png') no-repeat center; width:75px; height:90px;}
+        .bgTxt div {position:absolute;}
+        .bgTxt .top {top:0; left:-109%; animation: topMotion 20s linear infinite;}
+        .bgTxt .btm {top:90px; left:0%; animation: btmMotion 20s linear infinite;}
+
+        @keyframes topMotion {
+            0% {left:-109%;}
+            99.99999% {left:0;}
+            100% {left:-109%;}
+        }
+        @keyframes btmMotion {
+            0% {left:0;}
+            99.99999% {left:-109%;}
+            100% {left:0;}
+        }
+
+        /* fade image motion */
+        .fade {position:absolute; width:100%; height:340px; overflow:hidden;}
+        .story .fade {bottom:0;}
+        .identity .fade {top:0;}
+        .fade li {position:absolute; left:0; top:0; width:100%;}
+        .fade img {transition: 1s;}
+        .fade:hover img {transform: scale(1.2, 1.2);}
+
+        /* link button */
+        .fade .btn {position: absolute; overflow: hidden; width: 170px; height: 45px; background: #004c6b; color: #fff; line-height: 45px; font-size:0.9em;}
+        .fade .btn::before {content:''; position: absolute; left: -170px; top: 0; transition: 1s; width: 170px; height: 45px; background: #706142; }
+        .fade:hover .btn::before {left: 0px;}
+        .fade .btn b { position: absolute; top: 0; z-index: 1; }
+        .fade .btn i { position: absolute; z-index: 1;}
+
+        .story .btn {left: 550px; top: 60px;}
+        .identity .btn {left: 170px; top: 260px;}
+        .story .btn b { left: 30px;}
+        .identity .btn b {left: 20px;}
+        .story .btn i {left: 140px; top: 15px;}
+        .identity .btn i {left: 150px; top: 17px;}
+
+        /* title */
+        .container .title { position: absolute; width: 325px; height: 300px; background: url("honorsville/bg-line.png");}
+        .story .title { left: 500px; top: 0; transform: rotate(180deg); }
+        .identity .title { left: 60px; top: 220px;}
+
+        .container .title h3 { position: absolute; left: 10px; top: 0px; font-size: 1.8em; margin: -30px 0 0 20px; letter-spacing: -3px; }
+        .story .title h3 {right: 35px; bottom: -15px; transform: rotate(-180deg);}
+        .identity .title h3 {right: 37px; top: 230px; text-align: right;}
+    </style>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function () {
+            /*
+                object insert
+                A.append(B): B를 A 끝 태그 앞에 삽입
+                A.prepend(B): B를 A 시작 태그 뒤에 삽입
+                A.appendTo(B): A를 B 끝 태그 앞에 삽입
+                A.prependTo(B): A를 B 시작 태그 뒤에 삽입
+                A.after(B): B를 A 태그 다음에 삽입
+                A.before(B): B를 A 태그 이전에 삽입
+            */
+            /*
+                object clone
+                A.clone().appendTo(B): A를 복제하여 B의 끝 태그 앞에 삽입
+            */
+            $('.top span').clone().appendTo('.top').clone();
+            $('.btm span').clone().appendTo('.btm').clone();
+            var topWidth = $('.top').width();
+            console.log(topWidth);
+
+            //hover fade effect
+            var cnt = 0, timer, idx;
+            $('.fade').mouseenter(function(){
+                idx = $(this).parent().index();
+                timer = setInterval(slide, 2000);
+            });
+            $('.fade').mouseleave(function(){
+                clearInterval(timer);
+            });
+
+            function slide() {
+                cnt++;
+                if (cnt > 2) {
+                    cnt = 0;
+                }
+                $('.container > div').eq(idx).find('.fade li').eq(cnt).fadeIn(1000).siblings().fadeOut(1000);
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div id="section">
+        <div class="bgTxt">
+            <div class="top">
+                <span>CONSIDERATION</span>
+                <span>AFFINITY</span>
+                <span>PRESTIGE</span>
+            </div>
+            <div class="btm">
+                <span>CONSIDERATION</span>
+                <span>AFFINITY</span>
+                <span>PRESTIGE</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="story">
+                <div class="fade">
+                    <ul>
+                        <li><a href="#"><img src="honorsville/img_sec03_left01.jpg" alt="브랜드 스토리1"></a></li>
+                        <li><a href="#"><img src="honorsville/img_sec03_left02.jpg" alt="브랜드 스토리2"></a></li>
+                        <li><a href="#"><img src="honorsville/img_sec03_left03.jpg" alt="브랜드 스토리3"></a></li>
+                    </ul>
+                    <a class="btn"><b>브랜드 스토리</b><i class="fas fa-angle-right"></i></a>
+                </div>
+                <div class="title">
+                    <h3>공간의 품격을<br>완성하는<br>차별화된 주거문화</h3>
+                </div>
+            </div>
+            <div class="identity">
+                <div class="fade">
+                    <ul>
+                        <li><a href="#"><img src="honorsville/img_sec03_right01.jpg" alt="브랜드 아이덴티티1"></a></li>
+                        <li><a href="#"><img src="honorsville/img_sec03_right02.jpg" alt="브랜드 아이덴티티2"></a></li>
+                        <li><a href="#"><img src="honorsville/img_sec03_right03.jpg" alt="브랜드 아이덴티티3"></a></li>
+                    </ul>
+                    <a class="btn"><b>브랜드 아이덴티티</b><i class="fas fa-angle-right"></i></a>
+                </div>
+                <div class="title">
+                    <h3>가족의 삶에 대한<br>존경과<br>견고한 배려</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
