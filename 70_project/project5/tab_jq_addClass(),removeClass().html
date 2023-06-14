@@ -57,13 +57,12 @@
         }
 
         /* 탭 내용 */
+        /* 모든 내용 숨김 */
         #tabs > div {
             display: none;
             background: red;
         }
-        #tabs > #tab1 {
-            display: block;
-        }
+        /* on클래스가 있으면 보임 */
         #tabs > div.on {
             display: block;
         }
@@ -79,7 +78,7 @@
         </ul>
 
         <!-- 탭1 내용 -->
-        <div id="tab1">
+        <div id="tab1" class="on">
             <h2>탭1: 마루부리</h2>
             <p>마루부리, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus aspernatur tempora cumque,
                 exercitationem fugiat officiis repellendus obcaecati itaque aperiam amet explicabo facere autem ipsum
@@ -115,11 +114,11 @@
             tabBtn.removeClass('on');
             // 클릭한 버튼만 on클래스 추가
             $(this).addClass('on');
-            console.log(idx);
+
             // 모든 내용 숨김
-            tabCont.hide();
+            tabCont.removeClass('on');
             // idx번째에 해당하는 내용만 보임
-            tabCont.eq(idx).show();
+            tabCont.eq(idx).addClass('on');
         });
     </script>
 </body>
