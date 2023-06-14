@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭</title>
+    <style>
+        @font-face {
+            font-family: 'MaruBuri-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 10px;
+        }
+        body {
+            font:1.5rem/1.6 'MaruBuri-Regular';
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* 탭 메뉴 */
+        #tabs {
+            background: yellow;
+        }
+
+        #tabs>div {
+            /* display: none; */
+        }
+
+        #tabs .tabBtns {
+            display: flex;
+        }
+
+        #tabs .tabBtns li {
+            background: #EBDACA;
+            padding: 4px 16px;
+            margin-bottom: 8px;
+        }
+        #tabs .tabBtns li a {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #111;
+        }
+
+        #tabs .tabBtns li.on {
+            background: #672F2E;
+        }
+        #tabs .tabBtns li.on a {
+            color: #fff;
+        }
+
+        /* 탭 메뉴 - 공지사항 */
+        #tab1 li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        #tab1 a {
+            width: 250px;
+            white-space: nowrap;
+            overflow: hidden;
+            /* 말줄임 ...효과 */
+            text-overflow: ellipsis;
+        }
+
+        #tab1 a:hover {
+            color: #333;
+        }
+
+        /* 탭 메뉴 - 갤러리 */
+        #tab2 a {
+            display: inline-block;
+            width: 110px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="tabs">
+        <!-- 제목/버튼 -->
+        <ul class="tabBtns">
+            <li><a href="#tab1">탭1</a></li>
+            <li><a href="#tab2">탭2</a></li>
+        </ul>
+
+        <!-- 탭1 내용 -->
+        <div id="tab1">
+            <h2>탭1: 마루부리</h2>
+            <p>마루부리, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus aspernatur tempora cumque,
+                exercitationem fugiat officiis repellendus obcaecati itaque aperiam amet explicabo facere autem ipsum
+                sit quisquam aliquam hic esse sed.</p>
+        </div>
+
+        <!-- 탭2 내용 -->
+        <div id="tab2">
+            <h2>탭2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, repellendus.</p>
+        </div>
+    </div>
+</body>
+
+</html>
