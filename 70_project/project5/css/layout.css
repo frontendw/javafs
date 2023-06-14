@@ -30,6 +30,7 @@ body {
 }
 
 #indicator {
+    z-index: 99999;
     position: fixed;
     right:0;
     top:50%;
