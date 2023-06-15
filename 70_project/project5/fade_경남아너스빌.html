@@ -1,26 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fade Effect</title>
+    <style>
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+        @import url('http://fonts.cdnfonts.com/css/trajan-pro');
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 10px;
+        }
+        body {
+            font-size: 1.5rem;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+
+        li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* 섹션4: 브랜드 소개 */
+        #section4 {
+            position: relative;
+            height: 100vh;
+            background: #e0d7d6;
+        }
+
+        .container {
+            position: relative;
+            height: 505px;
+        }
+
+        .container>div {
+            position: absolute;
+            top: 0;
+            width: 900px;
+            height: 100%;
+        }
+
+        .story {
+            left: 0px;
+        }
+
+        .identity {
+            right: 0px;
+        }
+
+        /* 배경 텍스트 모션 */
+        .bgTxt {
+            position: relative;
+            height: 180px;
+            font: 700 90px/1 'Trajan Pro', sans-serif;
+            letter-spacing: -0.375px;
+            color: #cfc0bb;
+            overflow: hidden;
+            /* 줄바꿈 안함 */
+            white-space: nowrap;
+        }
+
+        .bgTxt span {
+            display: inline-block;
+            /* 인라인 요소 간 수직 중앙 맞춤 */
+            vertical-align: middle;
+        }
+
+        .bgTxt span::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            background: url('images/bg_dot.png') no-repeat center;
+            width: 75px;
+            height: 90px;
+        }
+
+        .bgTxt div {
+            position: absolute;
+            animation: 20s linear infinite;
+        }
+
+        .bgTxt .top {
+            top: 0;
+            left: -105.5%;
+            animation-name: topMotion;
+        }
+
+        .bgTxt .btm {
+            top: 90px;
+            left: 0;
+            animation-name: btmMotion;
+        }
+
+        @keyframes topMotion {
+            0% {left: -105.5%;}
+            99.99999% {left: 0;}
+            100% {left: -105.5%;}
+        }
+        @keyframes btmMotion {
+            0% {left: 0;}
+            99.99999% {left: -105.5%;}
+            100% {left: 0;}
+        }
+
+        /* 페이드 효과 */
+        .fade {
+            position: absolute;
+            width: 100%;
+            height: 340px;
+            /* 마우스 호버시 영역안에서 이미지 크기가 커지게 */
+            overflow: hidden;
+        }
+
+        .story .fade {
+            bottom: 0;
+        }
+
+        .identity .fade {
+            top: 0;
+        }
+
+        .fade li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .fade img {
+            transition: 1s;
+        }
+
+        .fade:hover img {
+            transform: scale(1.2, 1.2);
+        }
+
+        /* link button */
+        .fade .btn {
+            position: absolute;
+            overflow: hidden;
+            width: 170px;
+            height: 45px;
+            background: #004c6b;
+            color: #fff;
+            line-height: 45px;
+            font-size: 0.9em;
+        }
+
+        .fade .btn::before {
+            content: '';
+            position: absolute;
+            left: -170px;
+            top: 0;
+            transition: 1s;
+            width: 170px;
+            height: 45px;
+            background: #706142;
+        }
+
+        .fade:hover .btn::before {
+            left: 0px;
+        }
+
+        .fade .btn b {
+            position: absolute;
+            top: 0;
+            z-index: 1;
+        }
+
+        .fade .btn i {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .story .btn {
+            left: 550px;
+            top: 60px;
+        }
+
+        .identity .btn {
+            left: 170px;
+            top: 260px;
+        }
+
+        .story .btn b {
+            left: 30px;
+        }
+
+        .identity .btn b {
+            left: 20px;
+        }
+
+        .story .btn i {
+            left: 140px;
+            top: 15px;
+        }
+
+        .identity .btn i {
+            left: 150px;
+            top: 17px;
+        }
+
+        /* title */
+        .container .title {
+            position: absolute;
+            width: 325px;
+            height: 300px;
+            background: url("../assets/honorsville/bg-line.png");
+        }
+
+        .story .title {
+            left: 500px;
+            top: 0;
+            transform: rotate(180deg);
+        }
+
+        .identity .title {
+            left: 60px;
+            top: 220px;
+        }
+
+        .container .title h3 {
+            position: absolute;
+            left: 10px;
+            top: 0px;
+            font-size: 1.8em;
+            margin: -30px 0 0 20px;
+            letter-spacing: -3px;
+        }
+
+        .story .title h3 {
+            right: 35px;
+            bottom: -15px;
+            transform: rotate(-180deg);
+        }
+
+        .identity .title h3 {
+            right: 37px;
+            top: 230px;
+            text-align: right;
+        }
+    </style>
 </head>
+
 <body>
     <div id="section4" class="section">
         <div class="bgTxt">
             <div class="top">
                 <!-- 크다 맛있다 합리적 차별화 -->
-                <span>BIG DELICIOUS</span>
+                <span>CONSIDERATION</span><span>AFFINITY</span><span>PRESTIGE</span><span>CONSIDERATION</span><span>AFFINITY</span><span>PRESTIGE</span>
+                <!-- <span>BIG DELICIOUS</span>
                 <span>RATIONAL</span>
-                <span>DIFFERENTIATION</span>
+                <span>DIFFERENTIATION</span> -->
             </div>
             <div class="btm">
-                <span>BIG DELICIOUS</span>
+                <span>CONSIDERATION</span><span>AFFINITY</span><span>PRESTIGE</span><span>CONSIDERATION</span><span>AFFINITY</span><span>PRESTIGE</span>
+                <!-- <span>BIG DELICIOUS</span>
                 <span>RATIONAL</span>
-                <span>DIFFERENTIATION</span>
+                <span>DIFFERENTIATION</span> -->
             </div>
         </div>
         <div class="container">
+
+            <!-- 브랜드 소개 -->
             <div class="story">
                 <div class="fade">
                     <ul>
@@ -32,23 +287,26 @@
                     <a class="btn"><b>브랜드 스토리</b><i class="fas fa-angle-right"></i></a>
                 </div>
                 <div class="title">
-                    <h3>공간의 품격을<br>완성하는<br>차별화된 주거문화</h3>
+                    <h3>하루에 한 잔!<br>매일<br>즐기는 데일리 커피</h3>
                 </div>
-            </div>
+            </div><!-- .story 끝 -->
+
+            <!-- BI -->
             <div class="identity">
                 <div class="fade">
                     <ul>
-                        <li><a href="#"><img src="images/brand4" alt="브랜드 아이덴티티1"></a></li>
-                        <li><a href="#"><img src="images/brand5" alt="브랜드 아이덴티티2"></a></li>
-                        <li><a href="#"><img src="images/brand6" alt="브랜드 아이덴티티3"></a></li>
+                        <li><a href="#"><img src="images/brand6.png" alt="브랜드 아이덴티티1"></a></li>
+                        <li><a href="#"><img src="images/brand5.png" alt="브랜드 아이덴티티2"></a></li>
+                        <li><a href="#"><img src="images/brand4.png" alt="브랜드 아이덴티티3"></a></li>
                     </ul>
                     <a class="btn"><b>브랜드 아이덴티티</b><i class="fas fa-angle-right"></i></a>
                 </div>
                 <div class="title">
-                    <h3>가족의 삶에 대한<br>존경과<br>견고한 배려</h3>
+                    <h3>빅사이즈와 착한<br>가격의<br>데일리 커피</h3>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
