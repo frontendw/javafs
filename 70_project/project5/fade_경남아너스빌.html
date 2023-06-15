@@ -148,7 +148,7 @@
             transform: scale(1.2, 1.2);
         }
 
-        /* link button */
+        /* 링크 버튼 */
         .fade .btn {
             position: absolute;
             overflow: hidden;
@@ -157,7 +157,7 @@
             background: #004c6b;
             color: #fff;
             line-height: 45px;
-            font-size: 0.9em;
+            font-size: 1.35rem;
         }
 
         .fade .btn::before {
@@ -214,12 +214,12 @@
             top: 17px;
         }
 
-        /* title */
+        /* 타이틀 라인 */
         .container .title {
             position: absolute;
             width: 325px;
             height: 300px;
-            background: url("../assets/honorsville/bg-line.png");
+            background: url("images/bg-line.png") no-repeat;
         }
 
         .story .title {
@@ -237,7 +237,7 @@
             position: absolute;
             left: 10px;
             top: 0px;
-            font-size: 1.8em;
+            font-size: 2.7rem;
             margin: -30px 0 0 20px;
             letter-spacing: -3px;
         }
@@ -261,13 +261,13 @@
         <div class="bgTxt">
             <div class="top">
                 <!-- 크다 맛있다 합리적 차별화 -->
-                <span>CONSIDERATION</span><span>AFFINITY</span><span>PRESTIGE</span><span>CONSIDERATION</span><span>AFFINITY</span><span>PRESTIGE</span>
+                <span>CONSIDERATION</span><span>AFFINITY</span><span>PRESTIGE</span>
                 <!-- <span>BIG DELICIOUS</span>
                 <span>RATIONAL</span>
                 <span>DIFFERENTIATION</span> -->
             </div>
             <div class="btm">
-                <span>CONSIDERATION</span><span>AFFINITY</span><span>PRESTIGE</span><span>CONSIDERATION</span><span>AFFINITY</span><span>PRESTIGE</span>
+                <span>CONSIDERATION</span><span>AFFINITY</span><span>PRESTIGE</span>
                 <!-- <span>BIG DELICIOUS</span>
                 <span>RATIONAL</span>
                 <span>DIFFERENTIATION</span> -->
@@ -304,9 +304,50 @@
                 <div class="title">
                     <h3>빅사이즈와 착한<br>가격의<br>데일리 커피</h3>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div><!-- //.identity -->
+        </div><!-- //.container -->
+    </div> <!-- //#section4 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        // 상단 텍스트 모션을 위한 텍스트 복제
+        const txtTop = $('.top');
+        const txtTopSpan = txtTop.find('span');
+        const txtBtm = $('.btm');
+        const txtBtmSpan = txtBtm.find('span');
+
+        txtTopSpan.clone().appendTo(txtTop);
+        txtBtmSpan.clone().appendTo(txtBtm);
+
+        // 호버시 페이드 효과
+        const inner = $('.container > div');
+        const fade = inner.find('.fade');
+        let cnt = 0, idx, timer;
+
+        // fade에 마우스를 올리면
+        fade.mouseenter(function(){
+            // 마우스를 올린 fade의 부모의 색인 번호를 idx 저장
+            // 왼쪽은 0, 오른쪽은 1
+            idx = $(this).parent().index();
+            // 2초마다 fadeFn 함수를 호출한다.
+            timer = setInterval(fadeFn, 2000);
+        });
+        // fade 위에서 마우스가 벗어나면 함수 실행
+        fade.mouseleave(function(){
+            // setInterval 정지
+            clearInterval(timer);
+        });
+
+        function fadeFn() {
+            cnt++;
+            if (cnt > 2) {
+                cnt = 0;
+            }
+            // idx가 0이면 .story
+            // idx가 1이면 .identity
+            // cnt: 0, 1, 2
+            inner.eq(idx).find('li').eq(cnt).fadeIn(1000).siblings().fadeOut(1000);
+        }
+    </script>
 </body>
 
 </html>
