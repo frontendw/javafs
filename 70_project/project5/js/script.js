@@ -1,6 +1,9 @@
 // 문서가 준비되면 함수 실행
 $(function () {
 
+    // 헤더
+    const headerBg = $('#header');
+
     // 내비게이션바
     $('.main > li > a').mouseenter(function (e) {
         // a태그 기본 이벤트 제거
@@ -107,10 +110,12 @@ $(function () {
             btn.css({ opacity: 1 });
             txt1.css({ left: 360 + 'px' });
             txt2.css({ left: 360 + 'px' });
+            headerBg.css({background: '#fdd000'});
         } else {
             btn.css({ opacity: 0 });
             txt1.css({ left: -800 + 'px' });
             txt2.css({ left: -400 + 'px' });
+            headerBg.css({background: 'transparent'});
         }
     });
 
@@ -168,6 +173,35 @@ $(function () {
         // cnt: 0, 1, 2
         inner.eq(idx).find('li').eq(cnt).fadeIn(1000).siblings().fadeOut(1000);
     }
+
+    // 패밀리 사이트
+    const fs = $('.fs'),
+        fsLst = fs.find('ul'),
+        fsIcon = fs.find('i'),
+        fsTxt = fs.find('span'),
+        fsBtn = fs.find('.fsBtn');
+
+    let state = 0;
+    // .fsBtn을 클릭하면 함수 실행
+    fsBtn.click(function (e) {
+        // a태그의 기본 이벤트 제거
+        e.preventDefault();
+        // $('.fs ul').toggle();
+
+        fsLst.slideToggle();
+
+        /* 삼각형 모양 바꾸기 */
+        if (state == 0) {
+            // $('선택자').attr({속성: 값, 속성: 값, ...});
+            fsIcon.attr({ class: 'fa-solid fa-minus' });
+            fsTxt.text('관련 사이트 닫기');
+            state = 1;
+        } else {
+            fsIcon.attr({ class: 'fa-solid fa-plus' });
+            fsTxt.text('관련 사이트 열기');
+            state = 0;
+        }
+    });
 
     // 풀페이지 레이아웃
     $('html').stop().animate({ scrollTop: 0 });

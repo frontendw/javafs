@@ -32,15 +32,26 @@
         body {
             font-family: 'Noto Sans KR', sans-serif;
             font-size: 1.5rem;
+            /* 스크롤바 생성하기 */
+            height: 2000px;
         }
 
         /* 헤더 */
         #header {
+            position: fixed;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 0 60px;
             background: #fdd000;
+            /*
+                transition-perperty: all;
+                transition-duration: .5s;
+                transition-time-function: ease;
+                transition-delay: .5s;
+            */
+            transition: .5s .5s;
         }
 
         /* 로고 */
@@ -49,11 +60,13 @@
             letter-spacing: .5rem;
             line-height: 1;
         }
+
         .logo b {
             display: block;
             font-weight: normal;
             font-size: 2.2rem;
         }
+
         .logo span {
             font-size: 1.6rem;
         }
@@ -139,7 +152,7 @@
 
         /* 로그인/회원가입 */
         .member a {
-            margin:0 8px;
+            margin: 0 8px;
         }
     </style>
 </head>
@@ -192,6 +205,19 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
+        // 스크롤 시 헤더의 배경색 바꾸기
+        const headerBg = $('#header');
+
+        $(window).scroll(function () {
+            let st = $(this).scrollTop();
+
+            if (st <= 0) {
+                headerBg.css({ background: 'transparent' })
+            } else {
+                headerBg.css({ background: '#fdd000' })
+            }
+        });
+
         // 내비게이션바
         $('.main > li > a').mouseenter(function (e) {
             // a태그 기본 이벤트 제거
