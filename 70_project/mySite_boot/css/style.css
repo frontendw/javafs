@@ -92,6 +92,10 @@ section h2+p {
     word-break: break-all;
 }
 
+.progress {
+    height: 30px;
+}
+
 #counter ul {
     background: #616161;
     color: #fff;
