@@ -117,7 +117,8 @@
         window.addEventListener("scroll", function () {
             //변수 선언
             // let st = this.pageYOffset;
-            let st = this.scrollY;
+            let st = document.documentElement.scrollTop;
+            // let st = this.scrollY;
 
             result.innerHTML = st + " , " + wh;
 

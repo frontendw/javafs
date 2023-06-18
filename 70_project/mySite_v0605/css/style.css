@@ -47,11 +47,11 @@ header i {
 }
 
 /* section2~4 공통 */
-.container {
+/* .container {
     width: 960px;
     margin: 0 auto;
     padding-bottom: 81px;
-}
+} */
 
 section h2 {
     margin-top: 81px;
@@ -77,11 +77,11 @@ section h2+p {
 }
 
 /* section2 */
-.profile {
+/* .profile {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-}
+} */
 
 .profile p {
     text-align: justify;
@@ -89,22 +89,22 @@ section h2+p {
 }
 
 .profile p:first-of-type {
-    flex: 100%;
+    /* flex: 100%; */
     margin-bottom: 54px;
 }
 
 .profile div {
-    flex: 0 0 48%;
+    /* flex: 0 0 48%; */
     text-align: center;
 }
 
 .profile p:last-of-type {
-    flex: 0 0 48%;
+    /* flex: 0 0 48%; */
 }
 
-.photo {
+/* .photo {
     width: 425px;
-}
+} */
 
 .photo img {
     margin-top: 54px;
