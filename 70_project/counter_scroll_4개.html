@@ -7,8 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counter</title>
     <style>
+        * {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        li {
+            list-style:none;
+        }
         div {
             height: 100vh;
+        }
+        span {
+            display: block;
         }
     </style>
 </head>
@@ -18,17 +29,31 @@
         <h1>Counter</h1>
     </div>
     <div id="counter">
-        <span>0+</span>
+        <ul>
+            <li><span>0+</span>숫자의 의미</li>
+            <li><span>0+</span>숫자의 의미</li>
+            <li><span>0+</span>숫자의 의미</li>
+            <li><span>0+</span>숫자의 의미</li>
+        </ul>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         const elem = $('#counter span');
+        let state = 0;
+        
         $(window).scroll(function(){
             // 윈도우 스크롤이 150이상이면
             console.log($(this).scrollTop());
             if ($(this).scrollTop() >= 150) {
-                move();
+                if (state === 0) {
+                    move();
+                    state = 1;
+                } else {
+                    return;
+                }
+            } else {
+                state = 0;
             }
         });
 
@@ -74,14 +99,25 @@
 
     <!-- <script>
         const elem = document.querySelector('#counter span');
-
+        // 추가된 점 = j
+        // move() 함수가 실행되면 j가 1이 됨. 중복 실행 막음.
+        // span이 화면을 벗어나면, j = 0; 초기화. 재실행 가능
+        let j = 0;
+        
         window.onscroll = function () {
             let scr_e = document.documentElement.scrollTop;
             console.log(scr_e);
             if (scr_e >= 150) {
-                move();
+                if (j === 0) {
+                    move();
+                    j = 1;
+                } else {
+                    return;
+                }
+            } else {
+                j = 0;
             }
-        }
+        };
 
         function move() {
             let i = 0;
@@ -92,31 +128,8 @@
                 elem.innerHTML = i + "+";
                 i++
             }, 100)
-
-            //  ^ 아래 함수를 묶음
-
-            // setTimeout(function () {
-            //     elem.innerHTML = 1 + "%";
-            // }, 100);
-            // setTimeout(function () {
-            //     elem.innerHTML = 2 + "%";
-            // }, 200);
-            // setTimeout(function () {
-            //     elem.innerHTML = 3 + "%";
-            // }, 300);
-            // setTimeout(function () {
-            //     elem.innerHTML = 4 + "%";
-            // }, 400);
-            // setTimeout(function () {
-            //     elem.innerHTML = 5 + "%";
-            // }, 500);
-            // setTimeout(function () {
-            //     elem.innerHTML = 6 + "%";
-            // }, 500);
-            // setTimeout(function () {
-            //     elem.innerHTML = 55 + "%";
-            // }, 500);
-
+            // 재실행 방지 j
+            // j = 1;
         }
     </script> -->
 </body>
