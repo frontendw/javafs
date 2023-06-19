@@ -1,0 +1,100 @@
+안녕하세요. 선생님, 전반부 수업을 맡아 진행한 조휘일 강사입니다.
+간단히 이전 수업 내용과 학생포폴 주소와 함께 올립니다.
+활용 프로그램
+1. 피그마
+2. 크롬 브라우저
+3. 비주얼 스튜디오 코드
+4. 깃허브 데스크탑
+5. 파일질라
+
+학습 내용
+1. 피그마
+2. HTML
+  - meta, h1~h6, p, br, b, strong, em, i, mark, small, sub, sup, ins, del, blockquote, q, abbr, address, cite, code, samp, kbd, var, 기호, 이모티콘, ul, ol, li, dl, dt, dd, img, map, area, figure, figcaption, a, form, fieldset, legend, input, label, button, textarea, select, option, optgroup, datalist, video, audio, iframe, table, tr, td, th, caption, col, colgroup, thead, tbody, tfoot, div, span, header, section, nav, main, article, aside, footer
+
+3. CSS
+  - 선택자: 아이디, 클래스, 요소, *, 그룹, 공백, >, +, ~, :hover, :link, :visited, :active, :nth-of-type(n), :last-of-type, :first-of-type, nth-last-of-type(n), :nth-chid(n), :first-child, :last-child, :nth-child(n), :nth-last-child(n), :not(), :target, :checked, ::after, ::before, [속성], [속성=값], [속성=값], [속성~=값], [속성|=값], [속성^=값], [속성$=값], [속성*=값]
+
+  - 속성: color, background, background-color, background-image, background-repeat, background-position, background-attachment, background-size, background-origin, background-clip, border, border-width, border-style, border-color, border-radius, outline, width, min-width, max-width, height, min-height, max-height, margin, padding, box-sizing, box-shadow, visibility, display, float, clear, overflow, flex-direction, flex-wrap, flex-flow, justify-content, align-items, align-content, align-self, order, flex, flex-grow, flex-shrink, flex-basis, position, left, right, top, bottom, z-index, font, font-family, font-size, font-weight, font-style, @font-face, text-align, vertical-align, text-decoration, text-decoration-line, text-decoration-thickness, text-decoration-style, text-decoration-color, line-height, text-indent, text-transform, letter-spacing, word-spacing, white-space, text-shadow, list-style, list-style-type, list-style-image, list-style-position, border-collapse, border-spacing, caption-side, empty-cells, table-layout, opacity, transition, transition-property, transition-duration, transition-timing-function, transition-delay, transform, transform-origin, transform-style, perspective, perspective-origin, backface-visibility, animation, animation-name, animation-duration, animation-iteration-count, animation-timing-function, animation-delay, animation-fill-mode, animation-play-state, @keyframe, @media
+
+  - 색: hex, rgb, rgba, hsl, hsla
+  - 단위: px, %, em, rem, vw, vh, vmax, vmin, deg
+  - display: block, inline, inline-block, none, flex
+  - gradient: linear-gradient, radial-gradient, conic-gradient
+  - tranform: translate(), scale(), rotate(), skew(), perspective()
+ 
+4. JavaScript
+  - 키워드: break, case, const, continue, default, do, else, false, finally, for, function, if, in, let, new, null, return, switch, this, true, try, typeof, var, while
+  - 연산자: 산술(+, -, *, /, %, **, ++, --), 비교(>, <, >=, <=, ==, ===, !=, !==), 논리(&&, ||, !), 할당(=, +=, -=, *=, /=, %=, **=), 삼항(?:)
+  - 제어문: if, switch, for, do, while, for in, for of, break, continue
+  - 함수: 일반함수, 익명함수, 재귀호출함수, 즉시실행함수, 화살표함수
+  - 객체: window, document, location, screen, navigator, Date, Array, Math, String
+  - 메서드: alert(), prompt(), confirm(), open(), close(), moveBy(), setInterval(), clearInterval(), setTimeout(), clearTimeout(), reload(), write(), getElementById(), getElementsByClassName(), getElementsByTagName(), querySelector(), querySelectorAll(), getFullYear(), getMonth(), getDate(), getDay(), getHours(), getMinutes(), getSeconds(), getMilliseconds(), getTime(), abs(), max(), min(), pow(), random(), ceil(), floor(), round(), sqrt(), join(), concat(), slice(), sort(), reverse(), splice(), pop(), push(), shift(), unshift(), charAt(), indexOf(), lastIndexOf(), match(), search(), substr(), substring(), replace(), toLowerCase(), toUpperCase(), slice(), split(), concat(), charCodeAt(), fromCharCode(), trim(), addEventListener(), getAttribute(), setAttribute(), createElement(), createTextNode(), appendChild(), createAttribute(), setAttributeNode(), classList.add(), classList.remove()
+  - 속성: width, height, availWidth, availHeight, outerWidth, outerHeight, innerWidth, innerHeight, href, userAgent, length, innerText, innerHTML, style, value, offsetWidth, offsetHeight, pageX, pageY, scrollTop, offsetTop
+  - 노드: documentElement, parentElement, children, nextElementSibling, previousElementSibling
+  - 이벤트: click, mouseenter, mouseleave, mousemove, wheel, scroll, keydown, keyup
+
+5. 기타: jQuery, Bootstrap4 (그리드 시스템)
+
+기능구현
+1. 풀페이지
+2. 스크롤 이벤트
+3. 내비게이션: 2depth, 모바일, 탭, 아코디언
+4. 모달창, 윈도우 팝업창, 라이트 박스
+5. 캐로셀, 슬라이드 이미지, 페이드 이미지
+6. 로그인/로그아웃
+7. 디지털 시계
+8. 프로그래스바
+9. 카운터
+10. 반응형/적응형 페이지
+
+
+학생포폴주소
+1. 김나연
+https://github.com/naxomis/javafs
+http://kny.dothome.co.kr/
+2. 김종우
+https://github.com/h851312/javafs
+http://woo2023.dothome.co.kr/
+3. 김혜리
+https://github.com/kimrihye/javafs
+http://gpfl0520.dothome.co.kr/
+4. 문선호
+https://github.com/moonsunho/javafs
+http://tjsgh0411.dothome.co.kr/
+5. 박건우
+https://github.com/pk010426/javafs
+http://pk0426.dothome.co.kr/
+6. 오은준
+https://github.com/wan0706/javafs
+http://hgd1993.dothome.co.kr/
+7. 위재형
+https://github.com/jhwii/javafs
+http://jhwii98.dothome.co.kr/
+8. 이은미
+https://github.com/leeeunmi25/javafs
+http://akdongtiger.dothome.co.kr/
+9. 이재웅
+https://github.com/yoong0304/javafs
+http://yoong0304.dothome.co.kr/
+10. 이현수
+https://github.com/javsfs/javafs
+http://counman4.dothome.co.kr/
+11. 장준영
+https://github.com/JunYeonge/javafs
+http://said3230.dothome.co.kr/
+12. 정재욱
+https://github.com/jeongjwk/javafs
+http://jjw2023.dothome.co.kr/
+13. 조성은
+https://github.com/silvercho/javafs
+http://hgd2023.dothome.co.kr/
+14. 지동민
+https://github.com/jdm234/javafs
+http://ehals2.dothome.co.kr/
+15. 최윤석
+https://github.com/chois1234/javafs
+http://cys2023.dothome.co.kr/
+16. 홍지혜
+https://github.com/HoneyJH/Javafs
+http://hong.dothome.co.kr/
