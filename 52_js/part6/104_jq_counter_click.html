@@ -21,15 +21,16 @@
     <button>Click Me</button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
-        const elem = $('#counter span');
         $('button').click(function(){
             move();
         });
-
+        
         function move() {
+            const elem = $('#counter span');
             let num = 0;
             // counter 함수를 0.1초마다 실행
             const timer = setInterval(counter, 100);
+            
             function counter() {
                 if (num >= 16) {
                     clearInterval(timer);

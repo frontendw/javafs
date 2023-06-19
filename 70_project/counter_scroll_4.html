@@ -47,7 +47,10 @@
             console.log($(this).scrollTop());
             if ($(this).scrollTop() >= 150) {
                 if (state === 0) {
-                    move();
+                    move(0, 32, 100);
+                    move(1, 8, 200);
+                    move(2, 4, 300);
+                    move(3, 3, 400);
                     state = 1;
                 } else {
                     return;
@@ -57,16 +60,16 @@
             }
         });
 
-        function move() {
+        function move(idx, maxCnt, mSec) {
             let num = 0;
             // counter 함수를 0.1초마다 실행
-            const timer = setInterval(counter, 100);
+            const timer = setInterval(counter, mSec);
             function counter() {
-                if (num >= 16) {
+                if (num >= maxCnt) {
                     clearInterval(timer);
                 } else {
                     num++;
-                    elem.text(`${num}+`);
+                    elem.eq(idx).text(`${num}+`);
                 }
             }
         }

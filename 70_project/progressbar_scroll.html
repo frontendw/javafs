@@ -21,23 +21,38 @@
             text-align: center;
             color: white;
         }
+        .section {
+            height: 100vh;
+        }
     </style>
+
 </head>
 
 <body>
-    <h1>Progress Bar</h1>
-    <div class="skill">
+    <div class="section">
+        <h1>Progress Bar</h1>
+    </div>
+    <div class="skill section">
         <div class="progress">
             <div>0%</div>
         </div>
     </div>
-    <button>Click Me</button>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
-        // 변수 선언
-        $('button').click(function () {
-            move();
+        let state = 0;
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= 150) {
+                if (state === 0) {
+                    move();
+                    state = 1;
+                } else {
+                    return;
+                }
+            } else {
+                state = 0;
+            }
         });
 
 
