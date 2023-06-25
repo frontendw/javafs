@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+Vue</title>
+</head>
+<body>
+     <div id="app">
+        {{ message }}
+     </div>
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+     <script>
+        /* 
+            라이프 사이클(Life Cycle)
+                모바일 앱을 비롯한 애플리케이션이 가지는 생명 주기
+                            
+            뷰 인스턴스 라이프 사이클
+                생성 -> 부착 -> 갱신 -> 소멸
+
+            뷰 인스턴스 라이프 사이클 속성
+                beforeCreate
+                created
+                beforeMount
+                mounted
+                beforeUpdate
+                updated
+                beforeDestroy
+                destroyed
+
+            라이프 사이클 훅(hook)
+                라이프 사이클 속성에서 실행되는 커스텀 로직
+            커스텀 로직
+                개발자가 임의로 작성한 추가 로직
+
+        */
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!'
+            },
+            beforeCreate: function() {
+                console.log('beforeCreate');
+            },
+            created: function() {
+                console.log('created');
+            },
+            mounted: function() {
+                console.log('mounted');
+            },
+            updated: function() {
+                console.log('updated');
+            }
+        });
+     </script>
+</body>
+</html>

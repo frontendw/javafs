@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+Vue</title>
+</head>
+
+<body>
+    <div id="app">
+        <button>컴포넌트 등록</button>
+        <my-local-component></my-local-component>
+    </div>
+    <!-- 1. 뷰 라이브러리 파일 로딩 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        /* 
+            컴포넌트(Component)
+                조합하여 화면을 구성할 수 있는 블록(화면의 특정 영역)
+                예) Header, Content(Aside, List), Footer
+
+            컴포넌트 등록
+                지역(Local) 컴포넌트: 특정 인스턴스에만 사용
+                전역(Global) 컴포넌트: 여러 인스턴스에서 공통으로 사용
+
+            지역 컴포넌트 등록 형식
+                new Vue({
+                    components: {
+                        '컴포넌트이름': 컴포넌트내용
+                    }
+                });
+
+            컴포넌트이름
+                template 속성에서 사용할 HTML 사용자 정의 태그 이름
+            컴포넌트내용
+                컴포넌트 태그가 실제 화면의 HTML 요소로 변환될 때 표시될 속성 정의
+                template, data, methods 등
+
+        */
+
+        // 2. 변수
+        var cmp = {
+            template: '<div>지역 컴포넌트가 등록되었습니다.</div>'
+        };
+
+        // 3. 인스턴스 객체 생성(옵션 속성 포함)
+        new Vue({
+            // 4. 특정 화면 요소에 인스턴스 부착
+            el: '#app',
+            components: {
+                'my-local-component': cmp
+            }
+        });
+    </script>
+</body>
+
+</html>

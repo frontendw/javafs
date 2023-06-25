@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+Vue</title>
+</head>
+
+<body>
+    <h1>컴포넌트 등록하기</h1>
+    <div id="app">
+        <header>
+            <h2>{{ message }}</h2>
+        </header>
+        <todo-footer></todo-footer>
+        <todo-list></todo-list>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        /* 
+            <p>This is another global child component</p>를 template으로 갖는 컴포넌트를 등록해 보세요.
+                - 전역 컴포넌트 이름: todo-footer
+            <p>This is another local child component</p>를 template으로 갖는 컴포넌트를 등록해 보세요.
+                - 지역 컴포넌트 이름: todo-list
+
+        */
+
+        Vue.component('todo-footer', {
+            template: '<p>This is another global child component</p>'
+        });
+
+        var cmp = {
+            template: '<p>This is another local child component</p>'
+        };
+
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'This is a parent component'
+            },
+            components: {
+                'todo-list': cmp
+            }
+        });
+        new Vue({
+            el: '#app2'
+        });
+    </script>
+</body>
+
+</html>
