@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+Vue</title>
+</head>
+<body>
+    <!-- 
+        개발환경설정
+        1. 크롬 브라우저
+        2. 비주얼스튜디오코드(Visual Studio Code) 텍스트 에디터
+        3. 노드제이에스(Node.js)
+            https://nodejs.org/ko
+            CLI(Command Line Interface) 방식으로 뷰 프로젝트 구성
+        4. 뷰 개발자 도구(Vue.js devtools, 크롬 확장 플러그인)
+            https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
+            뷰로 만든 웹 앱의 구조를 디버깅하거나 분석
+     -->
+
+     <div id="app">
+        {{ message }}
+     </div>
+     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+     <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue.js!'
+            }
+        });
+     </script>
+</body>
+</html>
